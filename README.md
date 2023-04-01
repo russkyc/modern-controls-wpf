@@ -6,7 +6,9 @@ A highly customizable custom control library for wpf
 Preview
 
 <span align="center">
-<img style="width: 400px;" src="https://raw.githubusercontent.com/russkyc/modern-controls-wpf/master/Russkyc.ModernControls.WPF/Images/Sample.png">
+    
+![image](https://raw.githubusercontent.com/russkyc/modern-controls-wpf/master/Russkyc.ModernControls.WPF/Images/Sample.png)
+    
 </span>
 
 ---
