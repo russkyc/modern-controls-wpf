@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <!--<ResourceDictionary Source="/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/Default.xaml" />-->
+        <ResourceDictionary Source="/Russkyc.ModernControls.WPF;component/Styles/ModernButtonStyles.xaml" />
+        <ResourceDictionary Source="/Russkyc.ModernControls.WPF;component/Styles/ModernToggleButtonStyles.xaml" />
+        <ResourceDictionary Source="/Russkyc.ModernControls.WPF;component/Styles/ModernRadioButtonStyles.xaml" />
+        <ResourceDictionary Source="/Russkyc.ModernControls.WPF;component/Styles/ModernRadioStyles.xaml" />
+        <ResourceDictionary Source="/Russkyc.ModernControls.WPF;component/Styles/ModernTextBoxStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
