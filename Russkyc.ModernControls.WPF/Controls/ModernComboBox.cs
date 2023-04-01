@@ -28,38 +28,47 @@ using Bindables.Wpf;
 
 namespace org.russkyc.moderncontrols;
 
-public partial class ModernTextBox : TextBox
+public partial class ModernComboBox : ComboBox
 {
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty PlaceholderBrushProperty;
     [DependencyProperty(typeof(string))]
     public static readonly DependencyProperty PlaceholderProperty;
-    [DependencyProperty(typeof(Thickness))]
-    public static readonly DependencyProperty BorderThicknessProperty;
     [DependencyProperty(typeof(CornerRadius))]
     public static readonly DependencyProperty CornerRadiusProperty;
     [DependencyProperty(typeof(Thickness))]
     public static readonly DependencyProperty PaddingProperty;
+    [DependencyProperty(typeof(String))]
+    public static readonly DependencyProperty TextProperty;
     [DependencyProperty(typeof(HorizontalAlignment))]
     public static readonly DependencyProperty HorizontalContentAlignmentProperty;
-    [DependencyProperty(typeof(VerticalAlignment))]
-    public static readonly DependencyProperty VerticalContentAlignmentProperty;
-    
-    [DependencyProperty(typeof(Brush))]
-    public static readonly DependencyProperty PlaceholderBrushProperty;
     [DependencyProperty(typeof(Brush))]
     public static readonly DependencyProperty HoverForegroundProperty;
     [DependencyProperty(typeof(Brush))]
-    public static readonly DependencyProperty HoverBorderBrushProperty;
-    [DependencyProperty(typeof(Brush))]
     public static readonly DependencyProperty HoverBackgroundProperty;
-    [DependencyProperty(typeof(Brush))]
-    public static readonly DependencyProperty HoverPlaceholderProperty;
     [DependencyProperty(typeof(Brush))]
     public static readonly DependencyProperty PressedForegroundProperty;
     [DependencyProperty(typeof(Brush))]
     public static readonly DependencyProperty PressedBackgroundProperty;
     [DependencyProperty(typeof(Brush))]
-    public static readonly DependencyProperty PressedBorderBrushProperty;
+    public static readonly DependencyProperty CheckedForegroundProperty;
     [DependencyProperty(typeof(Brush))]
-    public static readonly DependencyProperty PressedPlaceholderBrushProperty;
-
+    public static readonly DependencyProperty CheckedBackgroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty DropdownBackgroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty DropdownBorderBrushProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty ItemForegroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty ItemBackgroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty HoverItemForegroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty HoverItemBackgroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty CheckedItemForegroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty CheckedItemBackgroundProperty;
+    
 }

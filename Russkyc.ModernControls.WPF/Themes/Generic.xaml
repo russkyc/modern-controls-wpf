@@ -6,5 +6,6 @@
         <ResourceDictionary Source="/Russkyc.ModernControls.WPF;component/Styles/ModernRadioButtonStyles.xaml" />
         <ResourceDictionary Source="/Russkyc.ModernControls.WPF;component/Styles/ModernRadioStyles.xaml" />
         <ResourceDictionary Source="/Russkyc.ModernControls.WPF;component/Styles/ModernTextBoxStyles.xaml" />
+        <ResourceDictionary Source="/Russkyc.ModernControls.WPF;component/Styles/ModernComboBoxStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

@@ -1,0 +1,124 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:moderncontrols="clr-namespace:org.russkyc.moderncontrols">
+    <Style TargetType="{x:Type moderncontrols:ModernComboBox}">
+        <Setter Property="Padding" Value="12" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="CornerRadius" Value="3" />
+        <Setter Property="HoverForeground" Value="{DynamicResource ForegroundStandardHover}" />
+        <Setter Property="HoverBackground" Value="{DynamicResource BackgroundInvertedHover}" />
+        <Setter Property="DropdownBackground" Value="{DynamicResource BackgroundInverted}" />
+        <Setter Property="PressedForeground" Value="{DynamicResource ForegroundInvertedHover}" />
+        <Setter Property="PressedBackground" Value="{DynamicResource BackgroundPrimaryPressed}" />
+        <Setter Property="CheckedForeground" Value="{DynamicResource ForegroundInverted}" />
+        <Setter Property="ItemForeground" Value="{DynamicResource ForegroundStandard}" />
+        <Setter Property="PlaceholderBrush" Value="{DynamicResource ForegroundSecondary}" />
+        <Setter Property="CheckedBackground" Value="{DynamicResource BackgroundSecondaryPressed}" />
+        <Setter Property="HoverItemBackground" Value="{DynamicResource BackgroundSecondaryPressed}" />
+        <Setter Property="HoverItemForeground" Value="{DynamicResource ForegroundStandardHover}" />
+        <Setter Property="CheckedItemBackground" Value="{DynamicResource BackgroundPrimary}" />
+        <Setter Property="CheckedItemForeground" Value="{DynamicResource ForegroundInverted}" />
+        <Setter Property="ItemContainerStyle" Value="{DynamicResource CustomComboBoxItemStyle}" />
+        <Setter Property="ItemsPanel" Value="{DynamicResource CustomComboBoxItemsPanelTemplate}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type moderncontrols:ModernComboBox}">
+                    <Grid>
+                        <moderncontrols:ModernToggleButton Name="ToggleButton"
+                                                           CheckedBackground="{Binding CheckedBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
+                                                           CheckedForeground="{Binding CheckedForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
+                                                           ClickMode="Press"
+                                                           Focusable="false"
+                                                           HoverBackground="{Binding HoverBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
+                                                           HoverForeground="{Binding HoverForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
+                                                           IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                                           PressedBackground="{Binding PressedBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
+                                                           PressedForeground="{Binding PressedForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
+                                                           Style="{DynamicResource ModernComboBoxToggle}" />
+                        <ContentPresenter Name="ContentSite"
+                                          Margin="{TemplateBinding Padding}"
+                                          HorizontalAlignment="Left"
+                                          VerticalAlignment="Center"
+                                          Content="{TemplateBinding SelectionBoxItem}"
+                                          ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                          ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                          IsHitTestVisible="False" />
+                        <moderncontrols:ModernTextBox x:Name="PART_EditableTextBox"
+                                                      Margin="3,3,23,3"
+                                                      HorizontalAlignment="Left"
+                                                      VerticalAlignment="Center"
+                                                      Background="Transparent"
+                                                      Focusable="True"
+                                                      Foreground="{TemplateBinding Foreground}"
+                                                      IsReadOnly="{Binding IsReadOnly, RelativeSource={RelativeSource TemplatedParent}}"
+                                                      OverridesDefaultStyle="True"
+                                                      Visibility="Hidden" />
+                        <Popup Name="Popup"
+                               AllowsTransparency="True"
+                               Focusable="False"
+                               IsOpen="{TemplateBinding ComboBox.IsDropDownOpen}"
+                               Placement="Bottom"
+                               PopupAnimation="Slide">
+                            <Grid Name="DropDown"
+                                  MinWidth="{TemplateBinding FrameworkElement.ActualWidth}"
+                                  MaxHeight="{TemplateBinding ComboBox.MaxDropDownHeight}"
+                                  SnapsToDevicePixels="True">
+                                <Border Name="DropDownBorder"
+                                        Background="{Binding DropdownBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}" />
+                                <ScrollViewer Margin="0">
+                                    <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                                </ScrollViewer>
+                            </Grid>
+                        </Popup>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger SourceName="Popup" Property="Popup.AllowsTransparency" Value="true">
+                            <Setter TargetName="DropDownBorder" Property="CornerRadius" Value="4" />
+                            <Setter TargetName="DropDownBorder" Property="Margin" Value="0,2,0,0" />
+                        </Trigger>
+                        <Trigger Property="ComboBox.IsEditable" Value="true">
+                            <Setter Property="KeyboardNavigation.IsTabStop" Value="false" />
+                            <Setter TargetName="ContentSite" Property="UIElement.Visibility" Value="Hidden" />
+                            <Setter TargetName="PART_EditableTextBox" Property="UIElement.Visibility" Value="Visible" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CustomComboBoxItemStyle" TargetType="{x:Type ComboBoxItem}">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ComboBoxItem}">
+                    <Border Name="Border"
+                            Padding="{Binding Padding, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
+                            Background="{x:Null}"
+                            CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
+                            SnapsToDevicePixels="true">
+                        <TextBlock x:Name="PART_ContentHost" Text="{TemplateBinding Content}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsHighlighted" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="{Binding HoverItemBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}" />
+                            <Setter TargetName="PART_ContentHost" Property="Foreground" Value="{Binding HoverItemForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}" />
+                        </Trigger>
+                        <Trigger Property="Selector.IsSelected" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="{Binding CheckedItemBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}" />
+                            <Setter TargetName="PART_ContentHost" Property="Foreground" Value="{Binding CheckedItemForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <ItemsPanelTemplate x:Key="CustomComboBoxItemsPanelTemplate">
+        <VirtualizingStackPanel />
+    </ItemsPanelTemplate>
+
+</ResourceDictionary>

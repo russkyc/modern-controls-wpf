@@ -3,6 +3,7 @@
                     xmlns:russkyc="clr-namespace:org.russkyc.moderncontrols">
     <Style TargetType="{x:Type russkyc:ModernButton}">
         <Setter Property="Padding" Value="10" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundInverted}" />
         <Setter Property="Background" Value="{DynamicResource BackgroundPrimary}" />
         <Setter Property="HoverForeground" Value="{DynamicResource ForegroundInvertedHover}" />
@@ -27,13 +28,12 @@
                                               Grid.Column="0"
                                               VerticalAlignment="Center"
                                               IsHitTestVisible="False" />
-                            <TextBlock x:Name="PART_Content"
+                            <TextBlock x:Name="PART_ContentHost"
                                        Grid.Column="1"
                                        VerticalAlignment="Center"
                                        FontWeight="{TemplateBinding FontWeight}"
                                        Foreground="{TemplateBinding Foreground}"
-                                       IsHitTestVisible="False"
-                                       Text="{TemplateBinding Text}" />
+                                       IsHitTestVisible="False" />
                             <ContentPresenter x:Name="PART_RightIcon"
                                               Grid.Column="0"
                                               VerticalAlignment="Center"

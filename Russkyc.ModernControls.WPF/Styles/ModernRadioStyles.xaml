@@ -4,6 +4,7 @@
     <Style TargetType="{x:Type russkyc:ModernRadio}">
         <Setter Property="Padding" Value="10" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundStandard}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="Background" Value="{DynamicResource BackgroundSecondaryPressed}" />
         <Setter Property="HoverForeground" Value="{DynamicResource ForegroundStandardHover}" />
         <Setter Property="HoverBackground" Value="{DynamicResource BackgroundInvertedPressed}" />
@@ -18,6 +19,7 @@
                     <Border x:Name="PART_ButtonBase"
                             Padding="{TemplateBinding Padding}"
                             Background="Transparent"
+                            BorderThickness="{TemplateBinding BorderThickness}"
                             CornerRadius="{TemplateBinding CornerRadius}">
                         <Grid HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" IsHitTestVisible="False">
                             <Grid.ColumnDefinitions>
@@ -36,17 +38,13 @@
                                         Background="#ffffff"
                                         CornerRadius="{TemplateBinding CornerRadius}" />
                             </Border>
-                            <TextBlock x:Name="PART_Content"
+                            <TextBlock x:Name="PART_ContentHost"
                                        Grid.Column="1"
                                        VerticalAlignment="Center"
                                        FontWeight="{TemplateBinding FontWeight}"
                                        Foreground="{TemplateBinding Foreground}"
                                        IsHitTestVisible="False"
-                                       Text="{TemplateBinding Text}" />
-                            <ContentPresenter x:Name="PART_RightIcon"
-                                              Grid.Column="0"
-                                              VerticalAlignment="Center"
-                                              IsHitTestVisible="False" />
+                                       Text="{TemplateBinding Content}" />
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>

@@ -34,10 +34,6 @@ public partial class ModernRadio : RadioButton
     public static readonly DependencyProperty CornerRadiusProperty;
     [DependencyProperty(typeof(Thickness))]
     public static readonly DependencyProperty PaddingProperty;
-    [DependencyProperty(typeof(String))]
-    public static readonly DependencyProperty TextProperty;
-    [DependencyProperty(typeof(FontWeight))]
-    public static readonly DependencyProperty FontWeightProperty;
     [DependencyProperty(typeof(HorizontalAlignment))]
     public static readonly DependencyProperty HorizontalContentAlignmentProperty;
     [DependencyProperty(typeof(Brush))]

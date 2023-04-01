@@ -3,6 +3,7 @@
                     xmlns:russkyc="clr-namespace:org.russkyc.moderncontrols">
     <Style TargetType="{x:Type russkyc:ModernToggleButton}">
         <Setter Property="Padding" Value="10" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundStandard}" />
         <Setter Property="Background" Value="{DynamicResource BackgroundInverted}" />
         <Setter Property="HoverForeground" Value="{DynamicResource ForegroundStandardHover}" />
@@ -40,6 +41,70 @@
                                               Grid.Column="0"
                                               VerticalAlignment="Center"
                                               IsHitTestVisible="False" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="{Binding HoverForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="{Binding HoverBackground, RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Foreground" Value="{Binding CheckedForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="{Binding CheckedBackground, RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Foreground" Value="{Binding PressedForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="{Binding PressedBackground, RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ModernComboBoxToggle" TargetType="{x:Type russkyc:ModernToggleButton}">
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundStandard}" />
+        <Setter Property="Background" Value="{DynamicResource BackgroundInverted}" />
+        <Setter Property="HoverForeground" Value="{DynamicResource ForegroundStandardHover}" />
+        <Setter Property="HoverBackground" Value="{DynamicResource BackgroundInvertedHover}" />
+        <Setter Property="PressedForeground" Value="{DynamicResource ForegroundInvertedHover}" />
+        <Setter Property="PressedBackground" Value="{DynamicResource BackgroundPrimaryPressed}" />
+        <Setter Property="CheckedForeground" Value="{DynamicResource ForegroundInverted}" />
+        <Setter Property="CheckedBackground" Value="{DynamicResource BackgroundPrimary}" />
+        <Setter Property="CornerRadius" Value="3" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type russkyc:ModernToggleButton}">
+                    <Border x:Name="PART_ButtonBase"
+                            Padding="{TemplateBinding Padding}"
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="{TemplateBinding CornerRadius}">
+                        <Grid HorizontalAlignment="Stretch" IsHitTestVisible="False">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="PART_Content"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                       VerticalAlignment="Center"
+                                       FontWeight="{TemplateBinding FontWeight}"
+                                       Foreground="{TemplateBinding Foreground}"
+                                       IsHitTestVisible="False"
+                                       Text="{TemplateBinding Text}" />
+                            <Path x:Name="Arrow"
+                                  Grid.Column="1"
+                                  Margin="{TemplateBinding Padding}"
+                                  HorizontalAlignment="Right"
+                                  VerticalAlignment="Center"
+                                  Data="M 0 0 L 4 4 L 8 0 Z"
+                                  Fill="{Binding ItemForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}"
+                                  Stretch="UniformToFill">
+                                <Path.LayoutTransform>
+                                    <ScaleTransform ScaleX="1.2" ScaleY="1.2" />
+                                </Path.LayoutTransform>
+                            </Path>
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
