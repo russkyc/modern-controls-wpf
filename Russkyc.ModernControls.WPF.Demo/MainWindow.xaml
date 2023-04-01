@@ -41,6 +41,7 @@
         <moderncontrols:ModernComboBox x:Name="CmbPrimary"
                                        Grid.Row="2"
                                        Grid.Column="0"
+                                       IsEditable="True"
                                        SelectedIndex="0" />
         <moderncontrols:ModernRadio Grid.Row="2"
                                     Grid.Column="1"

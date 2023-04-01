@@ -44,8 +44,8 @@
                                           ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
                                           IsHitTestVisible="False" />
                         <moderncontrols:ModernTextBox x:Name="PART_EditableTextBox"
-                                                      Margin="3,3,23,3"
-                                                      HorizontalAlignment="Left"
+                                                      Margin="3,0,47,0"
+                                                      HorizontalAlignment="Stretch"
                                                       VerticalAlignment="Center"
                                                       Background="Transparent"
                                                       Focusable="True"

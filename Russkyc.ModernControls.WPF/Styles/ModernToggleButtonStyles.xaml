@@ -102,7 +102,7 @@
                                   Fill="{Binding ItemForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}"
                                   Stretch="UniformToFill">
                                 <Path.LayoutTransform>
-                                    <ScaleTransform ScaleX="1.2" ScaleY="1.2" />
+                                    <ScaleTransform ScaleX="1.4" ScaleY="1.4" />
                                 </Path.LayoutTransform>
                             </Path>
                         </Grid>
