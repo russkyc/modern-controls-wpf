@@ -62,6 +62,6 @@ Sample Usage
 > - [x] ModernToggleButton
 > - [x] ModernRadio
 > - [x] ModernRadioButton
-> - [ ] ModernComboBox
+> - [x] ModernComboBox
 > - [ ] ModernAutocompleteBox
 
