@@ -9,9 +9,10 @@
     <Version>1.0.5</Version>
     <PackageIcon>Russkyc.png</PackageIcon>
     <Title>Modern Controls for WPF</Title>
-    <Description>A custom control library for wpf</Description>
+    <Description>Highly customizable modern controls for WPF</Description>
     <RepositoryUrl>https://github.com/russkyc/modern-controls-wpf</RepositoryUrl>
     <PackageTags>modern controls wpf custom flat theme style</PackageTags>
+    <Copyright>Russell Camo 2023</Copyright>
   </PropertyGroup>
   <PropertyGroup>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
