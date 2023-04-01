@@ -38,11 +38,15 @@
                                      Grid.Column="1"
                                      Content="Hello"
                                      FontWeight="Medium" />
-        <moderncontrols:ModernComboBox x:Name="CbxTester"
-                                       Grid.Row="2"
+        <moderncontrols:ModernComboBox Grid.Row="2"
                                        Grid.Column="0"
                                        Placeholder="Select Item"
-                                       SelectedIndex="0" />
+                                       SelectedIndex="0">
+            <ComboBoxItem>Tasgasgsg</ComboBoxItem>
+            <ComboBoxItem>Tasga2sgsg</ComboBoxItem>
+            <ComboBoxItem>Tas4gasgsg</ComboBoxItem>
+            <ComboBoxItem>Tasgtasgsg</ComboBoxItem>
+        </moderncontrols:ModernComboBox>
         <moderncontrols:ModernRadio Grid.Row="2"
                                     Grid.Column="1"
                                     Content="Hello Radio"
