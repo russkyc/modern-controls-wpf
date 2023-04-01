@@ -23,6 +23,8 @@ namespace Russkyc.ModernControls.WPF.Demo
         public MainWindow()
         {
             InitializeComponent();
+            
+            for (int i = 1; i <= 20; i++) CmbPrimary.Items.Add(i);
         }
     }
 }

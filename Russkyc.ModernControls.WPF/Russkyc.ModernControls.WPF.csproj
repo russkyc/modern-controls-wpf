@@ -6,7 +6,7 @@
     <UseWPF>true</UseWPF>
     <RootNamespace>org.russkyc.moderncontrols</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.1.1</Version>
+    <Version>1.1.2</Version>
     <PackageIcon>Russkyc.png</PackageIcon>
     <Title>Modern Controls for WPF</Title>
     <Description>Highly customizable modern controls for WPF</Description>

@@ -100,16 +100,16 @@
                             Background="{x:Null}"
                             CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
                             SnapsToDevicePixels="true">
-                        <TextBlock x:Name="PART_ContentHost" Text="{TemplateBinding Content}" />
+                        <ContentPresenter x:Name="PART_ContentHost" Content="{TemplateBinding Content}" />
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsHighlighted" Value="true">
                             <Setter TargetName="Border" Property="Background" Value="{Binding HoverItemBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}" />
-                            <Setter TargetName="PART_ContentHost" Property="Foreground" Value="{Binding HoverItemForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}" />
+                            <Setter TargetName="PART_ContentHost" Property="TextBlock.Foreground" Value="{Binding HoverItemForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}" />
                         </Trigger>
                         <Trigger Property="Selector.IsSelected" Value="true">
                             <Setter TargetName="Border" Property="Background" Value="{Binding CheckedItemBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}" />
-                            <Setter TargetName="PART_ContentHost" Property="Foreground" Value="{Binding CheckedItemForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}" />
+                            <Setter TargetName="PART_ContentHost" Property="TextBlock.Foreground" Value="{Binding CheckedItemForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

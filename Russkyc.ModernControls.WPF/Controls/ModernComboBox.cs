@@ -21,9 +21,11 @@
 // SOFTWARE.
 
 using System;
+using System.Collections.Specialized;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Threading;
 using Bindables.Wpf;
 
 namespace org.russkyc.moderncontrols;
@@ -70,5 +72,4 @@ public partial class ModernComboBox : ComboBox
     public static readonly DependencyProperty CheckedItemForegroundProperty;
     [DependencyProperty(typeof(Brush))]
     public static readonly DependencyProperty CheckedItemBackgroundProperty;
-    
 }
