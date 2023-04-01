@@ -10,6 +10,8 @@
     <PackageIcon>Russkyc.png</PackageIcon>
     <Title>Modern Controls for WPF</Title>
     <Description>A custom control library for wpf</Description>
+    <RepositoryUrl>https://github.com/russkyc/modern-controls-wpf</RepositoryUrl>
+    <PackageTags>modern controls wpf custom flat theme style</PackageTags>
   </PropertyGroup>
   <PropertyGroup>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
