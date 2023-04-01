@@ -6,13 +6,14 @@
     <UseWPF>true</UseWPF>
     <RootNamespace>org.russkyc.moderncontrols</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.5</Version>
+    <Version>1.1.1</Version>
     <PackageIcon>Russkyc.png</PackageIcon>
     <Title>Modern Controls for WPF</Title>
     <Description>Highly customizable modern controls for WPF</Description>
     <RepositoryUrl>https://github.com/russkyc/modern-controls-wpf</RepositoryUrl>
     <PackageTags>modern controls wpf custom flat theme style</PackageTags>
     <Copyright>Russell Camo 2023</Copyright>
+    <PackageReleaseNotes>Added Modern ComboBox</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
