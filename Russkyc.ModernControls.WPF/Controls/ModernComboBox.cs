@@ -1,6 +1,6 @@
 ﻿// MIT License
 // 
-// Copyright (c) $today.year Russell Camo (Russkyc)
+// Copyright (c) 2023 Russell Camo (Russkyc)
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,11 +21,9 @@
 // SOFTWARE.
 
 using System;
-using System.Collections.Specialized;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using System.Windows.Threading;
 using Bindables.Wpf;
 
 namespace org.russkyc.moderncontrols;
