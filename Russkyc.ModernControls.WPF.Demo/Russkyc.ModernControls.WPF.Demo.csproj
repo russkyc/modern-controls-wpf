@@ -11,4 +11,8 @@
       <ProjectReference Include="..\Russkyc.ModernControls.WPF\Russkyc.ModernControls.WPF.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
+    </ItemGroup>
+
 </Project>
