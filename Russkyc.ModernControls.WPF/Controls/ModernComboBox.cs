@@ -36,6 +36,8 @@ public partial class ModernComboBox : ComboBox
     public static readonly DependencyProperty PlaceholderProperty;
     [DependencyProperty(typeof(CornerRadius))]
     public static readonly DependencyProperty CornerRadiusProperty;
+    [DependencyProperty(typeof(CornerRadius))]
+    public static readonly DependencyProperty ItemCornerRadiusProperty;
     [DependencyProperty(typeof(Thickness))]
     public static readonly DependencyProperty PaddingProperty;
     [DependencyProperty(typeof(String))]
