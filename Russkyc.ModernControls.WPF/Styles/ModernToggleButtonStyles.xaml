@@ -1,11 +1,14 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:org.russkyc.moderncontrols.Converters"
                     xmlns:russkyc="clr-namespace:org.russkyc.moderncontrols">
     <Style TargetType="{x:Type russkyc:ModernToggleButton}">
         <Setter Property="Padding" Value="10" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
-        <Setter Property="Foreground" Value="{DynamicResource ForegroundStandard}" />
-        <Setter Property="Background" Value="{DynamicResource BackgroundInverted}" />
+        <Setter Property="IconPadding" Value="10" />
+        <Setter Property="IconSize" Value="15" />
+        <Setter Property="DefaultForeground" Value="{DynamicResource ForegroundStandard}" />
+        <Setter Property="DefaultBackground" Value="{DynamicResource BackgroundInverted}" />
         <Setter Property="HoverForeground" Value="{DynamicResource ForegroundStandardHover}" />
         <Setter Property="HoverBackground" Value="{DynamicResource BackgroundInvertedHover}" />
         <Setter Property="PressedForeground" Value="{DynamicResource ForegroundInvertedHover}" />
@@ -20,105 +23,125 @@
                             Padding="{TemplateBinding Padding}"
                             Background="{TemplateBinding Background}"
                             CornerRadius="{TemplateBinding CornerRadius}">
-                        <Grid HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" IsHitTestVisible="False">
+                        <Grid VerticalAlignment="{TemplateBinding VerticalContentAlignment}" IsHitTestVisible="False">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
-                            <ContentPresenter x:Name="PART_LeftIcon"
-                                              Grid.Column="0"
-                                              VerticalAlignment="Center"
-                                              IsHitTestVisible="False" />
-                            <TextBlock x:Name="PART_Content"
-                                       Grid.Column="1"
-                                       VerticalAlignment="Center"
-                                       FontWeight="{TemplateBinding FontWeight}"
-                                       Foreground="{TemplateBinding Foreground}"
-                                       IsHitTestVisible="False"
-                                       Text="{TemplateBinding Text}" />
-                            <ContentPresenter x:Name="PART_RightIcon"
-                                              Grid.Column="0"
-                                              VerticalAlignment="Center"
-                                              IsHitTestVisible="False" />
+                            <ScrollViewer x:Name="PART_LeftIcon"
+                                          Grid.Column="0"
+                                          Width="{TemplateBinding IconSize}"
+                                          Height="{TemplateBinding IconSize}"
+                                          Margin="{TemplateBinding IconPadding,
+                                                                   Converter={x:Static converters:ThicknessToRightThicknessConverter.Instance}}"
+                                          VerticalAlignment="Top"
+                                          HorizontalContentAlignment="Stretch"
+                                          VerticalContentAlignment="Stretch"
+                                          Content="{TemplateBinding LeftIcon}"
+                                          Foreground="{TemplateBinding IconForeground}"
+                                          HorizontalScrollBarVisibility="Disabled"
+                                          IsHitTestVisible="False"
+                                          VerticalScrollBarVisibility="Disabled" />
+                            <StackPanel Grid.Column="1"
+                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                        Orientation="Horizontal">
+                                <ScrollViewer x:Name="PART_LeftCenterIcon"
+                                              Width="{TemplateBinding IconSize}"
+                                              Height="{TemplateBinding IconSize}"
+                                              Margin="{TemplateBinding IconPadding,
+                                                                       Converter={x:Static converters:ThicknessToRightThicknessConverter.Instance}}"
+                                              VerticalAlignment="Top"
+                                              HorizontalContentAlignment="Stretch"
+                                              VerticalContentAlignment="Stretch"
+                                              Content="{TemplateBinding LeftCenterIcon}"
+                                              Foreground="{TemplateBinding IconForeground}"
+                                              HorizontalScrollBarVisibility="Disabled"
+                                              IsHitTestVisible="False"
+                                              VerticalScrollBarVisibility="Disabled" />
+                                <ScrollViewer x:Name="PART_ContentHost"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Content="{TemplateBinding Content}"
+                                              Foreground="{TemplateBinding Foreground}"
+                                              HorizontalScrollBarVisibility="Disabled"
+                                              IsHitTestVisible="False"
+                                              VerticalScrollBarVisibility="Disabled" />
+                                <ScrollViewer x:Name="PART_RightCenterIcon"
+                                              Width="{TemplateBinding IconSize}"
+                                              Height="{TemplateBinding IconSize}"
+                                              Margin="{TemplateBinding IconPadding,
+                                                                       Converter={x:Static converters:ThicknessToLeftThicknessConverter.Instance}}"
+                                              VerticalAlignment="Bottom"
+                                              HorizontalContentAlignment="Stretch"
+                                              VerticalContentAlignment="Stretch"
+                                              Content="{TemplateBinding RightCenterIcon}"
+                                              Foreground="{TemplateBinding IconForeground}"
+                                              HorizontalScrollBarVisibility="Disabled"
+                                              IsHitTestVisible="False"
+                                              VerticalScrollBarVisibility="Disabled" />
+                            </StackPanel>
+                            <ScrollViewer x:Name="PART_RightIcon"
+                                          Grid.Column="2"
+                                          Width="{TemplateBinding IconSize}"
+                                          Height="{TemplateBinding IconSize}"
+                                          Margin="{TemplateBinding IconPadding,
+                                                                   Converter={x:Static converters:ThicknessToLeftThicknessConverter.Instance}}"
+                                          VerticalAlignment="Bottom"
+                                          HorizontalContentAlignment="Stretch"
+                                          VerticalContentAlignment="Stretch"
+                                          Content="{TemplateBinding RightIcon}"
+                                          Foreground="{TemplateBinding IconForeground}"
+                                          HorizontalScrollBarVisibility="Disabled"
+                                          IsHitTestVisible="False"
+                                          VerticalScrollBarVisibility="Disabled" />
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="True">
+                            <Setter Property="Foreground" Value="{Binding DefaultForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="{Binding DefaultBackground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="IconForeground" Value="{Binding DefaultForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush" Value="{Binding DefaultBorderBrush, RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{Binding DisabledForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="IconForeground" Value="{Binding DisabledForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="{Binding DisabledBackground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush" Value="{Binding DisabledBorderBrush, RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Foreground" Value="{Binding HoverForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="IconForeground" Value="{Binding HoverForeground, RelativeSource={RelativeSource Self}}" />
                             <Setter Property="Background" Value="{Binding HoverBackground, RelativeSource={RelativeSource Self}}" />
-                        </Trigger>
-                        <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Foreground" Value="{Binding CheckedForeground, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="Background" Value="{Binding CheckedBackground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush" Value="{Binding HoverBorderBrush, RelativeSource={RelativeSource Self}}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter Property="Foreground" Value="{Binding PressedForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="IconForeground" Value="{Binding PressedForeground, RelativeSource={RelativeSource Self}}" />
                             <Setter Property="Background" Value="{Binding PressedBackground, RelativeSource={RelativeSource Self}}" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    <Style x:Key="ModernComboBoxToggle" TargetType="{x:Type russkyc:ModernToggleButton}">
-        <Setter Property="Padding" Value="10" />
-        <Setter Property="HorizontalContentAlignment" Value="Center" />
-        <Setter Property="Foreground" Value="{DynamicResource ForegroundStandard}" />
-        <Setter Property="Background" Value="{DynamicResource BackgroundInverted}" />
-        <Setter Property="HoverForeground" Value="{DynamicResource ForegroundStandardHover}" />
-        <Setter Property="HoverBackground" Value="{DynamicResource BackgroundInvertedHover}" />
-        <Setter Property="PressedForeground" Value="{DynamicResource ForegroundInvertedHover}" />
-        <Setter Property="PressedBackground" Value="{DynamicResource BackgroundPrimaryPressed}" />
-        <Setter Property="CheckedForeground" Value="{DynamicResource ForegroundInverted}" />
-        <Setter Property="CheckedBackground" Value="{DynamicResource BackgroundPrimary}" />
-        <Setter Property="CornerRadius" Value="3" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type russkyc:ModernToggleButton}">
-                    <Border x:Name="PART_ButtonBase"
-                            Padding="{TemplateBinding Padding}"
-                            Background="{TemplateBinding Background}"
-                            CornerRadius="{TemplateBinding CornerRadius}">
-                        <Grid HorizontalAlignment="Stretch" IsHitTestVisible="False">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
-                            <TextBlock x:Name="PART_Content"
-                                       Grid.Column="0"
-                                       HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                       VerticalAlignment="Center"
-                                       FontWeight="{TemplateBinding FontWeight}"
-                                       Foreground="{TemplateBinding Foreground}"
-                                       IsHitTestVisible="False"
-                                       Text="{TemplateBinding Text}" />
-                            <Path x:Name="Arrow"
-                                  Grid.Column="1"
-                                  Margin="{TemplateBinding Padding}"
-                                  HorizontalAlignment="Right"
-                                  VerticalAlignment="Center"
-                                  Data="M 0 0 L 4 4 L 8 0 Z"
-                                  Fill="{Binding ItemForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}"
-                                  Stretch="UniformToFill">
-                                <Path.LayoutTransform>
-                                    <ScaleTransform ScaleX="1.4" ScaleY="1.4" />
-                                </Path.LayoutTransform>
-                            </Path>
-                        </Grid>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Foreground" Value="{Binding HoverForeground, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="Background" Value="{Binding HoverBackground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush" Value="{Binding PressedBorderBrush, RelativeSource={RelativeSource Self}}" />
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
                             <Setter Property="Foreground" Value="{Binding CheckedForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="IconForeground" Value="{Binding CheckedForeground, RelativeSource={RelativeSource Self}}" />
                             <Setter Property="Background" Value="{Binding CheckedBackground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush" Value="{Binding CheckedBorderBrush, RelativeSource={RelativeSource Self}}" />
                         </Trigger>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Foreground" Value="{Binding PressedForeground, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="Background" Value="{Binding PressedBackground, RelativeSource={RelativeSource Self}}" />
+                        <Trigger Property="LeftIcon" Value="{x:Null}">
+                            <Setter TargetName="PART_LeftIcon" Property="Margin" Value="0" />
+                            <Setter TargetName="PART_LeftIcon" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="RightIcon" Value="{x:Null}">
+                            <Setter TargetName="PART_RightIcon" Property="Margin" Value="0" />
+                            <Setter TargetName="PART_RightIcon" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="LeftCenterIcon" Value="{x:Null}">
+                            <Setter TargetName="PART_LeftCenterIcon" Property="Margin" Value="0" />
+                            <Setter TargetName="PART_LeftCenterIcon" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="RightCenterIcon" Value="{x:Null}">
+                            <Setter TargetName="PART_RightCenterIcon" Property="Margin" Value="0" />
+                            <Setter TargetName="PART_RightCenterIcon" Property="Visibility" Value="Collapsed" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

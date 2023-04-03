@@ -20,7 +20,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -32,22 +31,61 @@ public partial class ModernRadioButton : RadioButton
 {
     [DependencyProperty(typeof(CornerRadius))]
     public static readonly DependencyProperty CornerRadiusProperty;
-    [DependencyProperty(typeof(Thickness))]
-    public static readonly DependencyProperty PaddingProperty;
-    [DependencyProperty(typeof(String))]
-    public static readonly DependencyProperty TextProperty;
-    [DependencyProperty(typeof(HorizontalAlignment))]
-    public static readonly DependencyProperty HorizontalContentAlignmentProperty;
+    [DependencyProperty(typeof(object))]
+    public static readonly DependencyProperty LeftIconProperty;
+    [DependencyProperty(typeof(object))]
+    public static readonly DependencyProperty RightIconProperty;
+    [DependencyProperty(typeof(object))]
+    public static readonly DependencyProperty LeftCenterIconProperty;
+    [DependencyProperty(typeof(object))]
+    public static readonly DependencyProperty RightCenterIconProperty;
+    [DependencyProperty(typeof(double))]
+    public static readonly DependencyProperty IconSizeProperty;
     [DependencyProperty(typeof(Brush))]
-    public static readonly DependencyProperty HoverForegroundProperty;
+    public static readonly DependencyProperty IconForegroundProperty;
+    [DependencyProperty(typeof(Thickness))]
+    public static readonly DependencyProperty IconPaddingProperty;
+    
+    
+    /// <summary>
+    /// Background Properties
+    /// </summary>
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty DefaultBackgroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty DisabledBackgroundProperty;
     [DependencyProperty(typeof(Brush))]
     public static readonly DependencyProperty HoverBackgroundProperty;
     [DependencyProperty(typeof(Brush))]
-    public static readonly DependencyProperty PressedForegroundProperty;
-    [DependencyProperty(typeof(Brush))]
     public static readonly DependencyProperty PressedBackgroundProperty;
     [DependencyProperty(typeof(Brush))]
-    public static readonly DependencyProperty CheckedForegroundProperty;
-    [DependencyProperty(typeof(Brush))]
     public static readonly DependencyProperty CheckedBackgroundProperty;
+    
+    /// <summary>
+    /// Foreground Properties
+    /// </summary>
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty DefaultForegroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty DisabledForegroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty HoverForegroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty PressedForegroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty CheckedForegroundProperty;
+    
+    /// <summary>
+    /// Border Properties
+    /// </summary>
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty DefaultBorderBrushProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty DisabledBorderBrushProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty HoverBorderBrushProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty PressedBorderBrushProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty CheckedBorderBrushProperty;
 }
