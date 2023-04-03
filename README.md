@@ -57,6 +57,17 @@ Sample Usage
                              Text="Modern Button" />
 ```
 
+## Background/Foreground is not updating on click/hover, what to do?
+
+#### DO:
+> Set the `DefaultBackground` or `DefaultForeground` property instead of the _Background_ and _Foreground_ property to change the default state color.
+
+#### DO NOT:
+> Set the `Background` and `Foreground` property directly.
+
+#### WHY?
+> WPF has very strict style precedence rules, setting the Background and Foreground property on the controls directly will break the hover / click / check / pressed color functionality since it will supercede all colors set by the control and make the properties unmodifiable to the control template.
+
 ---
 
 ## Control Library
