@@ -3,8 +3,6 @@ A highly customizable custom control library for wpf
 
 ---
 
-Preview
-
 <span align="center">
     
 ![image](https://raw.githubusercontent.com/russkyc/modern-controls-wpf/master/Russkyc.ModernControls.WPF/Images/Sample.png)
@@ -31,12 +29,12 @@ Add the following to App.xaml > Application.Resources
 
 Add the following to your window
 ```xaml
-xmlns:moderncontrols="clr-namespace:org.russkyc.moderncontrols;assembly=Russkyc.ModernControls.WPF"
+xmlns:russkyc="clr-namespace:org.russkyc.moderncontrols;assembly=Russkyc.ModernControls.WPF"
 ```
 
 Sample Usage
 ```xaml
-<moderncontrols:ModernButton Width="70" Text="Modern Button" />
+<russkyc:ModernButton Width="70" Text="Modern Button" />
 ```
 
 ---
