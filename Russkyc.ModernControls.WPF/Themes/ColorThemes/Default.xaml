@@ -3,8 +3,8 @@
     <!--  Standard  -->
     <SolidColorBrush x:Key="BackgroundTransparent" Color="#00000000" />
     <SolidColorBrush x:Key="BackgroundPrimary" Color="#2669E8" />
-    <SolidColorBrush x:Key="BackgroundSecondary" Color="#f6f6f6" />
-    <SolidColorBrush x:Key="BackgroundInverted" Color="#FAFAFA" />
+    <SolidColorBrush x:Key="BackgroundSecondary" Color="#F1F6F6" />
+    <SolidColorBrush x:Key="BackgroundInverted" Color="#F1F5F5" />
     <SolidColorBrush x:Key="BackgroundInfo" Color="#27C0FF" />
     <SolidColorBrush x:Key="BackgroundSuccess" Color="#00D88E" />
     <SolidColorBrush x:Key="BackgroundWarning" Color="#FFBE46" />
@@ -38,7 +38,7 @@
     <!--  Pressed  -->
     <SolidColorBrush x:Key="BackgroundPrimaryPressed" Color="#1F5ABD" />
     <SolidColorBrush x:Key="BackgroundSecondaryPressed" Color="#ECECEC" />
-    <SolidColorBrush x:Key="BackgroundInvertedPressed" Color="#D5D5D5" />
+    <SolidColorBrush x:Key="BackgroundInvertedPressed" Color="#C5C6D6" />
     <SolidColorBrush x:Key="BackgroundInfoPressed" Color="#24A8D6" />
     <SolidColorBrush x:Key="BackgroundSuccessPressed" Color="#00C878" />
     <SolidColorBrush x:Key="BackgroundWarningPressed" Color="#E1A025" />
