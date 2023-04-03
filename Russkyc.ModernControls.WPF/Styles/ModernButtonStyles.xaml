@@ -1,11 +1,13 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:org.russkyc.moderncontrols.Converters"
                     xmlns:russkyc="clr-namespace:org.russkyc.moderncontrols">
     <Style TargetType="{x:Type russkyc:ModernButton}">
         <Setter Property="Padding" Value="10" />
+        <Setter Property="IconPadding" Value="10" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
-        <Setter Property="Foreground" Value="{DynamicResource ForegroundInverted}" />
-        <Setter Property="Background" Value="{DynamicResource BackgroundPrimary}" />
+        <Setter Property="DefaultForeground" Value="{DynamicResource ForegroundInverted}" />
+        <Setter Property="DefaultBackground" Value="{DynamicResource BackgroundPrimary}" />
         <Setter Property="HoverForeground" Value="{DynamicResource ForegroundInvertedHover}" />
         <Setter Property="HoverBackground" Value="{DynamicResource BackgroundPrimaryHover}" />
         <Setter Property="PressedForeground" Value="{DynamicResource ForegroundInvertedPressed}" />
@@ -18,7 +20,9 @@
                             Padding="{TemplateBinding Padding}"
                             Background="{TemplateBinding Background}"
                             CornerRadius="{TemplateBinding CornerRadius}">
-                        <Grid HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" IsHitTestVisible="False">
+                        <Grid HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                              IsHitTestVisible="False">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
@@ -26,21 +30,31 @@
                             </Grid.ColumnDefinitions>
                             <ContentPresenter x:Name="PART_LeftIcon"
                                               Grid.Column="0"
-                                              VerticalAlignment="Center"
+                                              Margin="{TemplateBinding IconPadding,
+                                                                       Converter={x:Static converters:LeftIconPaddingConverter.Instance}}"
+                                              Content="{TemplateBinding LeftIcon}"
                                               IsHitTestVisible="False" />
-                            <TextBlock x:Name="PART_ContentHost"
-                                       Grid.Column="1"
-                                       VerticalAlignment="Center"
-                                       FontWeight="{TemplateBinding FontWeight}"
-                                       Foreground="{TemplateBinding Foreground}"
-                                       IsHitTestVisible="False" />
+                            <ContentPresenter x:Name="PART_ContentHost"
+                                              Grid.Column="1"
+                                              IsHitTestVisible="False"
+                                              TextBlock.Foreground="{TemplateBinding Foreground}" />
                             <ContentPresenter x:Name="PART_RightIcon"
-                                              Grid.Column="0"
-                                              VerticalAlignment="Center"
+                                              Grid.Column="2"
+                                              Margin="{TemplateBinding IconPadding,
+                                                                       Converter={x:Static converters:RightIconPaddingConverter.Instance}}"
+                                              Content="{TemplateBinding RightIcon}"
                                               IsHitTestVisible="False" />
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="True">
+                            <Setter Property="Foreground" Value="{Binding DefaultForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="{Binding DefaultBackground, RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{Binding DisabledForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="{Binding DisabledBackground, RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Foreground" Value="{Binding HoverForeground, RelativeSource={RelativeSource Self}}" />
                             <Setter Property="Background" Value="{Binding HoverBackground, RelativeSource={RelativeSource Self}}" />
