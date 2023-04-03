@@ -5,7 +5,7 @@ A highly customizable custom control library for wpf
 
 <span align="center">
     
-![image](https://raw.githubusercontent.com/russkyc/modern-controls-wpf/master/Russkyc.ModernControls.WPF/Images/Sample.png)
+![image](https://raw.githubusercontent.com/russkyc/modern-controls-wpf/master/Russkyc.ModernControls.WPF/Images/Demo.png)
     
 </span>
 
