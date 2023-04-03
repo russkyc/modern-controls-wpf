@@ -13,6 +13,7 @@
 
     <ItemGroup>
       <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
+      <PackageReference Include="Material.Icons.WPF" Version="1.2.0" />
     </ItemGroup>
 
 </Project>

@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:demo="clr-namespace:Russkyc.ModernControls.WPF.Demo"
+        xmlns:materialIcons="clr-namespace:Material.Icons.WPF;assembly=Material.Icons.WPF"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:moderncontrols="clr-namespace:org.russkyc.moderncontrols;assembly=Russkyc.ModernControls.WPF"
         Title="Modern Controls WPF Demo"
@@ -19,13 +20,13 @@
                Content="Demo Registration UI"
                FontSize="18"
                FontWeight="Medium" />
-        <moderncontrols:ModernTextBox Height="100"
-                                      Margin="0,10,0,0"
-                                      AcceptsReturn="True"
+        <moderncontrols:ModernTextBox Margin="0,10,0,0"
+                                      LeftIcon="{materialIcons:PackIcon Kind=User}"
                                       Placeholder="Last Name"
                                       Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}"
                                       TextWrapping="Wrap" />
         <moderncontrols:ModernTextBox Margin="0,10,0,0"
+                                      LeftIcon="{materialIcons:PackIcon Kind=Email}"
                                       Placeholder="First Name"
                                       Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" />
         <moderncontrols:ModernTextBox Margin="0,10,0,0"
@@ -35,14 +36,16 @@
             <Label Margin="0,0,5,0"
                    VerticalAlignment="Center"
                    Content="Gender" />
-            <moderncontrols:ModernRadio Margin="0,0,5,0"
-                                        VerticalAlignment="Center"
-                                        Content="Male"
-                                        IsChecked="{Binding Male, UpdateSourceTrigger=PropertyChanged}" />
-            <moderncontrols:ModernRadio Margin="0,0,5,0"
-                                        VerticalAlignment="Center"
-                                        Content="Female"
-                                        IsChecked="{Binding Female, UpdateSourceTrigger=PropertyChanged}" />
+            <moderncontrols:ModernToggleButton Margin="0,0,5,0"
+                                               VerticalAlignment="Center"
+                                               CheckedBackground="Green"
+                                               Content="Male"
+                                               DefaultBackground="Red"
+                                               IsChecked="{Binding Male, UpdateSourceTrigger=PropertyChanged}" />
+            <moderncontrols:ModernToggleButton Margin="0,0,5,0"
+                                               VerticalAlignment="Center"
+                                               Content="Female"
+                                               IsChecked="{Binding Female, UpdateSourceTrigger=PropertyChanged}" />
         </StackPanel>
         <Grid Margin="0,10,0,0">
             <Grid.ColumnDefinitions>
@@ -55,6 +58,7 @@
                    VerticalAlignment="Center"
                    Content="Date of Birth*" />
             <moderncontrols:ModernComboBox Grid.Column="1"
+                                           Margin="0,0,5,0"
                                            ItemsSource="{Binding Day, UpdateSourceTrigger=PropertyChanged}"
                                            SelectedIndex="{Binding SelectedDay, UpdateSourceTrigger=PropertyChanged}" />
             <moderncontrols:ModernComboBox Grid.Column="2"
@@ -69,7 +73,7 @@
                                      HorizontalContentAlignment="Left"
                                      Command="{Binding RegisterCommand}"
                                      Content="Register Student"
-                                     FontWeight="Bold"
+                                     FontWeight="Medium"
                                      Foreground="White" />
     </StackPanel>
 </Window>
