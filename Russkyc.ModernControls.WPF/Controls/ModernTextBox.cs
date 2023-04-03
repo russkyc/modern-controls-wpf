@@ -31,16 +31,8 @@ public partial class ModernTextBox : TextBox
 {
     [DependencyProperty(typeof(string))]
     public static readonly DependencyProperty PlaceholderProperty;
-    [DependencyProperty(typeof(Thickness))]
-    public static readonly DependencyProperty BorderThicknessProperty;
     [DependencyProperty(typeof(CornerRadius))]
     public static readonly DependencyProperty CornerRadiusProperty;
-    [DependencyProperty(typeof(Thickness))]
-    public static readonly DependencyProperty PaddingProperty;
-    [DependencyProperty(typeof(HorizontalAlignment))]
-    public static readonly DependencyProperty HorizontalContentAlignmentProperty;
-    [DependencyProperty(typeof(VerticalAlignment))]
-    public static readonly DependencyProperty VerticalContentAlignmentProperty;
     
     [DependencyProperty(typeof(Brush))]
     public static readonly DependencyProperty PlaceholderBrushProperty;

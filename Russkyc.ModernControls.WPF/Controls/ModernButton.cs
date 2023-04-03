@@ -21,27 +21,49 @@
 // SOFTWARE.
 
 using System.Windows;
-using System.Windows.Controls.Primitives;
+using System.Windows.Controls;
 using System.Windows.Media;
 using Bindables.Wpf;
 
 namespace org.russkyc.moderncontrols;
 
-public partial class ModernButton : ButtonBase
+public partial class ModernButton : Button
 {
+    
+    /// <summary>
+    /// Customization Properties
+    /// </summary>
     [DependencyProperty(typeof(CornerRadius))]
     public static readonly DependencyProperty CornerRadiusProperty;
-    [DependencyProperty(typeof(Thickness))]
-    public static readonly DependencyProperty PaddingProperty;
-    [DependencyProperty(typeof(HorizontalAlignment))]
-    public static readonly DependencyProperty HorizontalContentAlignmentProperty;
+    [DependencyProperty(typeof(object))]
+    public static readonly DependencyProperty LeftIconProperty;
+    [DependencyProperty(typeof(object))]
+    public static readonly DependencyProperty RightIconProperty;
+    [DependencyProperty(typeof(double))]
+    public static readonly DependencyProperty IconPaddingProperty;
+    
+    /// <summary>
+    /// Background Properties
+    /// </summary>
     [DependencyProperty(typeof(Brush))]
-    public static readonly DependencyProperty HoverForegroundProperty;
+    public static readonly DependencyProperty DefaultBackgroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty DisabledBackgroundProperty;
     [DependencyProperty(typeof(Brush))]
     public static readonly DependencyProperty HoverBackgroundProperty;
     [DependencyProperty(typeof(Brush))]
-    public static readonly DependencyProperty PressedForegroundProperty;
-    [DependencyProperty(typeof(Brush))]
     public static readonly DependencyProperty PressedBackgroundProperty;
-        
+    
+    /// <summary>
+    /// Foreground Properties
+    /// </summary>
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty DefaultForegroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty DisabledForegroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty HoverForegroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty PressedForegroundProperty;
+
 }
