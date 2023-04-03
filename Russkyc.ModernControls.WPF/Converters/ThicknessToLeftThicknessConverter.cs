@@ -27,17 +27,18 @@ using System.Windows.Data;
 
 namespace org.russkyc.moderncontrols.Converters;
 
-[ValueConversion(typeof(double),typeof(Thickness))]
-public class RightIconPaddingConverter : IValueConverter
+
+[ValueConversion(typeof(Thickness),typeof(Thickness))]
+public class ThicknessToLeftThicknessConverter : IValueConverter
 {
-    public static RightIconPaddingConverter Instance = new RightIconPaddingConverter();
+    public static ThicknessToLeftThicknessConverter Instance = new ThicknessToLeftThicknessConverter();
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        return  new Thickness((double)value, 0, 0, 0);
+        return new Thickness(((Thickness)value).Left, 0, 0, 0);
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        return ((Thickness)value).Left;
+        return new Thickness(((Thickness)value).Left, ((Thickness)value).Left, ((Thickness)value).Left, ((Thickness)value).Left);
     }
 }

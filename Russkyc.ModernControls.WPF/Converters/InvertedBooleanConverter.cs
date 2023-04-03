@@ -22,22 +22,22 @@
 
 using System;
 using System.Globalization;
-using System.Windows;
 using System.Windows.Data;
 
 namespace org.russkyc.moderncontrols.Converters;
 
-[ValueConversion(typeof(double),typeof(Thickness))]
-public class LeftIconPaddingConverter : IValueConverter
+[ValueConversion(typeof(bool), typeof(bool))]
+public class InvertedBooleanConverter : IValueConverter
 {
-    public static LeftIconPaddingConverter Instance = new LeftIconPaddingConverter();
+    public static InvertedBooleanConverter Instance = new InvertedBooleanConverter();
+
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        return new Thickness(0, 0, (double)value, 0);
+        return !(bool)value;
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        return ((Thickness)value).Right;
+        return !(bool)value;
     }
 }
