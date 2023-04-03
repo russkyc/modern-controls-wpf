@@ -39,6 +39,14 @@ public partial class ModernButton : Button
     public static readonly DependencyProperty LeftIconProperty;
     [DependencyProperty(typeof(object))]
     public static readonly DependencyProperty RightIconProperty;
+    [DependencyProperty(typeof(object))]
+    public static readonly DependencyProperty LeftCenterIconProperty;
+    [DependencyProperty(typeof(object))]
+    public static readonly DependencyProperty RightCenterIconProperty;
+    [DependencyProperty(typeof(double))]
+    public static readonly DependencyProperty IconSizeProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty IconForegroundProperty;
     [DependencyProperty(typeof(Thickness))]
     public static readonly DependencyProperty IconPaddingProperty;
     
@@ -65,5 +73,17 @@ public partial class ModernButton : Button
     public static readonly DependencyProperty HoverForegroundProperty;
     [DependencyProperty(typeof(Brush))]
     public static readonly DependencyProperty PressedForegroundProperty;
+    
+    /// <summary>
+    /// Border Properties
+    /// </summary>
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty DefaultBorderBrushProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty DisabledBorderBrushProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty HoverBorderBrushProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty PressedBorderBrushProperty;
 
 }
