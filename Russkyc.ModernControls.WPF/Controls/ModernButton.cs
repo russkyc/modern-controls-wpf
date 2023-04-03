@@ -39,7 +39,7 @@ public partial class ModernButton : Button
     public static readonly DependencyProperty LeftIconProperty;
     [DependencyProperty(typeof(object))]
     public static readonly DependencyProperty RightIconProperty;
-    [DependencyProperty(typeof(double))]
+    [DependencyProperty(typeof(Thickness))]
     public static readonly DependencyProperty IconPaddingProperty;
     
     /// <summary>
