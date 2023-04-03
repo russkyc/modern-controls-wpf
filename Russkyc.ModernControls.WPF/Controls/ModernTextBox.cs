@@ -99,12 +99,5 @@ public partial class ModernTextBox : TextBox
     public static readonly DependencyProperty HoverBorderBrushProperty;
     [DependencyProperty(typeof(Brush))]
     public static readonly DependencyProperty PressedBorderBrushProperty;
-    
-    
-    public new string Text
-    {
-        get => $"{Prefix.Length}{GetValue(TextProperty)}{Suffix.Length}";
-        set => SetValue(TextProperty, $"{Prefix.Length}{value}{Suffix.Length}");
-    }
 
 }
