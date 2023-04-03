@@ -38,7 +38,7 @@
     <!--  Pressed  -->
     <SolidColorBrush x:Key="BackgroundPrimaryPressed" Color="#1F5ABD" />
     <SolidColorBrush x:Key="BackgroundSecondaryPressed" Color="#ECECEC" />
-    <SolidColorBrush x:Key="BackgroundInvertedPressed" Color="#EDEDED" />
+    <SolidColorBrush x:Key="BackgroundInvertedPressed" Color="#D5D5D5" />
     <SolidColorBrush x:Key="BackgroundInfoPressed" Color="#24A8D6" />
     <SolidColorBrush x:Key="BackgroundSuccessPressed" Color="#00C878" />
     <SolidColorBrush x:Key="BackgroundWarningPressed" Color="#E1A025" />
