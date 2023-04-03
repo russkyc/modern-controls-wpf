@@ -3,7 +3,7 @@ A highly customizable custom control library for wpf
 
 | Version                                                                                                                                                          | Package Name               |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
-| ![Nuget](https://img.shields.io/nuget/v/Russkyc.ModernControls.WPF?color=1f72de) ![](https://img.shields.io/badge/-.NET%206.0-blueviolet?color=1f72de&label=NET) | Russkyc.ModernControls.WPF |
+| ![Nuget](https://img.shields.io/nuget/v/Russkyc.ModernControls.WPF?color=1f72de) ![](https://img.shields.io/badge/-.NET%206.0-blueviolet?color=1f72de&label=NET) | [Russkyc.ModernControls.WPF](https://www.nuget.org/packages/Russkyc.ModernControls.WPF/) |
 
 
 ### What sets this apart from the default WPF controls?
