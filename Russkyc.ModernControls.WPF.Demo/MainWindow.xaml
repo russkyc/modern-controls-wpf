@@ -21,32 +21,54 @@
                FontSize="18"
                FontWeight="Medium" />
         <moderncontrols:ModernTextBox Margin="0,10,0,0"
+                                      CornerRadius="5"
                                       LeftIcon="{materialIcons:PackIcon Kind=User}"
-                                      Placeholder="Last Name"
-                                      Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}"
-                                      TextWrapping="Wrap" />
+                                      Placeholder="Name"
+                                      Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
         <moderncontrols:ModernTextBox Margin="0,10,0,0"
+                                      CornerRadius="5"
                                       LeftIcon="{materialIcons:PackIcon Kind=Email}"
-                                      Placeholder="First Name"
-                                      Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" />
+                                      Placeholder="School Email"
+                                      Suffix="@legazpi.sti.edu.ph"
+                                      Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}" />
         <moderncontrols:ModernTextBox Margin="0,10,0,0"
-                                      Placeholder="Middle Name"
-                                      Text="{Binding MiddleName, UpdateSourceTrigger=PropertyChanged}" />
-        <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                                      CornerRadius="5"
+                                      LeftIcon="{materialIcons:PackIcon Kind=School}"
+                                      Placeholder="Student No"
+                                      Text="{Binding StudentNumber, UpdateSourceTrigger=PropertyChanged}" />
+        <Grid Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
             <Label Margin="0,0,5,0"
                    VerticalAlignment="Center"
-                   Content="Gender" />
-            <moderncontrols:ModernToggleButton Margin="0,0,5,0"
-                                               VerticalAlignment="Center"
-                                               CheckedBackground="Green"
-                                               Content="Male"
-                                               DefaultBackground="Red"
-                                               IsChecked="{Binding Male, UpdateSourceTrigger=PropertyChanged}" />
-            <moderncontrols:ModernToggleButton Margin="0,0,5,0"
-                                               VerticalAlignment="Center"
-                                               Content="Female"
-                                               IsChecked="{Binding Female, UpdateSourceTrigger=PropertyChanged}" />
-        </StackPanel>
+                   Content="Enrollee Type*" />
+            <moderncontrols:ModernRadioButton Grid.Column="1"
+                                              Margin="0,0,5,0"
+                                              VerticalAlignment="Center"
+                                              CheckedBackground="#00c0a6"
+                                              Content="Freshmen"
+                                              IconPadding="5"
+                                              PressedBackground="#00b0a4"
+                                              RightCenterIcon="{materialIcons:PackIcon Kind=GraduationCap}" />
+            <moderncontrols:ModernRadioButton Grid.Column="2"
+                                              Margin="0,0,5,0"
+                                              VerticalAlignment="Center"
+                                              Content="Returnee"
+                                              IconPadding="5"
+                                              RightCenterIcon="{materialIcons:PackIcon Kind=GraduationCap}" />
+            <moderncontrols:ModernRadioButton Grid.Column="3"
+                                              Margin="0,0,5,0"
+                                              VerticalAlignment="Center"
+                                              CheckedBackground="#8D25FF"
+                                              Content="Transferee"
+                                              IconPadding="5"
+                                              PressedBackground="#8D15EF"
+                                              RightCenterIcon="{materialIcons:PackIcon Kind=GraduationCap}" />
+        </Grid>
         <Grid Margin="0,10,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
@@ -59,21 +81,22 @@
                    Content="Date of Birth*" />
             <moderncontrols:ModernComboBox Grid.Column="1"
                                            Margin="0,0,5,0"
+                                           CornerRadius="5"
                                            ItemsSource="{Binding Day, UpdateSourceTrigger=PropertyChanged}"
-                                           SelectedIndex="{Binding SelectedDay, UpdateSourceTrigger=PropertyChanged}" />
+                                           Placeholder="Test"
+                                           PlaceholderForeground="Black" />
             <moderncontrols:ModernComboBox Grid.Column="2"
                                            Margin="0,0,5,0"
-                                           ItemsSource="{Binding Month, UpdateSourceTrigger=PropertyChanged}"
-                                           SelectedIndex="{Binding SelectedMonth, UpdateSourceTrigger=PropertyChanged}" />
+                                           CornerRadius="5"
+                                           ItemsSource="{Binding Month, UpdateSourceTrigger=PropertyChanged}" />
             <moderncontrols:ModernComboBox Grid.Column="3"
-                                           ItemsSource="{Binding Year, UpdateSourceTrigger=PropertyChanged}"
-                                           SelectedIndex="{Binding SelectedYear, UpdateSourceTrigger=PropertyChanged}" />
+                                           CornerRadius="5"
+                                           ItemsSource="{Binding Year, UpdateSourceTrigger=PropertyChanged}" />
         </Grid>
         <moderncontrols:ModernButton Margin="0,12,0,0"
-                                     HorizontalContentAlignment="Left"
-                                     Command="{Binding RegisterCommand}"
                                      Content="Register Student"
+                                     CornerRadius="5"
                                      FontWeight="Medium"
-                                     Foreground="White" />
+                                     LeftCenterIcon="{materialIcons:PackIcon Kind=Register}" />
     </StackPanel>
 </Window>
