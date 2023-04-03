@@ -1,17 +1,19 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:org.russkyc.moderncontrols.Converters"
                     xmlns:russkyc="clr-namespace:org.russkyc.moderncontrols">
     <Style TargetType="{x:Type russkyc:ModernTextBox}">
         <Setter Property="Padding" Value="10" />
+        <Setter Property="IconSize" Value="15" />
         <Setter Property="DefaultForeground" Value="{DynamicResource ForegroundStandard}" />
-        <Setter Property="DefaultBackground" Value="{DynamicResource BackgroundInverted}" />
+        <Setter Property="DefaultBackground" Value="{DynamicResource BackgroundInvertedHover}" />
         <Setter Property="DefaultBorderBrush" Value="{DynamicResource BackgroundInvertedPressed}" />
         <Setter Property="DefaultPlaceholderForeground" Value="{DynamicResource ForegroundSecondary}" />
         <Setter Property="HoverForeground" Value="{DynamicResource ForegroundStandardHover}" />
         <Setter Property="HoverBackground" Value="{DynamicResource BackgroundInvertedHover}" />
         <Setter Property="HoverBorderBrush" Value="{DynamicResource BackgroundInvertedPressed}" />
         <Setter Property="PressedForeground" Value="{DynamicResource ForegroundStandardPressed}" />
-        <Setter Property="PressedBackground" Value="{DynamicResource BackgroundInverted}" />
+        <Setter Property="PressedBackground" Value="{DynamicResource BackgroundInvertedHover}" />
         <Setter Property="PressedBorderBrush" Value="{DynamicResource BackgroundPrimary}" />
         <Setter Property="CornerRadius" Value="3" />
         <Setter Property="Template">
@@ -23,31 +25,83 @@
                             BorderThickness="{TemplateBinding BorderThickness}"
                             CornerRadius="{TemplateBinding CornerRadius}">
                         <Grid Margin="0"
-                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              HorizontalAlignment="Stretch"
                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                               IsHitTestVisible="False">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <ScrollViewer x:Name="PART_Placeholder"
-                                          Grid.Column="1"
+                                          Grid.Column="2"
                                           Margin="{TemplateBinding Padding}"
                                           Background="{x:Null}"
                                           Content="{TemplateBinding Placeholder}"
                                           Foreground="{TemplateBinding DefaultPlaceholderForeground}"
                                           IsHitTestVisible="False"
                                           Visibility="Hidden" />
-                            <ScrollViewer x:Name="PART_ContentHost"
+                            <ScrollViewer x:Name="PART_LeftIcon"
+                                          Grid.Column="0"
+                                          Width="{TemplateBinding IconSize}"
+                                          Height="{TemplateBinding IconSize}"
+                                          Margin="{TemplateBinding Padding,
+                                                                   Converter={x:Static converters:ThicknessToLeftTopBottomThicknessConverter.Instance}}"
+                                          VerticalAlignment="Top"
+                                          HorizontalContentAlignment="Stretch"
+                                          VerticalContentAlignment="Stretch"
+                                          Content="{TemplateBinding LeftIcon}"
+                                          Foreground="{TemplateBinding IconForeground}"
+                                          HorizontalScrollBarVisibility="Disabled"
+                                          IsHitTestVisible="False"
+                                          VerticalScrollBarVisibility="Disabled" />
+                            <ScrollViewer x:Name="PART_Prefix"
                                           Grid.Column="1"
+                                          Margin="{TemplateBinding Padding,
+                                                                   Converter={x:Static converters:ThicknessToLeftTopBottomThicknessConverter.Instance}}"
+                                          VerticalAlignment="Top"
+                                          Content="{TemplateBinding Prefix}"
+                                          Foreground="{TemplateBinding DefaultPlaceholderForeground}"
+                                          HorizontalScrollBarVisibility="Disabled"
+                                          IsHitTestVisible="False"
+                                          VerticalScrollBarVisibility="Disabled" />
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          Grid.Column="2"
+                                          HorizontalAlignment="Stretch"
                                           Background="{x:Null}"
                                           Foreground="{TemplateBinding DefaultForeground}"
                                           IsHitTestVisible="False" />
+                            <ScrollViewer x:Name="PART_Suffix"
+                                          Grid.Column="3"
+                                          Margin="{TemplateBinding Padding,
+                                                                   Converter={x:Static converters:ThicknessToRightTopBottomThicknessConverter.Instance}}"
+                                          VerticalAlignment="Bottom"
+                                          Content="{TemplateBinding Suffix}"
+                                          Foreground="{TemplateBinding DefaultPlaceholderForeground}"
+                                          HorizontalScrollBarVisibility="Disabled"
+                                          IsHitTestVisible="False"
+                                          VerticalScrollBarVisibility="Disabled" />
+                            <ScrollViewer x:Name="PART_RightIcon"
+                                          Grid.Column="4"
+                                          Width="{TemplateBinding IconSize}"
+                                          Height="{TemplateBinding IconSize}"
+                                          Margin="{TemplateBinding Padding,
+                                                                   Converter={x:Static converters:ThicknessToRightTopBottomThicknessConverter.Instance}}"
+                                          VerticalAlignment="Bottom"
+                                          HorizontalContentAlignment="Stretch"
+                                          VerticalContentAlignment="Stretch"
+                                          Content="{TemplateBinding RightIcon}"
+                                          Foreground="{TemplateBinding IconForeground}"
+                                          HorizontalScrollBarVisibility="Disabled"
+                                          IsHitTestVisible="False"
+                                          VerticalScrollBarVisibility="Disabled" />
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="True">
+                            <Setter Property="IconForeground" Value="{Binding DefaultPlaceholderForeground, RelativeSource={RelativeSource Self}}" />
                             <Setter Property="Foreground" Value="{Binding DefaultForeground, RelativeSource={RelativeSource Self}}" />
                             <Setter Property="Background" Value="{Binding DefaultBackground, RelativeSource={RelativeSource Self}}" />
                             <Setter Property="BorderBrush" Value="{Binding DefaultBorderBrush, RelativeSource={RelativeSource Self}}" />
@@ -58,14 +112,30 @@
                             <Setter Property="BorderBrush" Value="{Binding HoverBorderBrush, RelativeSource={RelativeSource Self}}" />
                         </Trigger>
                         <Trigger Property="IsSelectionActive" Value="True">
+                            <Setter Property="IconForeground" Value="{Binding PressedBorderBrush, RelativeSource={RelativeSource Self}}" />
                             <Setter Property="Foreground" Value="{Binding PressedForeground, RelativeSource={RelativeSource Self}}" />
                             <Setter Property="Background" Value="{Binding PressedBackground, RelativeSource={RelativeSource Self}}" />
                             <Setter Property="BorderBrush" Value="{Binding PressedBorderBrush, RelativeSource={RelativeSource Self}}" />
                         </Trigger>
+                        <Trigger Property="LeftIcon" Value="{x:Null}">
+                            <Setter TargetName="PART_LeftIcon" Property="Margin" Value="0" />
+                            <Setter TargetName="PART_LeftIcon" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="RightIcon" Value="{x:Null}">
+                            <Setter TargetName="PART_RightIcon" Property="Margin" Value="0" />
+                            <Setter TargetName="PART_RightIcon" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="Prefix" Value="{x:Null}">
+                            <Setter TargetName="PART_Prefix" Property="Margin" Value="0" />
+                            <Setter TargetName="PART_Prefix" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="Suffix" Value="{x:Null}">
+                            <Setter TargetName="PART_Suffix" Property="Margin" Value="0" />
+                            <Setter TargetName="PART_Suffix" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="Text" Value="" />
-                                <Condition Property="IsSelectionActive" Value="False" />
                             </MultiTrigger.Conditions>
                             <MultiTrigger.Setters>
                                 <Setter TargetName="PART_Placeholder" Property="Visibility" Value="Visible" />

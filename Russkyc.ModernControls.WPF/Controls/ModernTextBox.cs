@@ -29,7 +29,7 @@ namespace org.russkyc.moderncontrols;
 
 public partial class ModernTextBox : TextBox
 {
-    
+
     /// <summary>
     /// Customization Properties
     /// </summary>
@@ -37,6 +37,20 @@ public partial class ModernTextBox : TextBox
     public static readonly DependencyProperty PlaceholderProperty;
     [DependencyProperty(typeof(CornerRadius))]
     public static readonly DependencyProperty CornerRadiusProperty;
+    [DependencyProperty(typeof(object))]
+    public static readonly DependencyProperty LeftIconProperty;
+    [DependencyProperty(typeof(object))]
+    public static readonly DependencyProperty RightIconProperty;
+    [DependencyProperty(typeof(double))]
+    public static readonly DependencyProperty IconSizeProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty IconForegroundProperty;
+    [DependencyProperty(typeof(string))]
+    public static readonly DependencyProperty PrefixProperty;
+    [DependencyProperty(typeof(string))]
+    public static readonly DependencyProperty SuffixProperty;
+    [DependencyProperty(typeof(Thickness))]
+    public static readonly DependencyProperty IconPaddingProperty;
     
     /// <summary>
     /// Background Properties
@@ -85,5 +99,12 @@ public partial class ModernTextBox : TextBox
     public static readonly DependencyProperty HoverBorderBrushProperty;
     [DependencyProperty(typeof(Brush))]
     public static readonly DependencyProperty PressedBorderBrushProperty;
+    
+    
+    public new string Text
+    {
+        get => $"{Prefix.Length}{GetValue(TextProperty)}{Suffix.Length}";
+        set => SetValue(TextProperty, $"{Prefix.Length}{value}{Suffix.Length}");
+    }
 
 }
