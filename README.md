@@ -1,5 +1,14 @@
-## Russkyc.ModernControls.WPF
+# Russkyc.ModernControls.WPF
 A highly customizable custom control library for wpf
+
+| Version                                                                                                                                                          | Package Name               |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
+| ![Nuget](https://img.shields.io/nuget/v/Russkyc.ModernControls.WPF?color=1f72de) ![](https://img.shields.io/badge/-.NET%206.0-blueviolet?color=1f72de&label=NET) | Russkyc.ModernControls.WPF |
+
+
+### What sets this apart from the default WPF controls?
+
+The default wpf control library is awesome when it comes to ui customization, but theres only one problem --you need to write a handful of style setters, dependency properties, and triggers to have a truly customized control. Which is why **Russkyc.ModernControls.WPF** is created. It saves you from having to write all of the style, templates, and triggers by providing controls that have high customizabilty all using properties. Perfect for quick and easy UI Development.
 
 ---
 
@@ -10,18 +19,14 @@ A highly customizable custom control library for wpf
 </span>
 
 ---
-### Setup
+## Setup
 
-Add the following to App.xaml > Application.Resources
+Add the following to App.xaml. **Order is Important!**
 
 ```xaml
 <ResourceDictionary>
-    <!--  Modern Controls  -->
     <ResourceDictionary.MergedDictionaries>
-        <!--  Order is Important  -->
-        <!--  Control Theme  -->
         <ResourceDictionary Source="pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/Default.xaml" />
-        <!--  Control Resource  -->
         <ResourceDictionary Source="pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/Generic.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
@@ -41,7 +46,6 @@ Sample Usage
 
 ### A Taste of ModernControls Customization
 
-**Modern Button**
 ```xaml
 <moderncontrols:ModernButton Width="70"
                              CornerRadius="5"
@@ -52,9 +56,10 @@ Sample Usage
                              PressedForeground="#FFBE46"
                              Text="Modern Button" />
 ```
+
 ---
 
-### Control Library
+## Control Library
 > - [x] ModernTextBox
 > - [x] ModernButton
 > - [x] ModernToggleButton
@@ -63,3 +68,156 @@ Sample Usage
 > - [x] ModernComboBox
 > - [ ] ModernAutocompleteBox
 
+---
+
+## API Reference
+> This contains all the custom control properties present in each control, their values, and their sample use case. this is the compact version of the API documentation and will be moved to its respective documentation page in the future.
+
+### ModernButton
+
+| Custom Property | Value | Sample Usage |
+|---------------------| --------------- | ------------ |
+| CornerRadius        | CornerRadius | `<russkyc:ModernButton CornerRadius="10"/>` |
+| LeftIcon            | object       | `<russkyc:ModernButton LeftIcon="{StaticResource Icon}"/>` |
+| RightIcon           | object       | `<russkyc:ModernButton RightIcon="{StaticResource Icon}"/>` |
+| LeftCenterIcon      | object       | `<russkyc:ModernButton LeftCenterIcon="{StaticResource Icon}"/>` |
+| RightCenterIcon     | object       | `<russkyc:ModernButton RightCenterIcon="{StaticResource Icon}"/>` |
+| IconSize            | double       | `<russkyc:ModernButton IconSize="20"/>` |
+| IconForeground      | Brush        | `<russkyc:ModernButton IconForeground="Green"/>` |
+| IconPadding         | Thickness    | `<russkyc:ModernButton IconPadding="5"/>` |
+| DefaultBackground   | Brush        | `<russkyc:ModernButton DefaultBackground="LightGray"/>` |
+| DisabledBackground  | Brush        | `<russkyc:ModernButton DisabledBackground="Gray"/>` |
+| HoverBackground     | Brush        | `<russkyc:ModernButton HoverBackground="DarkGray"/>` |
+| PressedBackground   | Brush        | `<russkyc:ModernButton PressedBackground="Black"/>` |
+| DefaultForeground   | Brush        | `<russkyc:ModernButton DefaultForeground="White"/>` |
+| DisabledForeground  | Brush        | `<russkyc:ModernButton DisabledForeground="LightGray"/>` |
+| HoverForeground     | Brush        | `<russkyc:ModernButton HoverForeground="Green"/>` |
+| PressedForeground   | Brush        | `<russkyc:ModernButton PressedForeground="Red"/>` |
+| DefaultBorderBrush  | Brush        | `<russkyc:ModernButton DefaultBorderBrush="Black"/>` |
+| DisabledBorderBrush | Brush        | `<russkyc:ModernButton DisabledBorderBrush="Gray"/>` |
+| HoverBorderBrush    | Brush        | `<russkyc:ModernButton HoverBorderBrush="DarkGray"/>` |
+| PressedBorderBrush  | Brush        | `<russkyc:ModernButton PressedBorderBrush="Black"/>` |
+
+### ModernTextBox
+
+| Custom Property               | Value       | Sample Usage                                                        |
+|-------------------------------|-------------|---------------------------------------------------------------------|
+| Placeholder                   | string      | `<russkyc:ModernTextBox Placeholder="Enter your name" />`             |
+| CornerRadius                  | CornerRadius | `<russkyc:ModernTextBox CornerRadius="5" />`                  |
+| LeftIcon                      | object      | `<russkyc:ModernTextBox LeftIcon="{StaticResource Icon}" />`          |
+| RightIcon                     | object      | `<russkyc:ModernTextBox RightIcon="{StaticResource Icon}" />`         |
+| IconSize                      | double      | `<russkyc:ModernTextBox IconSize="20" />`                             |
+| IconForeground                | Brush       | `<russkyc:ModernTextBox IconForeground="Red" />`                      |
+| Prefix                        | string      | `<russkyc:ModernTextBox Prefix="$" />`                                |
+| Suffix                        | string      | `<russkyc:ModernTextBox Suffix="USD" />`                              |
+| IconPadding                   | Thickness   | `<russkyc:ModernTextBox IconPadding="5" />`                           |
+| DefaultBackground             | Brush       | `<russkyc:ModernTextBox DefaultBackground="White" />`                 |
+| DisabledBackground            | Brush       | `<russkyc:ModernTextBox DisabledBackground="Gray" />`                 |
+| HoverBackground               | Brush       | `<russkyc:ModernTextBox HoverBackground="LightGray" />`               |
+| PressedBackground             | Brush       | `<russkyc:ModernTextBox PressedBackground="DarkGray" />`              |
+| DefaultForeground             | Brush       | `<russkyc:ModernTextBox DefaultForeground="Black" />`                 |
+| DisabledForeground            | Brush       | `<russkyc:ModernTextBox DisabledForeground="LightGray" />`            |
+| HoverForeground               | Brush       | `<russkyc:ModernTextBox HoverForeground="Red" />`                     |
+| PressedForeground             | Brush       | `<russkyc:ModernTextBox PressedForeground="Blue" />`                  |
+| DefaultPlaceholderForeground  | Brush       | `<russkyc:ModernTextBox DefaultPlaceholderForeground="Gray" />`       |
+| DisabledPlaceholderForeground | Brush       | `<russkyc:ModernTextBox DisabledPlaceholderForeground="LightGray" />` |
+| HoverPlaceholderForeground    | Brush       | `<russkyc:ModernTextBox HoverPlaceholderForeground="DarkGray" />`     |
+| PressedPlaceholderForeground  | Brush       | `<russkyc:ModernTextBox PressedPlaceholderForeground="Black" />`      |
+| DefaultBorderBrush            | Brush       | `<russkyc:ModernTextBox DefaultBorderBrush="Gray" />`                 |
+| DisabledBorderBrush           | Brush       | `<russkyc:ModernTextBox DisabledBorderBrush="LightGray" />`           |
+| HoverBorderBrush              | Brush       | `<russkyc:ModernTextBox HoverBorderBrush="DarkGray" />`               |
+| PressedBorderBrush            | Brush       | `<russkyc:ModernTextBox PressedBorderBrush="Black" />`                |
+
+
+### ModernComboBox
+
+| Custom Property       | Value       | Sample Usage                                                |
+|-----------------------|--------------|-------------------------------------------------------------|
+| Icon                  | object       | `<russkyc:ModernComboBox Icon="{StaticResource MyIcon}" />`  |
+| IconSize              | double       | `<russkyc:ModernComboBox IconSize="16" />`                   |
+| IconPadding           | Thickness    | `<russkyc:ModernComboBox IconPadding="4" />`                 |
+| PlaceholderForeground | Brush        | `<russkyc:ModernComboBox PlaceholderForeground="Gray" />`    |
+| Placeholder           | string       | `<russkyc:ModernComboBox Placeholder="Select an item" />`    |
+| CornerRadius          | CornerRadius | `<russkyc:ModernComboBox CornerRadius="2" />`                |
+| ItemCornerRadius      | CornerRadius | `<russkyc:ModernComboBox ItemCornerRadius="2" />`            |
+| DefaultBackground     | Brush        | `<russkyc:ModernComboBox DefaultBackground="White" />`       |
+| DisabledBackground    | Brush        | `<russkyc:ModernComboBox DisabledBackground="LightGray" />`  |
+| HoverBackground       | Brush        | `<russkyc:ModernComboBox HoverBackground="LightBlue" />`     |
+| PressedBackground     | Brush        | `<russkyc:ModernComboBox PressedBackground="Blue" />`        |
+| CheckedBackground     | Brush        | `<russkyc:ModernComboBox CheckedBackground="Green" />`       |
+| ItemBackground        | Brush        | `<russkyc:ModernComboBox ItemBackground="White" />`          |
+| HoverItemBackground   | Brush        | `<russkyc:ModernComboBox HoverItemBackground="LightBlue" />` |
+| CheckedItemBackground | Brush        | `<russkyc:ModernComboBox CheckedItemBackground="Green" />`   |
+| ItemForeground        | Brush        | `<russkyc:ModernComboBox ItemForeground="Black" />`          |
+| HoverItemForeground   | Brush        | `<russkyc:ModernComboBox HoverItemForeground="White" />`     |
+| CheckedItemForeground | Brush        | `<russkyc:ModernComboBox CheckedItemForeground="White" />`   |
+| DropdownBackground    | Brush        | `<russkyc:ModernComboBox DropdownBackground="White" />`      |
+| DropdownBorderBrush   | Brush        | `<russkyc:ModernComboBox DropdownBorderBrush="Gray" />`      |
+
+### ModernRadio
+
+| Custom Property   | Value         | Sample Usage                                      |
+|-------------------|----------------|---------------------------------------------------|
+| CornerRadius      | CornerRadius | `<russkyc:ModernRadio CornerRadius="5"/>`           |
+| HoverForeground   | Brush        | `<russkyc:ModernRadio HoverForeground="Red"/>`      |
+| HoverBackground   | Brush        | `<russkyc:ModernRadio HoverBackground="Green"/>`    |
+| PressedForeground | Brush        | `<russkyc:ModernRadio PressedForeground="Yellow"/>` |
+| PressedBackground | Brush        | `<russkyc:ModernRadio PressedBackground="Blue"/>`   |
+| CheckedForeground | Brush        | `<russkyc:ModernRadio CheckedForeground="Orange"/>` |
+| CheckedBackground | Brush        | `<russkyc:ModernRadio CheckedBackground="Purple"/>` |
+
+### ModernRadioButton
+
+| Custom Property     | Value               | Sample Usage                                                                  |
+|---------------------|----------------------|-------------------------------------------------------------------------------|
+| CornerRadius        | CornerRadius | `<russkyc:ModernRadioButton CornerRadius="5"/>`                                 |
+| LeftIcon            | object       | `<russkyc:ModernRadioButton LeftIcon="{StaticResource SomeIcon}"/>`             |
+| RightIcon           | object       | `<russkyc:ModernRadioButton RightIcon="{StaticResource SomeIcon}"/>`            |
+| LeftCenterIcon      | object       | `<russkyc:ModernRadioButton LeftCenterIcon="{StaticResource SomeIcon}"/>`       |
+| RightCenterIcon     | object       | `<russkyc:ModernRadioButton RightCenterIcon="{StaticResource SomeIcon}"/>`      |
+| IconSize            | double       | `<russkyc:ModernRadioButton IconSize="16"/>`                                    |
+| IconForeground      | Brush        | `<russkyc:ModernRadioButton IconForeground="Red"/>`                             |
+| IconPadding         | Thickness    | `<russkyc:ModernRadioButton IconPadding="5"/>`                                  |
+| DefaultBackground   | Brush        | `<russkyc:ModernRadioButton DefaultBackground="Gray"/>`                         |
+| DisabledBackground  | Brush        | `<russkyc:ModernRadioButton IsEnabled="False" DisabledBackground="LightGray"/>` |
+| HoverBackground     | Brush        | `<russkyc:ModernRadioButton Background="White" HoverBackground="LightGray"/>`   |
+| PressedBackground   | Brush        | `<russkyc:ModernRadioButton Background="White" PressedBackground="Gray"/>`      |
+| CheckedBackground   | Brush        | `<russkyc:ModernRadioButton IsChecked="True" CheckedBackground="Green"/>`       |
+| DefaultForeground   | Brush        | `<russkyc:ModernRadioButton DefaultForeground="Black"/>`                        |
+| DisabledForeground  | Brush        | `<russkyc:ModernRadioButton IsEnabled="False" DisabledForeground="DarkGray"/>`  |
+| HoverForeground     | Brush        | `<russkyc:ModernRadioButton Foreground="Black" HoverForeground="Blue"/>`        |
+| PressedForeground   | Brush        | `<russkyc:ModernRadioButton Foreground="Black" PressedForeground="Red"/>`       |
+| CheckedForeground   | Brush        | `<russkyc:ModernRadioButton IsChecked="True" CheckedForeground="White"/>`       |
+| DefaultBorderBrush  | Brush        | `<russkyc:ModernRadioButton DefaultBorderBrush="Black"/>`                       |
+| DisabledBorderBrush | Brush        | `<russkyc:ModernRadioButton IsEnabled="False" DisabledBorderBrush="Gray"/>`     |
+| HoverBorderBrush    | Brush        | `<russkyc:ModernRadioButton BorderBrush="Black" HoverBorderBrush="Blue"/>`      |
+| PressedBorderBrush  | Brush        | `<russkyc:ModernRadioButton BorderBrush="Black" PressedBorderBrush="Red"/>`     |
+| CheckedBorderBrush  | Brush        | `<russkyc:ModernRadioButton IsChecked="True" CheckedBorderBrush="Green"/>`      |
+
+### ModernToggleButton
+
+| Custom Property     | Value       | Sample Usage                                                              |
+|---------------------|--------------|---------------------------------------------------------------------------|
+| CornerRadius        | CornerRadius | `<russkyc:ModernToggleButton CornerRadius="5"/>`                          |
+| LeftIcon            | object       | `<russkyc:ModernToggleButton LeftIcon="{StaticResource MyIcon}"/>`        |
+| RightIcon           | object       | `<russkyc:ModernToggleButton RightIcon="{StaticResource MyIcon}"/>`       |
+| LeftCenterIcon      | object       | `<russkyc:ModernToggleButton LeftCenterIcon="{StaticResource MyIcon}"/>`  |
+| RightCenterIcon     | object       | `<russkyc:ModernToggleButton RightCenterIcon="{StaticResource MyIcon}"/>` |
+| IconSize            | double       | `<russkyc:ModernToggleButton IconSize="16"/>`                             |
+| IconForeground      | Brush        | `<russkyc:ModernToggleButton IconForeground="Black"/>`                    |
+| IconPadding         | Thickness    | `<russkyc:ModernToggleButton IconPadding="4"/>`                           |
+| DefaultBackground   | Brush        | `<russkyc:ModernToggleButton DefaultBackground="White"/>`                 |
+| DisabledBackground  | Brush        | `<russkyc:ModernToggleButton DisabledBackground="Gray"/>`                 |
+| HoverBackground     | Brush        | `<russkyc:ModernToggleButton HoverBackground="LightGray"/>`               |
+| PressedBackground   | Brush        | `<russkyc:ModernToggleButton PressedBackground="DarkGray"/>`              |
+| CheckedBackground   | Brush        | `<russkyc:ModernToggleButton CheckedBackground="Yellow"/>`                |
+| DefaultForeground   | Brush        | `<russkyc:ModernToggleButton DefaultForeground="Black"/>`                 |
+| DisabledForeground  | Brush        | `<russkyc:ModernToggleButton DisabledForeground="DarkGray"/>`             |
+| HoverForeground     | Brush        | `<russkyc:ModernToggleButton HoverForeground="Blue"/>`                    |
+| PressedForeground   | Brush        | `<russkyc:ModernToggleButton PressedForeground="White"/>`                 |
+| CheckedForeground   | Brush        | `<russkyc:ModernToggleButton CheckedForeground="Red"/>`                   |
+| DefaultBorderBrush  | Brush        | `<russkyc:ModernToggleButton DefaultBorderBrush="Black"/>`                |
+| DisabledBorderBrush | Brush        | `<russkyc:ModernToggleButton DisabledBorderBrush="DarkGray"/>`            |
+| HoverBorderBrush    | Brush        | `<russkyc:ModernToggleButton HoverBorderBrush="Blue"/>`                   |
+| PressedBorderBrush  | Brush        | `<russkyc:ModernToggleButton PressedBorderBrush="White"/>`                |
+| CheckedBorderBrush  | Brush        | `<russkyc:ModernToggleButton CheckedBorderBrush="Red"/>`                  |
