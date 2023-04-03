@@ -29,28 +29,61 @@ namespace org.russkyc.moderncontrols;
 
 public partial class ModernTextBox : TextBox
 {
+    
+    /// <summary>
+    /// Customization Properties
+    /// </summary>
     [DependencyProperty(typeof(string))]
     public static readonly DependencyProperty PlaceholderProperty;
     [DependencyProperty(typeof(CornerRadius))]
     public static readonly DependencyProperty CornerRadiusProperty;
     
+    /// <summary>
+    /// Background Properties
+    /// </summary>
     [DependencyProperty(typeof(Brush))]
-    public static readonly DependencyProperty PlaceholderBrushProperty;
+    public static readonly DependencyProperty DefaultBackgroundProperty;
     [DependencyProperty(typeof(Brush))]
-    public static readonly DependencyProperty HoverForegroundProperty;
-    [DependencyProperty(typeof(Brush))]
-    public static readonly DependencyProperty HoverBorderBrushProperty;
+    public static readonly DependencyProperty DisabledBackgroundProperty;
     [DependencyProperty(typeof(Brush))]
     public static readonly DependencyProperty HoverBackgroundProperty;
     [DependencyProperty(typeof(Brush))]
-    public static readonly DependencyProperty HoverPlaceholderProperty;
+    public static readonly DependencyProperty PressedBackgroundProperty;
+    
+    /// <summary>
+    /// Foreground Properties
+    /// </summary>
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty DefaultForegroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty DisabledForegroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty HoverForegroundProperty;
     [DependencyProperty(typeof(Brush))]
     public static readonly DependencyProperty PressedForegroundProperty;
+    
+    /// <summary>
+    /// Placeholder Properties
+    /// </summary>
     [DependencyProperty(typeof(Brush))]
-    public static readonly DependencyProperty PressedBackgroundProperty;
+    public static readonly DependencyProperty DefaultPlaceholderForegroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty DisabledPlaceholderForegroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty HoverPlaceholderForegroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty PressedPlaceholderForegroundProperty;
+    
+    /// <summary>
+    /// Border Properties
+    /// </summary>
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty DefaultBorderBrushProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty DisabledBorderBrushProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty HoverBorderBrushProperty;
     [DependencyProperty(typeof(Brush))]
     public static readonly DependencyProperty PressedBorderBrushProperty;
-    [DependencyProperty(typeof(Brush))]
-    public static readonly DependencyProperty PressedPlaceholderBrushProperty;
 
 }

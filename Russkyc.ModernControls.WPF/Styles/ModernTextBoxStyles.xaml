@@ -3,57 +3,55 @@
                     xmlns:russkyc="clr-namespace:org.russkyc.moderncontrols">
     <Style TargetType="{x:Type russkyc:ModernTextBox}">
         <Setter Property="Padding" Value="10" />
-        <Setter Property="FontWeight" Value="Medium" />
-        <Setter Property="Foreground" Value="{DynamicResource ForegroundStandard}" />
-        <Setter Property="Background" Value="{DynamicResource BackgroundInverted}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource BackgroundSecondaryPressed}" />
-        <Setter Property="PlaceholderBrush" Value="{DynamicResource ForegroundSecondary}" />
+        <Setter Property="DefaultForeground" Value="{DynamicResource ForegroundStandard}" />
+        <Setter Property="DefaultBackground" Value="{DynamicResource BackgroundInverted}" />
+        <Setter Property="DefaultBorderBrush" Value="{DynamicResource BackgroundInvertedPressed}" />
+        <Setter Property="DefaultPlaceholderForeground" Value="{DynamicResource ForegroundSecondary}" />
         <Setter Property="HoverForeground" Value="{DynamicResource ForegroundStandardHover}" />
         <Setter Property="HoverBackground" Value="{DynamicResource BackgroundInvertedHover}" />
         <Setter Property="HoverBorderBrush" Value="{DynamicResource BackgroundInvertedPressed}" />
         <Setter Property="PressedForeground" Value="{DynamicResource ForegroundStandardPressed}" />
         <Setter Property="PressedBackground" Value="{DynamicResource BackgroundInverted}" />
         <Setter Property="PressedBorderBrush" Value="{DynamicResource BackgroundPrimary}" />
-        <Setter Property="BorderThickness" Value="1" />
         <Setter Property="CornerRadius" Value="3" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type russkyc:ModernTextBox}">
-                    <Border x:Name="PART_ButtonBase"
-                            Padding="{TemplateBinding Padding}"
+                    <Border x:Name="PART_TextBoxBase"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             CornerRadius="{TemplateBinding CornerRadius}">
-                        <Grid HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" IsHitTestVisible="False">
+                        <Grid Margin="0"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                              IsHitTestVisible="False">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
-                            <ContentPresenter x:Name="PART_LeftIcon"
-                                              Grid.Column="0"
-                                              VerticalAlignment="Center"
-                                              IsHitTestVisible="False" />
                             <ScrollViewer x:Name="PART_Placeholder"
                                           Grid.Column="1"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          Margin="{TemplateBinding Padding}"
                                           Background="{x:Null}"
                                           Content="{TemplateBinding Placeholder}"
-                                          FontWeight="{TemplateBinding FontWeight}"
-                                          Foreground="{TemplateBinding PlaceholderBrush}"
+                                          Foreground="{TemplateBinding DefaultPlaceholderForeground}"
                                           IsHitTestVisible="False"
                                           Visibility="Hidden" />
                             <ScrollViewer x:Name="PART_ContentHost"
                                           Grid.Column="1"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           Background="{x:Null}"
-                                          FontWeight="{TemplateBinding FontWeight}"
-                                          Foreground="{TemplateBinding Foreground}"
+                                          Foreground="{TemplateBinding DefaultForeground}"
                                           IsHitTestVisible="False" />
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="True">
+                            <Setter Property="Foreground" Value="{Binding DefaultForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="{Binding DefaultBackground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush" Value="{Binding DefaultBorderBrush, RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Foreground" Value="{Binding HoverForeground, RelativeSource={RelativeSource Self}}" />
                             <Setter Property="Background" Value="{Binding HoverBackground, RelativeSource={RelativeSource Self}}" />
