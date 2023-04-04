@@ -29,19 +29,39 @@ namespace org.russkyc.moderncontrols;
 
 public partial class ModernRadio : RadioButton
 {
+    
+    /// <summary>
+    /// Customization Properties
+    /// </summary>
     [DependencyProperty(typeof(CornerRadius))]
     public static readonly DependencyProperty CornerRadiusProperty;
+    
+    /// <summary>
+    /// Background Properties
+    /// </summary>
     [DependencyProperty(typeof(Brush))]
-    public static readonly DependencyProperty HoverForegroundProperty;
+    public static readonly DependencyProperty DefaultBackgroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty DisabledBackgroundProperty;
     [DependencyProperty(typeof(Brush))]
     public static readonly DependencyProperty HoverBackgroundProperty;
     [DependencyProperty(typeof(Brush))]
-    public static readonly DependencyProperty PressedForegroundProperty;
-    [DependencyProperty(typeof(Brush))]
     public static readonly DependencyProperty PressedBackgroundProperty;
     [DependencyProperty(typeof(Brush))]
-    public static readonly DependencyProperty CheckedForegroundProperty;
-    [DependencyProperty(typeof(Brush))]
     public static readonly DependencyProperty CheckedBackgroundProperty;
+    
+    /// <summary>
+    /// Foreground Properties
+    /// </summary>
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty DefaultForegroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty DisabledForegroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty HoverForegroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty PressedForegroundProperty;
+    [DependencyProperty(typeof(Brush))]
+    public static readonly DependencyProperty CheckedForegroundProperty;
         
 }
