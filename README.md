@@ -14,7 +14,7 @@ The default wpf control library is awesome when it comes to ui customization, bu
 
 <span align="center">
     
-![image](https://raw.githubusercontent.com/russkyc/modern-controls-wpf/master/Russkyc.ModernControls.WPF/Images/Demo.png)
+![image](https://raw.githubusercontent.com/russkyc/modern-controls-wpf/master/Russkyc.ModernControls.WPF.Demo/Resources/Demo.png)
     
 </span>
 
