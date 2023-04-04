@@ -21,39 +21,69 @@
 // SOFTWARE.
 
 using System.Collections.ObjectModel;
+using System.Linq;
 using CommunityToolkit.Mvvm.ComponentModel;
+using org.russkyc.moderncontrols.Helpers;
 
 namespace Russkyc.ModernControls.WPF.Demo;
 
 public partial class RegistrationViewModel : ObservableObject
 {
     [ObservableProperty]
-    private string _email;
+    private string? _email;
     
     [ObservableProperty]
-    private string _studentNumber;
+    private string? _studentNumber;
     
     [ObservableProperty]
-    private string _name;
+    private string? _name;
 
     [ObservableProperty]
-    private ObservableCollection<int> _day;
+    private ObservableCollection<int>? _day;
     
     [ObservableProperty]
-    private ObservableCollection<int> _month;
+    private ObservableCollection<int>? _month;
     
     [ObservableProperty]
-    private ObservableCollection<int> _year;
+    private ObservableCollection<int>? _year;
 
+    [ObservableProperty]
+    private ObservableCollection<string>? _themes;
+
+    private int _selectedIndex;
+
+    public int SelectedIndex
+    {
+        get => _selectedIndex;
+        set
+        {
+            _selectedIndex = value;
+            OnPropertyChanged();
+            ChangeTheme();
+        }
+    }
+    
     public RegistrationViewModel()
     {
 
         Day = new ObservableCollection<int>();
         Month = new ObservableCollection<int>();
         Year = new ObservableCollection<int>();
+        Themes = new ObservableCollection<string>();
             
         for (int i = 1; i <= 30; i++) Day.Add(i);
         for (int i = 1; i <= 12; i++) Month.Add(i);
         for (int i = 1900; i <= 2022; i++) Year.Add(i);
+        
+        ThemeHelper.GetThemes()
+            .ToList()
+            .ForEach(Themes.Add);
+        
+        SelectedIndex = 0;
+    }
+
+    public void ChangeTheme()
+    {
+        ThemeHelper.SetGlobalTheme(Themes![SelectedIndex]);
     }
 }
