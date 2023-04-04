@@ -5,16 +5,16 @@
     <Style TargetType="{x:Type russkyc:ModernTextBox}">
         <Setter Property="Padding" Value="10" />
         <Setter Property="IconSize" Value="15" />
-        <Setter Property="DefaultForeground" Value="{DynamicResource ForegroundStandard}" />
-        <Setter Property="DefaultBackground" Value="{DynamicResource BackgroundInvertedHover}" />
-        <Setter Property="DefaultBorderBrush" Value="{DynamicResource BackgroundInvertedPressed}" />
-        <Setter Property="DefaultPlaceholderForeground" Value="{DynamicResource ForegroundSecondary}" />
-        <Setter Property="HoverForeground" Value="{DynamicResource ForegroundStandardHover}" />
-        <Setter Property="HoverBackground" Value="{DynamicResource BackgroundInvertedHover}" />
-        <Setter Property="HoverBorderBrush" Value="{DynamicResource BackgroundInvertedPressed}" />
-        <Setter Property="PressedForeground" Value="{DynamicResource ForegroundStandardPressed}" />
-        <Setter Property="PressedBackground" Value="{DynamicResource BackgroundInvertedHover}" />
-        <Setter Property="PressedBorderBrush" Value="{DynamicResource BackgroundPrimary}" />
+        <Setter Property="DefaultForeground" Value="{DynamicResource fg-000}" />
+        <Setter Property="DefaultBackground" Value="{DynamicResource bg-000}" />
+        <Setter Property="DefaultBorderBrush" Value="{DynamicResource bg-600}" />
+        <Setter Property="DefaultPlaceholderForeground" Value="{DynamicResource bg-600}" />
+        <Setter Property="HoverForeground" Value="{DynamicResource fg-000}" />
+        <Setter Property="HoverBackground" Value="{DynamicResource bg-000}" />
+        <Setter Property="HoverBorderBrush" Value="{DynamicResource bg-500}" />
+        <Setter Property="PressedForeground" Value="{DynamicResource fg-000}" />
+        <Setter Property="PressedBackground" Value="{DynamicResource bg-000}" />
+        <Setter Property="PressedBorderBrush" Value="{DynamicResource primary-default}" />
         <Setter Property="CornerRadius" Value="3" />
         <Setter Property="Template">
             <Setter.Value>

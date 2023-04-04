@@ -7,12 +7,12 @@
         <Setter Property="IconPadding" Value="10" />
         <Setter Property="IconSize" Value="15" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
-        <Setter Property="DefaultForeground" Value="{DynamicResource ForegroundInverted}" />
-        <Setter Property="DefaultBackground" Value="{DynamicResource BackgroundPrimary}" />
-        <Setter Property="HoverForeground" Value="{DynamicResource ForegroundInvertedHover}" />
-        <Setter Property="HoverBackground" Value="{DynamicResource BackgroundPrimaryHover}" />
-        <Setter Property="PressedForeground" Value="{DynamicResource ForegroundInvertedPressed}" />
-        <Setter Property="PressedBackground" Value="{DynamicResource BackgroundPrimaryPressed}" />
+        <Setter Property="DefaultForeground" Value="{DynamicResource inverted-lighten-3}" />
+        <Setter Property="DefaultBackground" Value="{DynamicResource primary-default}" />
+        <Setter Property="HoverForeground" Value="{DynamicResource inverted-lighten-3}" />
+        <Setter Property="HoverBackground" Value="{DynamicResource primary-lighten-1}" />
+        <Setter Property="PressedForeground" Value="{DynamicResource inverted-lighten-3}" />
+        <Setter Property="PressedBackground" Value="{DynamicResource primary-darken-1}" />
         <Setter Property="CornerRadius" Value="3" />
         <Setter Property="Template">
             <Setter.Value>

@@ -20,25 +20,52 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
-using org.russkyc.moderncontrols.Helpers;
+using System.Windows.Threading;
 
-namespace Russkyc.ModernControls.WPF.Demo
+namespace org.russkyc.moderncontrols.Helpers;
+
+public static class ThemeHelper
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
-    public partial class App : Application
+    private static readonly Object _lock = new Object();
+    private static Dictionary<string,string> _themes = new Dictionary<string, string>();
+
+    public static void AddTheme(string key, string source)
     {
-        protected override void OnStartup(StartupEventArgs e)
+        lock (_lock)
         {
-            // App initialization
-            InitializeComponent();
-            base.OnStartup(e);
-            
-            // Add Themes
-            ThemeHelper.AddTheme("Day","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/DefaultLight.xaml");
-            ThemeHelper.AddTheme("Night","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/RazerDark.xaml");
+            _themes.Add(key,source);
+        }
+    }
+
+    public static void RemoveTheme(string name, string source)
+    {
+        lock (_lock)
+        {
+            _themes.Remove(name);
+        }
+    }
+
+    public static IEnumerable<string> GetThemes()
+    {
+        lock (_lock)
+        {
+            return _themes.Keys
+                .AsEnumerable();
+        }
+    }
+    public static void SetGlobalTheme(string name)
+    {
+        lock (_lock)
+        {
+            Dispatcher.CurrentDispatcher.BeginInvoke(
+                () =>Application.Current
+                        .Resources
+                        .MergedDictionaries[0]
+                        .Source = new Uri(_themes[name], UriKind.RelativeOrAbsolute));
         }
     }
 }

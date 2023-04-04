@@ -3,16 +3,16 @@
                     xmlns:russkyc="clr-namespace:org.russkyc.moderncontrols">
     <Style TargetType="{x:Type russkyc:ModernRadio}">
         <Setter Property="Padding" Value="10" />
-        <Setter Property="Foreground" Value="{DynamicResource ForegroundStandard}" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
-        <Setter Property="Background" Value="{DynamicResource BackgroundSecondaryPressed}" />
-        <Setter Property="HoverForeground" Value="{DynamicResource ForegroundStandardHover}" />
-        <Setter Property="HoverBackground" Value="{DynamicResource BackgroundInvertedPressed}" />
-        <Setter Property="PressedForeground" Value="{DynamicResource ForegroundStandardPressed}" />
-        <Setter Property="PressedBackground" Value="{DynamicResource BackgroundPrimaryPressed}" />
-        <Setter Property="CheckedForeground" Value="{DynamicResource ForegroundStandard}" />
-        <Setter Property="CheckedBackground" Value="{DynamicResource BackgroundPrimary}" />
-        <Setter Property="CornerRadius" Value="3" />
+        <Setter Property="DefaultForeground" Value="{DynamicResource fg-000}" />
+        <Setter Property="DefaultBackground" Value="{DynamicResource bg-400}" />
+        <Setter Property="HoverForeground" Value="{DynamicResource fg-000}" />
+        <Setter Property="HoverBackground" Value="{DynamicResource bg-300}" />
+        <Setter Property="PressedForeground" Value="{DynamicResource fg-000}" />
+        <Setter Property="PressedBackground" Value="{DynamicResource primary-darken-1}" />
+        <Setter Property="CheckedForeground" Value="{DynamicResource fg-000}" />
+        <Setter Property="CheckedBackground" Value="{DynamicResource primary-default}" />
+        <Setter Property="CornerRadius" Value="30" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type russkyc:ModernRadio}">
@@ -35,7 +35,7 @@
                                     Visibility="Visible">
                                 <Border Width="7"
                                         Height="7"
-                                        Background="#ffffff"
+                                        Background="{DynamicResource bg-000}"
                                         CornerRadius="{TemplateBinding CornerRadius}" />
                             </Border>
                             <TextBlock x:Name="PART_ContentHost"
@@ -48,6 +48,14 @@
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="True">
+                            <Setter Property="Foreground" Value="{Binding DefaultForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="{Binding DefaultBackground, RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{Binding DisabledForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="{Binding DisabledBackground, RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Foreground" Value="{Binding HoverForeground, RelativeSource={RelativeSource Self}}" />
                             <Setter Property="Background" Value="{Binding HoverBackground, RelativeSource={RelativeSource Self}}" />
