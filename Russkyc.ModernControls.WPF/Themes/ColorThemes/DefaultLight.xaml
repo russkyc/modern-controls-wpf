@@ -3,12 +3,12 @@
 
     <!--  Background  -->
     <SolidColorBrush x:Key="bg-000" Color="#f8fdff" />
-    <SolidColorBrush x:Key="bg-100" Color="#f3f8fa" />
-    <SolidColorBrush x:Key="bg-200" Color="#eef3f5" />
-    <SolidColorBrush x:Key="bg-300" Color="#e9eef0" />
-    <SolidColorBrush x:Key="bg-400" Color="#e4e9eb" />
-    <SolidColorBrush x:Key="bg-500" Color="#dfe4e6" />
-    <SolidColorBrush x:Key="bg-600" Color="#dadfe0" />
+    <SolidColorBrush x:Key="bg-100" Color="#EEF3F5" />
+    <SolidColorBrush x:Key="bg-200" Color="#E1E6E8" />
+    <SolidColorBrush x:Key="bg-300" Color="#D7DCDE" />
+    <SolidColorBrush x:Key="bg-400" Color="#D3D8DA" />
+    <SolidColorBrush x:Key="bg-500" Color="#CFD4D6" />
+    <SolidColorBrush x:Key="bg-600" Color="#BFC4C5" />
 
     <!--  Foreground  -->
     <SolidColorBrush x:Key="fg-000" Color="#0c0e17" />
