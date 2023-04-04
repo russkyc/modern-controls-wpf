@@ -8,15 +8,15 @@
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="IconPadding" Value="10" />
         <Setter Property="IconSize" Value="15" />
-        <Setter Property="DefaultForeground" Value="{DynamicResource ForegroundStandard}" />
-        <Setter Property="DefaultBackground" Value="{DynamicResource BackgroundSecondary}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource BackgroundSecondary}" />
-        <Setter Property="HoverForeground" Value="{DynamicResource ForegroundStandardHover}" />
-        <Setter Property="HoverBackground" Value="{DynamicResource BackgroundInverted}" />
-        <Setter Property="PressedForeground" Value="{DynamicResource ForegroundInvertedHover}" />
-        <Setter Property="PressedBackground" Value="{DynamicResource BackgroundPrimaryPressed}" />
-        <Setter Property="CheckedForeground" Value="{DynamicResource ForegroundInverted}" />
-        <Setter Property="CheckedBackground" Value="{DynamicResource BackgroundPrimary}" />
+        <Setter Property="DefaultForeground" Value="{DynamicResource fg-000}" />
+        <Setter Property="DefaultBackground" Value="{DynamicResource bg-100}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource bg-200}" />
+        <Setter Property="HoverForeground" Value="{DynamicResource fg-000}" />
+        <Setter Property="HoverBackground" Value="{DynamicResource bg-100}" />
+        <Setter Property="PressedForeground" Value="{DynamicResource inverted-lighten-3}" />
+        <Setter Property="PressedBackground" Value="{DynamicResource primary-darken-1}" />
+        <Setter Property="CheckedForeground" Value="{DynamicResource inverted-lighten-3}" />
+        <Setter Property="CheckedBackground" Value="{DynamicResource primary-default}" />
         <Setter Property="CornerRadius" Value="3" />
         <Setter Property="Template">
             <Setter.Value>

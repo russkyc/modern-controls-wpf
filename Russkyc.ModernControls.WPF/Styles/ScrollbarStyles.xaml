@@ -39,7 +39,7 @@
 
     <Style TargetType="{x:Type ScrollBar}">
         <Setter Property="Stylus.IsFlicksEnabled" Value="false" />
-        <Setter Property="Foreground" Value="{DynamicResource ForegroundInvertedPressed}" />
+        <Setter Property="Foreground" Value="{DynamicResource bg-300}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Width" Value="6" />
         <Setter Property="Template">
@@ -78,7 +78,7 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger SourceName="Thumb" Property="IsDragging" Value="true">
-                            <Setter TargetName="Thumb" Property="Background" Value="{DynamicResource ForegroundSecondary}" />
+                            <Setter TargetName="Thumb" Property="Background" Value="{DynamicResource bg-500}" />
                         </Trigger>
 
                         <Trigger Property="IsEnabled" Value="false">

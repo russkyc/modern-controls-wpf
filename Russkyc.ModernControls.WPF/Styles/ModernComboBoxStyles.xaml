@@ -9,18 +9,17 @@
         <Setter Property="IconPadding" Value="10" />
         <Setter Property="IconSize" Value="15" />
         <Setter Property="ItemCornerRadius" Value="3" />
-        <Setter Property="HoverItemForeground" Value="{DynamicResource ForegroundStandardHover}" />
-        <Setter Property="DefaultBackground" Value="{DynamicResource BackgroundInverted}" />
-        <Setter Property="HoverBackground" Value="{DynamicResource BackgroundInverted}" />
-        <Setter Property="DropdownBackground" Value="{DynamicResource BackgroundInverted}" />
-        <Setter Property="PressedBackground" Value="{DynamicResource BackgroundInverted}" />
-        <Setter Property="ItemForeground" Value="{DynamicResource ForegroundStandard}" />
-        <Setter Property="PlaceholderForeground" Value="{DynamicResource ForegroundSecondary}" />
-        <Setter Property="CheckedBackground" Value="{DynamicResource BackgroundSecondaryPressed}" />
-        <Setter Property="HoverItemBackground" Value="{DynamicResource BackgroundSecondaryPressed}" />
-        <Setter Property="HoverItemForeground" Value="{DynamicResource ForegroundStandardHover}" />
-        <Setter Property="CheckedItemBackground" Value="{DynamicResource BackgroundPrimary}" />
-        <Setter Property="CheckedItemForeground" Value="{DynamicResource ForegroundInverted}" />
+        <Setter Property="DefaultBackground" Value="{DynamicResource bg-100}" />
+        <Setter Property="HoverBackground" Value="{DynamicResource bg-100}" />
+        <Setter Property="DropdownBackground" Value="{DynamicResource bg-100}" />
+        <Setter Property="PressedBackground" Value="{DynamicResource bg-200}" />
+        <Setter Property="ItemForeground" Value="{DynamicResource fg-000}" />
+        <Setter Property="PlaceholderForeground" Value="{DynamicResource bg-400}" />
+        <Setter Property="CheckedBackground" Value="{DynamicResource bg-200}" />
+        <Setter Property="HoverItemBackground" Value="{DynamicResource bg-100}" />
+        <Setter Property="HoverItemForeground" Value="{DynamicResource fg-000}" />
+        <Setter Property="CheckedItemBackground" Value="{DynamicResource primary-default}" />
+        <Setter Property="CheckedItemForeground" Value="{DynamicResource inverted-lighten-3}" />
         <Setter Property="ItemContainerStyle" Value="{DynamicResource CustomComboBoxItemStyle}" />
         <Setter Property="ItemsPanel" Value="{DynamicResource CustomComboBoxItemsPanelTemplate}" />
         <Setter Property="Template">
@@ -36,24 +35,24 @@
                                                            Grid.Column="0"
                                                            Grid.ColumnSpan="3"
                                                            CheckedBackground="{Binding CheckedBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
-                                                           CheckedForeground="{Binding CheckedForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
+                                                           CheckedForeground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
                                                            ClickMode="Press"
                                                            CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
                                                            DefaultBackground="{Binding Background, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
                                                            Focusable="false"
                                                            HoverBackground="{Binding HoverBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
-                                                           HoverForeground="{Binding HoverForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
+                                                           HoverForeground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
                                                            IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
                                                            PressedBackground="{Binding PressedBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
-                                                           PressedForeground="{Binding PressedForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}" />
+                                                           PressedForeground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}" />
 
-                        <Grid Grid.Column="0" Margin="{TemplateBinding Padding, Converter={x:Static converters:ThicknessToLeftTopBottomThicknessConverter.Instance}}">
+                        <Grid Grid.Column="0" Margin="{TemplateBinding Padding, Converter={x:Static converters:ThicknessToLeftThicknessConverter.Instance}}">
                             <ScrollViewer x:Name="PART_Icon"
                                           Width="{TemplateBinding IconSize}"
                                           Height="{TemplateBinding IconSize}"
                                           Margin="{TemplateBinding IconPadding,
                                                                    Converter={x:Static converters:ThicknessToRightThicknessConverter.Instance}}"
-                                          VerticalAlignment="Top"
+                                          VerticalAlignment="Center"
                                           HorizontalContentAlignment="Stretch"
                                           VerticalContentAlignment="Stretch"
                                           Content="{TemplateBinding Icon}"
@@ -65,7 +64,7 @@
                         <ContentPresenter x:Name="ContentSite"
                                           Grid.Column="1"
                                           Margin="{TemplateBinding Padding,
-                                                                   Converter={x:Static converters:ThicknessToRightTopBottomThicknessConverter.Instance}}"
+                                                                   Converter={x:Static converters:ThicknessToRightThicknessConverter.Instance}}"
                                           HorizontalAlignment="Left"
                                           VerticalAlignment="Center"
                                           Content="{TemplateBinding SelectionBoxItem}"
@@ -163,17 +162,19 @@
 
     <Style x:Key="CustomComboBoxItemStyle" TargetType="{x:Type ComboBoxItem}">
         <Setter Property="SnapsToDevicePixels" Value="true" />
-        <Setter Property="Margin" Value="3,3,0,0" />
+        <Setter Property="Margin" Value="0,3,0,0" />
         <Setter Property="OverridesDefaultStyle" Value="true" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ComboBoxItem}">
                     <Border Name="Border"
                             Padding="{Binding Padding, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
-                            Background="{x:Null}"
+                            Background="{Binding DropdownBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
                             CornerRadius="{Binding ItemCornerRadius, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
                             SnapsToDevicePixels="true">
-                        <ContentPresenter x:Name="PART_ContentHost" Content="{TemplateBinding Content}">
+                        <ContentPresenter x:Name="PART_ContentHost"
+                                          Content="{TemplateBinding Content}"
+                                          ContentTemplateSelector="{Binding ItemTemplateSelector, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=moderncontrols:ModernComboBox}}">
                             <ContentPresenter.Resources>
                                 <Style TargetType="TextBlock">
                                     <Setter Property="TextTrimming" Value="CharacterEllipsis" />
