@@ -14,7 +14,7 @@ The default wpf control library is awesome when it comes to ui customization, bu
 
 <span align="center">
     
-![image](https://raw.githubusercontent.com/russkyc/modern-controls-wpf/master/Russkyc.ModernControls.WPF/Images/Demo.png)
+![image](https://raw.githubusercontent.com/russkyc/modern-controls-wpf/master/Russkyc.ModernControls.WPF.Demo/Resources/Demo.png)
     
 </span>
 
@@ -26,7 +26,7 @@ Add the following to App.xaml. **Order is Important!**
 ```xaml
 <ResourceDictionary>
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/Default.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/DefaultLight.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/Generic.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
@@ -57,17 +57,6 @@ Sample Usage
                              Text="Modern Button" />
 ```
 
-## Background/Foreground is not updating on click/hover, what to do?
-
-#### DO:
-> Set the `DefaultBackground` or `DefaultForeground` property instead of the _Background_ and _Foreground_ property to change the default state color.
-
-#### DO NOT:
-> Set the `Background` and `Foreground` property directly.
-
-#### WHY?
-> WPF has very strict style precedence rules, setting the Background and Foreground property on the controls directly will break the hover / click / check / pressed color functionality since it will supercede all colors set by the control and make the properties unmodifiable to the control template.
-
 ---
 
 ## Control Library
@@ -78,6 +67,106 @@ Sample Usage
 > - [x] ModernRadioButton
 > - [x] ModernComboBox
 > - [ ] ModernAutocompleteBox
+
+---
+
+## Global Theme Management
+
+<span align="center">
+
+![image](https://raw.githubusercontent.com/russkyc/modern-controls-wpf/master/Russkyc.ModernControls.WPF.Demo/Resources/ThemeManagementDemo.gif)
+
+</span>
+
+### Using the new Theme Helper
+
+Imports
+```csharp
+using org.russkyc.moderncontrols.Helpers;
+```
+
+Adding Themes
+
+```csharp
+ThemeHelper.AddTheme("Light","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/DefaultLight.xaml");
+ThemeHelper.AddTheme("Dark","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/RazerDark.xaml");
+```
+
+Changing Themes (Live)
+
+```csharp
+ThemeHelper.SetGlobalTheme("Dark");
+```
+
+Get List of Themes (names)
+```csharp
+ThemeHelper.GetThemes();
+```
+
+Removing Themes
+
+```csharp
+ThemeHelper.RemoveTheme("Light");
+```
+
+## Want to create yout own Theme?
+
+Use This Template
+
+```xaml
+<!--  ModernControls Default Light Theme  -->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--  Background  -->
+    <SolidColorBrush x:Key="bg-000" Color="#f8fdff" />
+    <SolidColorBrush x:Key="bg-100" Color="#EEF3F5" />
+    <SolidColorBrush x:Key="bg-200" Color="#E1E6E8" />
+    <SolidColorBrush x:Key="bg-300" Color="#D7DCDE" />
+    <SolidColorBrush x:Key="bg-400" Color="#D3D8DA" />
+    <SolidColorBrush x:Key="bg-500" Color="#CFD4D6" />
+    <SolidColorBrush x:Key="bg-600" Color="#BFC4C5" />
+
+    <!--  Foreground  -->
+    <SolidColorBrush x:Key="fg-000" Color="#0c0e17" />
+    <SolidColorBrush x:Key="fg-100" Color="#161820" />
+    <SolidColorBrush x:Key="fg-200" Color="#1f222a" />
+    <SolidColorBrush x:Key="fg-300" Color="#292b33" />
+    <SolidColorBrush x:Key="fg-400" Color="#33353c" />
+    <SolidColorBrush x:Key="fg-500" Color="#3c3f46" />
+    <SolidColorBrush x:Key="fg-600" Color="#46494f" />
+
+    <!--  Primary  -->
+    <SolidColorBrush x:Key="primary-lighten-3" Color="#3d9be6" />
+    <SolidColorBrush x:Key="primary-lighten-2" Color="#2989e1" />
+    <SolidColorBrush x:Key="primary-lighten-1" Color="#1576db" />
+    <SolidColorBrush x:Key="primary-default" Color="#0462d4" />
+    <SolidColorBrush x:Key="primary-darken-1" Color="#0152c6" />
+    <SolidColorBrush x:Key="primary-darken-2" Color="#0043b8" />
+    <SolidColorBrush x:Key="primary-darken-3" Color="#0035a9" />
+
+    <!--  Inverted  -->
+    <SolidColorBrush x:Key="inverted-lighten-3" Color="#f2f9ff" />
+    <SolidColorBrush x:Key="inverted-lighten-2" Color="#ebf4ff" />
+    <SolidColorBrush x:Key="inverted-lighten-1" Color="#e3f0ff" />
+    <SolidColorBrush x:Key="inverted-default" Color="#dceaff" />
+    <SolidColorBrush x:Key="inverted-darken-1" Color="#d3e1f6" />
+    <SolidColorBrush x:Key="inverted-darken-2" Color="#cad9ec" />
+    <SolidColorBrush x:Key="inverted-darken-3" Color="#c1d0e3" />
+
+</ResourceDictionary>
+```
+
+#### Add your theme to the ThemeHelper
+
+```csharp
+ThemeHelper.AddTheme("MyTheme","path_to_your_theme/MyThemeName.xaml");
+```
+
+#### And Apply
+
+```csharp
+ThemeHelper.SetGlobalTheme("MyTheme");
+```
 
 ---
 
@@ -232,3 +321,16 @@ Sample Usage
 | HoverBorderBrush    | Brush        | `<russkyc:ModernToggleButton HoverBorderBrush="Blue"/>`                   |
 | PressedBorderBrush  | Brush        | `<russkyc:ModernToggleButton PressedBorderBrush="White"/>`                |
 | CheckedBorderBrush  | Brush        | `<russkyc:ModernToggleButton CheckedBorderBrush="Red"/>`                  |
+
+---
+
+## Background/Foreground is not updating on click/hover, what to do?
+
+#### DO:
+> Set the `DefaultBackground` or `DefaultForeground` property instead of the _Background_ and _Foreground_ property to change the default state color.
+
+#### DO NOT:
+> Set the `Background` and `Foreground` property directly.
+
+#### WHY?
+> WPF has very strict style precedence rules, setting the Background and Foreground property on the controls directly will break the hover / click / check / pressed color functionality since it will supercede all colors set by the control and make the properties unmodifiable to the control template.
