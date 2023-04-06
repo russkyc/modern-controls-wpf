@@ -214,19 +214,19 @@ ThemeHelper.SetGlobalTheme("MyTheme");
 | DefaultBackground             | Brush        | `<russkyc:ModernTextBox DefaultBackground="White" />`                 |
 | DisabledBackground            | Brush        | `<russkyc:ModernTextBox DisabledBackground="Gray" />`                 |
 | HoverBackground               | Brush        | `<russkyc:ModernTextBox HoverBackground="LightGray" />`               |
-| PressedBackground             | Brush        | `<russkyc:ModernTextBox PressedBackground="DarkGray" />`              |
+| FocusedBackground             | Brush        | `<russkyc:ModernTextBox FocusedBackground="DarkGray" />`              |
 | DefaultForeground             | Brush        | `<russkyc:ModernTextBox DefaultForeground="Black" />`                 |
 | DisabledForeground            | Brush        | `<russkyc:ModernTextBox DisabledForeground="LightGray" />`            |
 | HoverForeground               | Brush        | `<russkyc:ModernTextBox HoverForeground="Red" />`                     |
-| PressedForeground             | Brush        | `<russkyc:ModernTextBox PressedForeground="Blue" />`                  |
+| FocusedForeground             | Brush        | `<russkyc:ModernTextBox FocusedForeground="Blue" />`                  |
 | DefaultPlaceholderForeground  | Brush        | `<russkyc:ModernTextBox DefaultPlaceholderForeground="Gray" />`       |
 | DisabledPlaceholderForeground | Brush        | `<russkyc:ModernTextBox DisabledPlaceholderForeground="LightGray" />` |
 | HoverPlaceholderForeground    | Brush        | `<russkyc:ModernTextBox HoverPlaceholderForeground="DarkGray" />`     |
-| PressedPlaceholderForeground  | Brush        | `<russkyc:ModernTextBox PressedPlaceholderForeground="Black" />`      |
+| FocusedPlaceholderForeground  | Brush        | `<russkyc:ModernTextBox FocusedPlaceholderForeground="Black" />`      |
 | DefaultBorderBrush            | Brush        | `<russkyc:ModernTextBox DefaultBorderBrush="Gray" />`                 |
 | DisabledBorderBrush           | Brush        | `<russkyc:ModernTextBox DisabledBorderBrush="LightGray" />`           |
 | HoverBorderBrush              | Brush        | `<russkyc:ModernTextBox HoverBorderBrush="DarkGray" />`               |
-| PressedBorderBrush            | Brush        | `<russkyc:ModernTextBox PressedBorderBrush="Black" />`                |
+| FocusedBorderBrush            | Brush        | `<russkyc:ModernTextBox FocusedBorderBrush="Black" />`                |
 
 
 ### ModernComboBox

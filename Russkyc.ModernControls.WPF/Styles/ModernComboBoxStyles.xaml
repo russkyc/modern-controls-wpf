@@ -6,7 +6,7 @@
         <Setter Property="Padding" Value="12" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="CornerRadius" Value="3" />
-        <Setter Property="IconPadding" Value="10" />
+        <Setter Property="IconPadding" Value="5" />
         <Setter Property="IconSize" Value="15" />
         <Setter Property="ItemCornerRadius" Value="3" />
         <Setter Property="DefaultBackground" Value="{DynamicResource bg-100}" />
@@ -15,11 +15,11 @@
         <Setter Property="PressedBackground" Value="{DynamicResource bg-200}" />
         <Setter Property="ItemForeground" Value="{DynamicResource fg-000}" />
         <Setter Property="PlaceholderForeground" Value="{DynamicResource bg-400}" />
-        <Setter Property="CheckedBackground" Value="{DynamicResource bg-200}" />
+        <Setter Property="SelectedBackground" Value="{DynamicResource bg-200}" />
         <Setter Property="HoverItemBackground" Value="{DynamicResource bg-100}" />
         <Setter Property="HoverItemForeground" Value="{DynamicResource fg-000}" />
-        <Setter Property="CheckedItemBackground" Value="{DynamicResource primary-default}" />
-        <Setter Property="CheckedItemForeground" Value="{DynamicResource inverted-lighten-3}" />
+        <Setter Property="SelectedItemBackground" Value="{DynamicResource primary-default}" />
+        <Setter Property="SelectedItemForeground" Value="{DynamicResource inverted-lighten-3}" />
         <Setter Property="ItemContainerStyle" Value="{DynamicResource CustomComboBoxItemStyle}" />
         <Setter Property="ItemsPanel" Value="{DynamicResource CustomComboBoxItemsPanelTemplate}" />
         <Setter Property="Template">
@@ -34,7 +34,7 @@
                         <moderncontrols:ModernToggleButton Name="ToggleButton"
                                                            Grid.Column="0"
                                                            Grid.ColumnSpan="3"
-                                                           CheckedBackground="{Binding CheckedBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
+                                                           CheckedBackground="{Binding SelectedBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
                                                            CheckedForeground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
                                                            ClickMode="Press"
                                                            CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}"
@@ -87,7 +87,6 @@
                                                       IsReadOnly="{Binding IsReadOnly, RelativeSource={RelativeSource TemplatedParent}}"
                                                       OverridesDefaultStyle="True"
                                                       Placeholder="{TemplateBinding Placeholder}"
-                                                      PressedPlaceholderForeground="{TemplateBinding PlaceholderForeground}"
                                                       Visibility="Hidden" />
                         <Path x:Name="Arrow"
                               Grid.Column="2"
@@ -188,8 +187,8 @@
                             <Setter TargetName="PART_ContentHost" Property="TextBlock.Foreground" Value="{Binding HoverItemForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}" />
                         </Trigger>
                         <Trigger Property="Selector.IsSelected" Value="true">
-                            <Setter TargetName="Border" Property="Background" Value="{Binding CheckedItemBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}" />
-                            <Setter TargetName="PART_ContentHost" Property="TextBlock.Foreground" Value="{Binding CheckedItemForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}" />
+                            <Setter TargetName="Border" Property="Background" Value="{Binding SelectedItemBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}" />
+                            <Setter TargetName="PART_ContentHost" Property="TextBlock.Foreground" Value="{Binding SelectedItemForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=moderncontrols:ModernComboBox}}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

@@ -8,13 +8,13 @@
         <Setter Property="DefaultForeground" Value="{DynamicResource fg-000}" />
         <Setter Property="DefaultBackground" Value="{DynamicResource bg-000}" />
         <Setter Property="DefaultBorderBrush" Value="{DynamicResource bg-600}" />
-        <Setter Property="DefaultPlaceholderForeground" Value="{DynamicResource bg-600}" />
+        <Setter Property="PlaceholderForeground" Value="{DynamicResource bg-600}" />
         <Setter Property="HoverForeground" Value="{DynamicResource fg-000}" />
         <Setter Property="HoverBackground" Value="{DynamicResource bg-000}" />
         <Setter Property="HoverBorderBrush" Value="{DynamicResource bg-500}" />
-        <Setter Property="PressedForeground" Value="{DynamicResource fg-000}" />
-        <Setter Property="PressedBackground" Value="{DynamicResource bg-000}" />
-        <Setter Property="PressedBorderBrush" Value="{DynamicResource primary-default}" />
+        <Setter Property="FocusedForeground" Value="{DynamicResource fg-000}" />
+        <Setter Property="FocusedBackground" Value="{DynamicResource bg-000}" />
+        <Setter Property="FocusedBorderBrush" Value="{DynamicResource primary-default}" />
         <Setter Property="CornerRadius" Value="3" />
         <Setter Property="Template">
             <Setter.Value>
@@ -40,7 +40,7 @@
                                           Margin="{TemplateBinding Padding}"
                                           Background="{x:Null}"
                                           Content="{TemplateBinding Placeholder}"
-                                          Foreground="{TemplateBinding DefaultPlaceholderForeground}"
+                                          Foreground="{TemplateBinding PlaceholderForeground}"
                                           IsHitTestVisible="False"
                                           Visibility="Hidden" />
                             <ScrollViewer x:Name="PART_LeftIcon"
@@ -63,7 +63,7 @@
                                                                    Converter={x:Static converters:ThicknessToLeftTopBottomThicknessConverter.Instance}}"
                                           VerticalAlignment="Top"
                                           Content="{TemplateBinding Prefix}"
-                                          Foreground="{TemplateBinding DefaultPlaceholderForeground}"
+                                          Foreground="{TemplateBinding PlaceholderForeground}"
                                           HorizontalScrollBarVisibility="Disabled"
                                           IsHitTestVisible="False"
                                           VerticalScrollBarVisibility="Disabled" />
@@ -79,7 +79,7 @@
                                                                    Converter={x:Static converters:ThicknessToRightTopBottomThicknessConverter.Instance}}"
                                           VerticalAlignment="Bottom"
                                           Content="{TemplateBinding Suffix}"
-                                          Foreground="{TemplateBinding DefaultPlaceholderForeground}"
+                                          Foreground="{TemplateBinding PlaceholderForeground}"
                                           HorizontalScrollBarVisibility="Disabled"
                                           IsHitTestVisible="False"
                                           VerticalScrollBarVisibility="Disabled" />
@@ -101,7 +101,7 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="True">
-                            <Setter Property="IconForeground" Value="{Binding DefaultPlaceholderForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="IconForeground" Value="{Binding PlaceholderForeground, RelativeSource={RelativeSource Self}}" />
                             <Setter Property="Foreground" Value="{Binding DefaultForeground, RelativeSource={RelativeSource Self}}" />
                             <Setter Property="Background" Value="{Binding DefaultBackground, RelativeSource={RelativeSource Self}}" />
                             <Setter Property="BorderBrush" Value="{Binding DefaultBorderBrush, RelativeSource={RelativeSource Self}}" />
@@ -112,10 +112,10 @@
                             <Setter Property="BorderBrush" Value="{Binding HoverBorderBrush, RelativeSource={RelativeSource Self}}" />
                         </Trigger>
                         <Trigger Property="IsSelectionActive" Value="True">
-                            <Setter Property="IconForeground" Value="{Binding PressedBorderBrush, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="Foreground" Value="{Binding PressedForeground, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="Background" Value="{Binding PressedBackground, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="BorderBrush" Value="{Binding PressedBorderBrush, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="IconForeground" Value="{Binding FocusedBorderBrush, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Foreground" Value="{Binding FocusedForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="{Binding FocusedBackground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush" Value="{Binding FocusedBorderBrush, RelativeSource={RelativeSource Self}}" />
                         </Trigger>
                         <Trigger Property="LeftIcon" Value="{x:Null}">
                             <Setter TargetName="PART_LeftIcon" Property="Margin" Value="0" />
