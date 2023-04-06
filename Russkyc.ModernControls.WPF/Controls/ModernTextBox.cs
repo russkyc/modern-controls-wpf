@@ -26,7 +26,7 @@ using System.Windows.Media;
 
 namespace org.russkyc.moderncontrols;
 
-public partial class ModernTextBox : TextBox
+public class ModernTextBox : TextBox
 {
 
     /// <summary>

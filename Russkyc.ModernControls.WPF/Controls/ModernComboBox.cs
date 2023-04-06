@@ -26,7 +26,7 @@ using System.Windows.Media;
 
 namespace org.russkyc.moderncontrols;
 
-public partial class ModernComboBox : ComboBox
+public class ModernComboBox : ComboBox
 {
     
     /// <summary>

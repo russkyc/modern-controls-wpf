@@ -26,7 +26,7 @@ using System.Windows.Media;
 
 namespace org.russkyc.moderncontrols;
 
-public partial class ModernRadio : RadioButton
+public class ModernRadio : RadioButton
 {
     
     /// <summary>
