@@ -5,7 +5,10 @@
     <Style TargetType="{x:Type russkyc:ModernTextBox}">
         <Setter Property="Padding" Value="10" />
         <Setter Property="IconSize" Value="15" />
+        <Setter Property="IconPadding" Value="5" />
         <Setter Property="DefaultForeground" Value="{DynamicResource fg-000}" />
+        <Setter Property="CaretBrush" Value="{DynamicResource fg-000}" />
+        <Setter Property="BorderThickness" Value="1" />
         <Setter Property="DefaultBackground" Value="{DynamicResource bg-000}" />
         <Setter Property="DefaultBorderBrush" Value="{DynamicResource bg-600}" />
         <Setter Property="PlaceholderForeground" Value="{DynamicResource bg-600}" />
@@ -24,7 +27,7 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             CornerRadius="{TemplateBinding CornerRadius}">
-                        <Grid Margin="0"
+                        <Grid Margin="{TemplateBinding Padding}"
                               HorizontalAlignment="Stretch"
                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                               IsHitTestVisible="False">
@@ -37,7 +40,6 @@
                             </Grid.ColumnDefinitions>
                             <ScrollViewer x:Name="PART_Placeholder"
                                           Grid.Column="2"
-                                          Margin="{TemplateBinding Padding}"
                                           Background="{x:Null}"
                                           Content="{TemplateBinding Placeholder}"
                                           Foreground="{TemplateBinding PlaceholderForeground}"
@@ -47,8 +49,8 @@
                                           Grid.Column="0"
                                           Width="{TemplateBinding IconSize}"
                                           Height="{TemplateBinding IconSize}"
-                                          Margin="{TemplateBinding Padding,
-                                                                   Converter={x:Static converters:ThicknessToLeftTopBottomThicknessConverter.Instance}}"
+                                          Margin="{TemplateBinding IconPadding,
+                                                                   Converter={x:Static converters:ThicknessToRightThicknessConverter.Instance}}"
                                           VerticalAlignment="Top"
                                           HorizontalContentAlignment="Stretch"
                                           VerticalContentAlignment="Stretch"
@@ -59,8 +61,8 @@
                                           VerticalScrollBarVisibility="Disabled" />
                             <ScrollViewer x:Name="PART_Prefix"
                                           Grid.Column="1"
-                                          Margin="{TemplateBinding Padding,
-                                                                   Converter={x:Static converters:ThicknessToLeftTopBottomThicknessConverter.Instance}}"
+                                          Margin="{TemplateBinding IconPadding,
+                                                                   Converter={x:Static converters:ThicknessToRightThicknessConverter.Instance}}"
                                           VerticalAlignment="Top"
                                           Content="{TemplateBinding Prefix}"
                                           Foreground="{TemplateBinding PlaceholderForeground}"
@@ -70,25 +72,23 @@
                             <ScrollViewer x:Name="PART_ContentHost"
                                           Grid.Column="2"
                                           HorizontalAlignment="Stretch"
-                                          Background="{x:Null}"
+                                          VerticalAlignment="Center"
                                           Foreground="{TemplateBinding DefaultForeground}"
                                           IsHitTestVisible="False" />
-                            <ScrollViewer x:Name="PART_Suffix"
-                                          Grid.Column="3"
-                                          Margin="{TemplateBinding Padding,
-                                                                   Converter={x:Static converters:ThicknessToRightTopBottomThicknessConverter.Instance}}"
-                                          VerticalAlignment="Bottom"
-                                          Content="{TemplateBinding Suffix}"
-                                          Foreground="{TemplateBinding PlaceholderForeground}"
-                                          HorizontalScrollBarVisibility="Disabled"
-                                          IsHitTestVisible="False"
-                                          VerticalScrollBarVisibility="Disabled" />
+                            <TextBlock x:Name="PART_Suffix"
+                                       Grid.Column="3"
+                                       Margin="{TemplateBinding IconPadding,
+                                                                Converter={x:Static converters:ThicknessToLeftThicknessConverter.Instance}}"
+                                       VerticalAlignment="Bottom"
+                                       Foreground="{TemplateBinding PlaceholderForeground}"
+                                       IsHitTestVisible="False"
+                                       Text="{TemplateBinding Suffix}" />
                             <ScrollViewer x:Name="PART_RightIcon"
                                           Grid.Column="4"
                                           Width="{TemplateBinding IconSize}"
                                           Height="{TemplateBinding IconSize}"
-                                          Margin="{TemplateBinding Padding,
-                                                                   Converter={x:Static converters:ThicknessToRightTopBottomThicknessConverter.Instance}}"
+                                          Margin="{TemplateBinding IconPadding,
+                                                                   Converter={x:Static converters:ThicknessToLeftThicknessConverter.Instance}}"
                                           VerticalAlignment="Bottom"
                                           HorizontalContentAlignment="Stretch"
                                           VerticalContentAlignment="Stretch"

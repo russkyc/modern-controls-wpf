@@ -98,28 +98,6 @@ public class ModernTextBox : TextBox
         set => SetValue(RightIconProperty, value);
     }
     
-    public static readonly DependencyProperty LeftCenterIconProperty = DependencyProperty.Register(
-        nameof(LeftCenterIcon),
-        typeof(object),
-        typeof(ModernTextBox),
-        new FrameworkPropertyMetadata());
-    public object? LeftCenterIcon
-    {
-        get => (object?)GetValue(LeftCenterIconProperty);
-        set => SetValue(LeftCenterIconProperty, value);
-    }
-    
-    public static readonly DependencyProperty RightCenterIconProperty = DependencyProperty.Register(
-        nameof(RightCenterIcon),
-        typeof(object),
-        typeof(ModernTextBox),
-        new FrameworkPropertyMetadata());
-    public object? RightCenterIcon
-    {
-        get => (object?)GetValue(RightCenterIconProperty);
-        set => SetValue(RightCenterIconProperty, value);
-    }
-    
     public static readonly DependencyProperty IconSizeProperty = DependencyProperty.Register(
         nameof(IconSize),
         typeof(double),
