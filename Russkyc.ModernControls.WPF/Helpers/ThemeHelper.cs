@@ -62,10 +62,11 @@ public static class ThemeHelper
         lock (_lock)
         {
             Dispatcher.CurrentDispatcher.BeginInvoke(
-                () =>Application.Current
-                        .Resources
-                        .MergedDictionaries[0]
-                        .Source = new Uri(_themes[name], UriKind.RelativeOrAbsolute));
+                () => Application.Current
+                    .Resources
+                    .MergedDictionaries
+                    .First(dict => dict.Source.LocalPath.Contains("Russkyc.ModernControls.WPF;component/Themes/"))!
+                    .Source = new Uri(_themes[name], UriKind.RelativeOrAbsolute));
         }
     }
 }
