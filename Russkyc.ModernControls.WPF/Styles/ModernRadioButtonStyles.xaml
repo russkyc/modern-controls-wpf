@@ -6,7 +6,7 @@
         <Setter Property="Padding" Value="10" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="IconPadding" Value="10" />
+        <Setter Property="IconPadding" Value="5" />
         <Setter Property="IconSize" Value="15" />
         <Setter Property="DefaultForeground" Value="{DynamicResource fg-000}" />
         <Setter Property="DefaultBackground" Value="{DynamicResource bg-100}" />

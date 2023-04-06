@@ -4,7 +4,7 @@
                     xmlns:russkyc="clr-namespace:org.russkyc.moderncontrols">
     <Style TargetType="{x:Type russkyc:ModernButton}">
         <Setter Property="Padding" Value="10" />
-        <Setter Property="IconPadding" Value="10" />
+        <Setter Property="IconPadding" Value="5" />
         <Setter Property="IconSize" Value="15" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="DefaultForeground" Value="{DynamicResource inverted-lighten-3}" />

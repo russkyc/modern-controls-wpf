@@ -82,7 +82,7 @@ public partial class RegistrationViewModel : ObservableObject
         SelectedIndex = 0;
     }
 
-    public void ChangeTheme()
+    private void ChangeTheme()
     {
         ThemeHelper.SetGlobalTheme(Themes![SelectedIndex]);
     }
