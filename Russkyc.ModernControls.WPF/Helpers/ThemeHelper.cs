@@ -30,8 +30,8 @@ namespace org.russkyc.moderncontrols.Helpers;
 
 public static class ThemeHelper
 {
-    private static readonly Object _lock = new Object();
-    private static Dictionary<string,string> _themes = new Dictionary<string, string>();
+    private static readonly object _lock = new object();
+    private static readonly IDictionary<string,string> _themes = new Dictionary<string, string>();
 
     public static void AddTheme(string key, string source)
     {
