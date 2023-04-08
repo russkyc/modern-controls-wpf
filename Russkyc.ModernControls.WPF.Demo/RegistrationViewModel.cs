@@ -29,15 +29,17 @@ namespace Russkyc.ModernControls.WPF.Demo;
 
 public partial class RegistrationViewModel : ObservableObject
 {
-    [ObservableProperty]
-    private string? _email;
-    
-    [ObservableProperty]
-    private string? _studentNumber;
     
     [ObservableProperty]
     private string? _name;
+    
+    [ObservableProperty]
+    private string? _email;
+    
 
+    [ObservableProperty]
+    private int? _studentNumber;
+    
     [ObservableProperty]
     private ObservableCollection<int>? _day;
     
