@@ -231,28 +231,28 @@ ThemeHelper.SetGlobalTheme("MyTheme");
 
 ### ModernComboBox
 
-| Custom Property       | Value         | Sample Usage                                                 |
-|-----------------------|---------------|--------------------------------------------------------------|
-| Icon                  | object        | `<russkyc:ModernComboBox Icon="{StaticResource MyIcon}" />`  |
-| IconSize              | double        | `<russkyc:ModernComboBox IconSize="16" />`                   |
-| IconPadding           | Thickness     | `<russkyc:ModernComboBox IconPadding="4" />`                 |
-| PlaceholderForeground | Brush         | `<russkyc:ModernComboBox PlaceholderForeground="Gray" />`    |
-| Placeholder           | string        | `<russkyc:ModernComboBox Placeholder="Select an item" />`    |
-| CornerRadius          | CornerRadius  | `<russkyc:ModernComboBox CornerRadius="2" />`                |
-| ItemCornerRadius      | CornerRadius  | `<russkyc:ModernComboBox ItemCornerRadius="2" />`            |
-| DefaultBackground     | Brush         | `<russkyc:ModernComboBox DefaultBackground="White" />`       |
-| DisabledBackground    | Brush         | `<russkyc:ModernComboBox DisabledBackground="LightGray" />`  |
-| HoverBackground       | Brush         | `<russkyc:ModernComboBox HoverBackground="LightBlue" />`     |
-| PressedBackground     | Brush         | `<russkyc:ModernComboBox PressedBackground="Blue" />`        |
-| CheckedBackground     | Brush         | `<russkyc:ModernComboBox CheckedBackground="Green" />`       |
-| ItemBackground        | Brush         | `<russkyc:ModernComboBox ItemBackground="White" />`          |
-| HoverItemBackground   | Brush         | `<russkyc:ModernComboBox HoverItemBackground="LightBlue" />` |
-| CheckedItemBackground | Brush         | `<russkyc:ModernComboBox CheckedItemBackground="Green" />`   |
-| ItemForeground        | Brush         | `<russkyc:ModernComboBox ItemForeground="Black" />`          |
-| HoverItemForeground   | Brush         | `<russkyc:ModernComboBox HoverItemForeground="White" />`     |
-| CheckedItemForeground | Brush         | `<russkyc:ModernComboBox CheckedItemForeground="White" />`   |
-| DropdownBackground    | Brush         | `<russkyc:ModernComboBox DropdownBackground="White" />`      |
-| DropdownBorderBrush   | Brush         | `<russkyc:ModernComboBox DropdownBorderBrush="Gray" />`      |
+| Custom Property        | Value         | Sample Usage                                                 |
+|------------------------|---------------|--------------------------------------------------------------|
+| Icon                   | object        | `<russkyc:ModernComboBox Icon="{StaticResource MyIcon}" />`  |
+| IconSize               | double        | `<russkyc:ModernComboBox IconSize="16" />`                   |
+| IconPadding            | Thickness     | `<russkyc:ModernComboBox IconPadding="4" />`                 |
+| PlaceholderForeground  | Brush         | `<russkyc:ModernComboBox PlaceholderForeground="Gray" />`    |
+| Placeholder            | string        | `<russkyc:ModernComboBox Placeholder="Select an item" />`    |
+| CornerRadius           | CornerRadius  | `<russkyc:ModernComboBox CornerRadius="2" />`                |
+| ItemCornerRadius       | CornerRadius  | `<russkyc:ModernComboBox ItemCornerRadius="2" />`            |
+| DefaultBackground      | Brush         | `<russkyc:ModernComboBox DefaultBackground="White" />`       |
+| DisabledBackground     | Brush         | `<russkyc:ModernComboBox DisabledBackground="LightGray" />`  |
+| HoverBackground        | Brush         | `<russkyc:ModernComboBox HoverBackground="LightBlue" />`     |
+| SelectedBackground     | Brush         | `<russkyc:ModernComboBox SelectedBackground="Blue" />`       |
+| CheckedBackground      | Brush         | `<russkyc:ModernComboBox CheckedBackground="Green" />`       |
+| ItemBackground         | Brush         | `<russkyc:ModernComboBox ItemBackground="White" />`          |
+| HoverItemBackground    | Brush         | `<russkyc:ModernComboBox HoverItemBackground="LightBlue" />` |
+| CheckedItemBackground  | Brush         | `<russkyc:ModernComboBox CheckedItemBackground="Green" />`   |
+| ItemForeground         | Brush         | `<russkyc:ModernComboBox ItemForeground="Black" />`          |
+| HoverItemForeground    | Brush         | `<russkyc:ModernComboBox HoverItemForeground="White" />`     |
+| CheckedItemForeground  | Brush         | `<russkyc:ModernComboBox CheckedItemForeground="White" />`   |
+| DropdownBackground     | Brush         | `<russkyc:ModernComboBox DropdownBackground="White" />`      |
+| DropdownBorderBrush    | Brush         | `<russkyc:ModernComboBox DropdownBorderBrush="Gray" />`      |
 
 ### ModernRadio
 
