@@ -17,7 +17,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type russkyc:ModernRadio}">
                     <Border x:Name="PART_ButtonBase"
-                            Padding="{TemplateBinding Padding}"
+                            Margin="{TemplateBinding Padding}"
                             Background="Transparent"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             CornerRadius="{TemplateBinding CornerRadius}">
