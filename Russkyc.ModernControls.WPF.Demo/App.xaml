@@ -6,8 +6,10 @@
         <ResourceDictionary>
             <!--  ModernControls WPF  -->
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/DefaultLight.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/Generic.xaml" />
+                <ResourceDictionary
+                    Source="pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/DefaultDark.xaml" />
+                <ResourceDictionary
+                    Source="pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/Generic.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

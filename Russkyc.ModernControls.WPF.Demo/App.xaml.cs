@@ -37,8 +37,8 @@ namespace Russkyc.ModernControls.WPF.Demo
             base.OnStartup(e);
             
             // Add Themes
+            ThemeHelper.AddTheme("Night","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/DefaultDark.xaml");
             ThemeHelper.AddTheme("Day","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/DefaultLight.xaml");
-            ThemeHelper.AddTheme("Night","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/RazerDark.xaml");
-        }
+            }
     }
 }
