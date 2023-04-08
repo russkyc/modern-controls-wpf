@@ -43,6 +43,17 @@ public class ModernTextBox : TextBox
         set => SetValue(PlaceholderProperty, value);
     }
     
+    public static readonly DependencyProperty HelperTextProperty = DependencyProperty.Register(
+        nameof(HelperText),
+        typeof(string),
+        typeof(ModernTextBox),
+        new FrameworkPropertyMetadata());
+    public string? HelperText
+    {
+        get => (string?)GetValue(HelperTextProperty);
+        set => SetValue(HelperTextProperty, value);
+    }
+    
     public static readonly DependencyProperty PrefixProperty = DependencyProperty.Register(
         nameof(Prefix),
         typeof(string),
