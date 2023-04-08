@@ -28,6 +28,11 @@
     <SolidColorBrush x:Key="primary-darken-2" Color="#2e1a96" />
     <SolidColorBrush x:Key="primary-darken-3" Color="#1e1467" />
 
+    <!--  Status  -->
+    <SolidColorBrush x:Key="success" Color="#18CB56" />
+    <SolidColorBrush x:Key="warning" Color="#CE941B" />
+    <SolidColorBrush x:Key="danger" Color="#CB2D2B" />
+
     <!--  Inverted  -->
     <SolidColorBrush x:Key="inverted-lighten-3" Color="#F4FDFF" />
     <SolidColorBrush x:Key="inverted-lighten-2" Color="#ebf4ff" />
