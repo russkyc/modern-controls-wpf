@@ -91,4 +91,27 @@ public class ModernWindow : Window
         get => (Brush)GetValue(TitlebarForegroundProperty);
         set => SetValue(TitlebarForegroundProperty, value);
     }
+    
+    public static readonly DependencyProperty IconSizeProperty = DependencyProperty.Register(
+        nameof(IconSize),
+        typeof(double),
+        typeof(ModernWindow),
+        new FrameworkPropertyMetadata());
+    public double IconSize
+    {
+        get => (double)GetValue(IconSizeProperty);
+        set => SetValue(IconSizeProperty, value);
+    }
+    
+    public static readonly DependencyProperty IconPaddingProperty = DependencyProperty.Register(
+        nameof(IconPadding),
+        typeof(Thickness),
+        typeof(ModernWindow),
+        new FrameworkPropertyMetadata());
+    public Thickness IconPadding
+    {
+        get => (Thickness)GetValue(IconPaddingProperty);
+        set => SetValue(IconPaddingProperty, value);
+    }
+
 }
