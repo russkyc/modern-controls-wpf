@@ -4,8 +4,8 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            <!--  ModernControls WPF  -->
             <ResourceDictionary.MergedDictionaries>
+                <!--  ModernControls WPF  -->
                 <ResourceDictionary
                     Source="pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/DefaultDark.xaml" />
                 <ResourceDictionary
