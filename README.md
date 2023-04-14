@@ -21,15 +21,24 @@ The default wpf control library is awesome when it comes to ui customization, bu
 ---
 ## Setup
 
-Add the following to App.xaml. **Order is Important!**
+Add the Resources to App.xaml. **Order is Important!**
 
 ```xaml
-<ResourceDictionary>
-    <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/DefaultLight.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/Generic.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-</ResourceDictionary>
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+            
+                <!--  ModernControls WPF  -->
+                <ResourceDictionary
+                    Source="pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/DefaultDark.xaml" />
+                <ResourceDictionary
+                    Source="pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/Generic.xaml" />
+                
+                <!-- Place your other dictionaries here -->
+                
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
 ```
 
 Add the following to your window
@@ -60,13 +69,14 @@ Sample Usage
 ---
 
 ## Control Library
-> - [x] ModernTextBox
+> - [x] ModernWindow - **_New! in 1.5.0_**
+> - [x] ModernTextBox - **_Updated! in 1.5.0_**
 > - [x] ModernButton
 > - [x] ModernToggleButton
 > - [x] ModernRadio
+> - [x] ModernSwitch - **_New! in 1.5.0_**
 > - [x] ModernRadioButton
-> - [x] ModernComboBox
-> - [ ] ModernAutocompleteBox
+> - [x] ModernComboBox - **_Updated! in 1.5.0_**
 
 ---
 
@@ -78,7 +88,10 @@ Sample Usage
 
 </span>
 
-### Using the new Theme Helper
+### Using the new Theme Manager
+
+> **Breaking Changes in 1.5.x**\
+> `ThemeHelper` is now renamed to `ThemeManager`
 
 Imports
 ```csharp
@@ -88,25 +101,25 @@ using org.russkyc.moderncontrols.Helpers;
 Adding Themes
 
 ```csharp
-ThemeHelper.AddTheme("Light","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/DefaultLight.xaml");
-ThemeHelper.AddTheme("Dark","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/RazerDark.xaml");
+ThemeManager.AddTheme("Light","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/DefaultLight.xaml");
+ThemeManager.AddTheme("Dark","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/RazerDark.xaml");
 ```
 
 Changing Themes (Live)
 
 ```csharp
-ThemeHelper.SetGlobalTheme("Dark");
+ThemeManager.SetGlobalTheme("Dark");
 ```
 
 Get List of Themes (names)
 ```csharp
-ThemeHelper.GetThemes();
+ThemeManager.GetThemes();
 ```
 
 Removing Themes
 
 ```csharp
-ThemeHelper.RemoveTheme("Light");
+ThemeManager.RemoveTheme("Light");
 ```
 
 ## Want to create your own Theme?
@@ -156,16 +169,16 @@ Use This Template
 </ResourceDictionary>
 ```
 
-#### Add your theme to the ThemeHelper
+#### Add your theme to the ThemeManager
 
 ```csharp
-ThemeHelper.AddTheme("MyTheme","path_to_your_theme/MyThemeName.xaml");
+ThemeManager.AddTheme("MyTheme","path_to_your_theme/MyThemeName.xaml");
 ```
 
 #### And Apply
 
 ```csharp
-ThemeHelper.SetGlobalTheme("MyTheme");
+ThemeManager.SetGlobalTheme("MyTheme");
 ```
 
 ---
