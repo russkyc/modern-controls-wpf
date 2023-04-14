@@ -5,6 +5,7 @@
         <TargetFramework>net6.0-windows</TargetFramework>
         <Nullable>enable</Nullable>
         <UseWPF>true</UseWPF>
+        <ApplicationIcon>Resources\russkyc_multi.ico</ApplicationIcon>
     </PropertyGroup>
 
     <ItemGroup>
@@ -14,6 +15,10 @@
     <ItemGroup>
       <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
       <PackageReference Include="Material.Icons.WPF" Version="1.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Resource Include="Resources\russkyc_multi.ico" />
     </ItemGroup>
 
 </Project>
