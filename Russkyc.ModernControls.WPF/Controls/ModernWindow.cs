@@ -74,12 +74,21 @@ public class ModernWindow : Window
         set => SetValue(TitleBarHeightProperty, value);
     }
 
-    public static readonly DependencyProperty TitleBarColorProperty = DependencyProperty.Register(
-        nameof(TitleBarColor), typeof(Brush), typeof(ModernWindow), new FrameworkPropertyMetadata());
+    public static readonly DependencyProperty TitlebarBackgroundProperty = DependencyProperty.Register(
+        nameof(TitlebarBackground), typeof(Brush), typeof(ModernWindow), new FrameworkPropertyMetadata());
 
-    public Brush TitleBarColor
+    public Brush TitlebarBackground
     {
-        get => (Brush)GetValue(TitleBarColorProperty);
-        set => SetValue(TitleBarColorProperty, value);
+        get => (Brush)GetValue(TitlebarBackgroundProperty);
+        set => SetValue(TitlebarBackgroundProperty, value);
+    }
+    
+    public static readonly DependencyProperty TitlebarForegroundProperty = DependencyProperty.Register(
+        nameof(TitlebarForeground), typeof(Brush), typeof(ModernWindow), new FrameworkPropertyMetadata());
+
+    public Brush TitlebarForeground
+    {
+        get => (Brush)GetValue(TitlebarForegroundProperty);
+        set => SetValue(TitlebarForegroundProperty, value);
     }
 }

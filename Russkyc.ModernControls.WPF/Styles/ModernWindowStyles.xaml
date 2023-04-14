@@ -8,7 +8,7 @@
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="BorderBrush" Value="{DynamicResource bg-200}" />
         <Setter Property="Foreground" Value="{DynamicResource fg-000}" />
-        <Setter Property="TitleBarColor" Value="{DynamicResource bg-200}" />
+        <Setter Property="TitlebarBackground" Value="{DynamicResource bg-200}" />
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
                 <WindowChrome
@@ -70,7 +70,7 @@
                                   Grid.Column="0"
                                   Grid.ColumnSpan="2"
                                   HorizontalAlignment="Stretch"
-                                  Background="{TemplateBinding TitleBarColor}">
+                                  Background="{TemplateBinding TitlebarBackground}">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
@@ -97,7 +97,7 @@
                                                       Command="{x:Static russkyc:ModernWindow.MinimizeCommand}"
                                                       Content="-"
                                                       CornerRadius="0"
-                                                      DefaultBackground="{TemplateBinding TitleBarColor}"
+                                                      DefaultBackground="{TemplateBinding TitlebarBackground}"
                                                       DefaultForeground="{DynamicResource fg-000}"
                                                       HoverBackground="{DynamicResource bg-100}"
                                                       HoverForeground="{DynamicResource fg-000}"
@@ -113,7 +113,7 @@
                                                       Command="{x:Static russkyc:ModernWindow.MaximizeCommand}"
                                                       Content="[]"
                                                       CornerRadius="0"
-                                                      DefaultBackground="{TemplateBinding TitleBarColor}"
+                                                      DefaultBackground="{TemplateBinding TitlebarBackground}"
                                                       DefaultForeground="{DynamicResource fg-000}"
                                                       HoverBackground="{DynamicResource bg-100}"
                                                       HoverForeground="{DynamicResource fg-000}"
@@ -129,7 +129,7 @@
                                                       Command="{x:Static russkyc:ModernWindow.CloseCommand}"
                                                       Content="x"
                                                       CornerRadius="0,3,0,0"
-                                                      DefaultBackground="{TemplateBinding TitleBarColor}"
+                                                      DefaultBackground="{TemplateBinding TitlebarBackground}"
                                                       DefaultForeground="{DynamicResource fg-000}"
                                                       HoverBackground="{DynamicResource danger}"
                                                       HoverForeground="{DynamicResource inverted-lighten-3}"

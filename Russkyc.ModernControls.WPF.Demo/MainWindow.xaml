@@ -8,6 +8,7 @@
                       xmlns:russkyc="clr-namespace:org.russkyc.moderncontrols;assembly=Russkyc.ModernControls.WPF"
                       Title="Modern Controls WPF Demo"
                       Background="{DynamicResource bg-000}"
+                      TitlebarBackground="Red"
                       WindowStartupLocation="CenterScreen"
                       mc:Ignorable="d">
     <Window.DataContext>
