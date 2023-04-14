@@ -22,22 +22,28 @@
 
 using System;
 using System.Globalization;
+using System.Windows;
 using System.Windows.Data;
 
 namespace org.russkyc.moderncontrols.Converters;
 
-[ValueConversion(typeof(bool), typeof(bool))]
-public class InvertedBooleanConverter : IValueConverter
+[ValueConversion(typeof(WindowState),typeof(Visibility))]
+public class WindowStateToVisibilityConverter : IValueConverter
 {
-    public static InvertedBooleanConverter Instance = new InvertedBooleanConverter();
-
+    public static WindowStateToVisibilityConverter Instance = new WindowStateToVisibilityConverter();
+    
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        return !(bool)value;
+        if (!(value is WindowState state))
+            return Visibility.Collapsed;
+
+        var targetState = (WindowState)Enum.Parse(typeof(WindowState), parameter?.ToString() ?? "Normal");
+
+        return state == targetState ? Visibility.Visible : Visibility.Collapsed;
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        throw new NotImplementedException();
+        throw new NotSupportedException();
     }
 }

@@ -29,15 +29,17 @@ namespace Russkyc.ModernControls.WPF.Demo;
 
 public partial class RegistrationViewModel : ObservableObject
 {
-    [ObservableProperty]
-    private string? _email;
-    
-    [ObservableProperty]
-    private string? _studentNumber;
     
     [ObservableProperty]
     private string? _name;
+    
+    [ObservableProperty]
+    private string? _email;
+    
 
+    [ObservableProperty]
+    private int? _studentNumber;
+    
     [ObservableProperty]
     private ObservableCollection<int>? _day;
     
@@ -75,7 +77,7 @@ public partial class RegistrationViewModel : ObservableObject
         for (int i = 1; i <= 12; i++) Month.Add(i);
         for (int i = 1900; i <= 2022; i++) Year.Add(i);
         
-        ThemeHelper.GetThemes()
+        ThemeManager.GetThemes()
             .ToList()
             .ForEach(Themes.Add);
         
@@ -84,6 +86,6 @@ public partial class RegistrationViewModel : ObservableObject
 
     private void ChangeTheme()
     {
-        ThemeHelper.SetGlobalTheme(Themes![SelectedIndex]);
+        ThemeManager.SetGlobalTheme(Themes![SelectedIndex]);
     }
 }

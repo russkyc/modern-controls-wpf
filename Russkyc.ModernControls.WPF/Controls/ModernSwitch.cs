@@ -21,65 +21,29 @@
 // SOFTWARE.
 
 using System.Windows;
-using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 
 namespace org.russkyc.moderncontrols;
 
-public class ModernTextBox : TextBox
+public class ModernSwitch : ToggleButton
 {
-
+    
     /// <summary>
     /// Customization Properties
     /// </summary>
-    public static readonly DependencyProperty PlaceholderProperty = DependencyProperty.Register(
-        nameof(Placeholder),
-        typeof(string),
-        typeof(ModernTextBox),
-        new FrameworkPropertyMetadata());
-    public string? Placeholder
+    public static readonly DependencyProperty ToggleCornerRadiusProperty = DependencyProperty.Register(
+        nameof(ToggleCornerRadius), typeof(CornerRadius), typeof(ModernSwitch), new FrameworkPropertyMetadata());
+    public CornerRadius ToggleCornerRadius
     {
-        get => (string?)GetValue(PlaceholderProperty);
-        set => SetValue(PlaceholderProperty, value);
-    }
-    
-    public static readonly DependencyProperty HelperTextProperty = DependencyProperty.Register(
-        nameof(HelperText),
-        typeof(string),
-        typeof(ModernTextBox),
-        new FrameworkPropertyMetadata());
-    public string? HelperText
-    {
-        get => (string?)GetValue(HelperTextProperty);
-        set => SetValue(HelperTextProperty, value);
-    }
-    
-    public static readonly DependencyProperty PrefixProperty = DependencyProperty.Register(
-        nameof(Prefix),
-        typeof(string),
-        typeof(ModernTextBox),
-        new FrameworkPropertyMetadata());
-    public string? Prefix
-    {
-        get => (string?)GetValue(PrefixProperty);
-        set => SetValue(PrefixProperty, value);
-    }
-    
-    public static readonly DependencyProperty SuffixProperty = DependencyProperty.Register(
-        nameof(Suffix),
-        typeof(string),
-        typeof(ModernTextBox),
-        new FrameworkPropertyMetadata());
-    public string? Suffix
-    {
-        get => (string?)GetValue(SuffixProperty);
-        set => SetValue(SuffixProperty, value);
+        get { return (CornerRadius)GetValue(ToggleCornerRadiusProperty); }
+        set { SetValue(ToggleCornerRadiusProperty, value); }
     }
     
     public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(
         nameof(CornerRadius),
         typeof(CornerRadius),
-        typeof(ModernTextBox),
+        typeof(ModernSwitch),
         new FrameworkPropertyMetadata());
     public CornerRadius CornerRadius
     {
@@ -90,7 +54,7 @@ public class ModernTextBox : TextBox
     public static readonly DependencyProperty LeftIconProperty = DependencyProperty.Register(
         nameof(LeftIcon),
         typeof(object),
-        typeof(ModernTextBox),
+        typeof(ModernSwitch),
         new FrameworkPropertyMetadata());
     public object? LeftIcon
     {
@@ -101,7 +65,7 @@ public class ModernTextBox : TextBox
     public static readonly DependencyProperty RightIconProperty = DependencyProperty.Register(
         nameof(RightIcon),
         typeof(object),
-        typeof(ModernTextBox),
+        typeof(ModernSwitch),
         new FrameworkPropertyMetadata());
     public object? RightIcon
     {
@@ -109,10 +73,32 @@ public class ModernTextBox : TextBox
         set => SetValue(RightIconProperty, value);
     }
     
+    public static readonly DependencyProperty LeftCenterIconProperty = DependencyProperty.Register(
+        nameof(LeftCenterIcon),
+        typeof(object),
+        typeof(ModernSwitch),
+        new FrameworkPropertyMetadata());
+    public object? LeftCenterIcon
+    {
+        get => (object?)GetValue(LeftCenterIconProperty);
+        set => SetValue(LeftCenterIconProperty, value);
+    }
+    
+    public static readonly DependencyProperty RightCenterIconProperty = DependencyProperty.Register(
+        nameof(RightCenterIcon),
+        typeof(object),
+        typeof(ModernSwitch),
+        new FrameworkPropertyMetadata());
+    public object? RightCenterIcon
+    {
+        get => (object?)GetValue(RightCenterIconProperty);
+        set => SetValue(RightCenterIconProperty, value);
+    }
+    
     public static readonly DependencyProperty IconSizeProperty = DependencyProperty.Register(
         nameof(IconSize),
         typeof(double),
-        typeof(ModernTextBox),
+        typeof(ModernSwitch),
         new FrameworkPropertyMetadata());
     public double IconSize
     {
@@ -123,7 +109,7 @@ public class ModernTextBox : TextBox
     public static readonly DependencyProperty IconForegroundProperty = DependencyProperty.Register(
         nameof(IconForeground),
         typeof(Brush),
-        typeof(ModernTextBox),
+        typeof(ModernSwitch),
         new FrameworkPropertyMetadata());
     public Brush? IconForeground
     {
@@ -134,7 +120,7 @@ public class ModernTextBox : TextBox
     public static readonly DependencyProperty IconPaddingProperty = DependencyProperty.Register(
         nameof(IconPadding),
         typeof(Thickness),
-        typeof(ModernTextBox),
+        typeof(ModernSwitch),
         new FrameworkPropertyMetadata());
     public Thickness IconPadding
     {
@@ -143,26 +129,12 @@ public class ModernTextBox : TextBox
     }
     
     /// <summary>
-    /// Placeholder Properties
-    /// </summary>
-    public static readonly DependencyProperty PlaceholderForegroundProperty = DependencyProperty.Register(
-        nameof(PlaceholderForeground),
-        typeof(Brush),
-        typeof(ModernTextBox),
-        new FrameworkPropertyMetadata());
-    public Brush? PlaceholderForeground
-    {
-        get => (Brush?)GetValue(PlaceholderForegroundProperty);
-        set => SetValue(PlaceholderForegroundProperty, value);
-    }
-    
-    /// <summary>
     /// Background Properties
     /// </summary>
     public static readonly DependencyProperty DefaultBackgroundProperty = DependencyProperty.Register(
         nameof(DefaultBackground),
         typeof(Brush),
-        typeof(ModernTextBox),
+        typeof(ModernSwitch),
         new FrameworkPropertyMetadata());
     public Brush? DefaultBackground
     {
@@ -173,7 +145,7 @@ public class ModernTextBox : TextBox
     public static readonly DependencyProperty DisabledBackgroundProperty = DependencyProperty.Register(
         nameof(DisabledBackground),
         typeof(Brush),
-        typeof(ModernTextBox),
+        typeof(ModernSwitch),
         new FrameworkPropertyMetadata());
     public Brush? DisabledBackground
     {
@@ -184,7 +156,7 @@ public class ModernTextBox : TextBox
     public static readonly DependencyProperty HoverBackgroundProperty = DependencyProperty.Register(
         nameof(HoverBackground),
         typeof(Brush),
-        typeof(ModernTextBox),
+        typeof(ModernSwitch),
         new FrameworkPropertyMetadata());
     public Brush? HoverBackground
     {
@@ -192,15 +164,26 @@ public class ModernTextBox : TextBox
         set => SetValue(HoverBackgroundProperty, value);
     }
     
-    public static readonly DependencyProperty FocusedBackgroundProperty = DependencyProperty.Register(
-        nameof(FocusedBackground),
+    public static readonly DependencyProperty PressedBackgroundProperty = DependencyProperty.Register(
+        nameof(PressedBackground),
         typeof(Brush),
-        typeof(ModernTextBox),
+        typeof(ModernSwitch),
         new FrameworkPropertyMetadata());
-    public Brush? FocusedBackground
+    public Brush? PressedBackground
     {
-        get => (Brush?)GetValue(FocusedBackgroundProperty);
-        set => SetValue(FocusedBackgroundProperty, value);
+        get => (Brush?)GetValue(PressedBackgroundProperty);
+        set => SetValue(PressedBackgroundProperty, value);
+    }
+    
+    public static readonly DependencyProperty CheckedBackgroundProperty = DependencyProperty.Register(
+        nameof(CheckedBackground),
+        typeof(Brush),
+        typeof(ModernSwitch),
+        new FrameworkPropertyMetadata());
+    public Brush? CheckedBackground
+    {
+        get => (Brush?)GetValue(CheckedBackgroundProperty);
+        set => SetValue(CheckedBackgroundProperty, value);
     }
     
     /// <summary>
@@ -209,7 +192,7 @@ public class ModernTextBox : TextBox
     public static readonly DependencyProperty DefaultForegroundProperty = DependencyProperty.Register(
         nameof(DefaultForeground),
         typeof(Brush),
-        typeof(ModernTextBox),
+        typeof(ModernSwitch),
         new FrameworkPropertyMetadata());
     public Brush? DefaultForeground
     {
@@ -220,7 +203,7 @@ public class ModernTextBox : TextBox
     public static readonly DependencyProperty DisabledForegroundProperty = DependencyProperty.Register(
         nameof(DisabledForeground),
         typeof(Brush),
-        typeof(ModernTextBox),
+        typeof(ModernSwitch),
         new FrameworkPropertyMetadata());
     public Brush? DisabledForeground
     {
@@ -231,7 +214,7 @@ public class ModernTextBox : TextBox
     public static readonly DependencyProperty HoverForegroundProperty = DependencyProperty.Register(
         nameof(HoverForeground),
         typeof(Brush),
-        typeof(ModernTextBox),
+        typeof(ModernSwitch),
         new FrameworkPropertyMetadata());
     public Brush? HoverForeground
     {
@@ -239,24 +222,35 @@ public class ModernTextBox : TextBox
         set => SetValue(HoverForegroundProperty, value);
     }
     
-    public static readonly DependencyProperty FocusedForegroundProperty = DependencyProperty.Register(
-        nameof(FocusedForeground),
+    public static readonly DependencyProperty PressedForegroundProperty = DependencyProperty.Register(
+        nameof(PressedForeground),
         typeof(Brush),
-        typeof(ModernTextBox),
+        typeof(ModernSwitch),
         new FrameworkPropertyMetadata());
-    public Brush? FocusedForeground
+    public Brush? PressedForeground
     {
-        get => (Brush?)GetValue(FocusedForegroundProperty);
-        set => SetValue(FocusedForegroundProperty, value);
+        get => (Brush?)GetValue(PressedForegroundProperty);
+        set => SetValue(PressedForegroundProperty, value);
     }
-
+    
+    public static readonly DependencyProperty CheckedForegroundProperty = DependencyProperty.Register(
+        nameof(CheckedForeground),
+        typeof(Brush),
+        typeof(ModernSwitch),
+        new FrameworkPropertyMetadata());
+    public Brush? CheckedForeground
+    {
+        get => (Brush?)GetValue(CheckedForegroundProperty);
+        set => SetValue(CheckedForegroundProperty, value);
+    }
+    
     /// <summary>
     /// Border Properties
     /// </summary>
     public static readonly DependencyProperty DefaultBorderBrushProperty = DependencyProperty.Register(
         nameof(DefaultBorderBrush),
         typeof(Brush),
-        typeof(ModernTextBox),
+        typeof(ModernSwitch),
         new FrameworkPropertyMetadata());
     public Brush? DefaultBorderBrush
     {
@@ -267,7 +261,7 @@ public class ModernTextBox : TextBox
     public static readonly DependencyProperty DisabledBorderBrushProperty = DependencyProperty.Register(
         nameof(DisabledBorderBrush),
         typeof(Brush),
-        typeof(ModernTextBox),
+        typeof(ModernSwitch),
         new FrameworkPropertyMetadata());
     public Brush? DisabledBorderBrush
     {
@@ -278,7 +272,7 @@ public class ModernTextBox : TextBox
     public static readonly DependencyProperty HoverBorderBrushProperty = DependencyProperty.Register(
         nameof(HoverBorderBrush),
         typeof(Brush),
-        typeof(ModernTextBox),
+        typeof(ModernSwitch),
         new FrameworkPropertyMetadata());
     public Brush? HoverBorderBrush
     {
@@ -286,15 +280,26 @@ public class ModernTextBox : TextBox
         set => SetValue(HoverBorderBrushProperty, value);
     }
     
-    public static readonly DependencyProperty FocusedBorderBrushProperty = DependencyProperty.Register(
-        nameof(FocusedBorderBrush),
+    public static readonly DependencyProperty PressedBorderBrushProperty = DependencyProperty.Register(
+        nameof(PressedBorderBrush),
         typeof(Brush),
-        typeof(ModernTextBox),
+        typeof(ModernSwitch),
         new FrameworkPropertyMetadata());    
-    public Brush? FocusedBorderBrush
+    public Brush? PressedBorderBrush
     {
-        get => (Brush?)GetValue(FocusedBorderBrushProperty);
-        set => SetValue(FocusedBorderBrushProperty, value);
+        get => (Brush?)GetValue(PressedBorderBrushProperty);
+        set => SetValue(PressedBorderBrushProperty, value);
     }
-
+    
+    public static readonly DependencyProperty CheckedBorderBrushProperty = DependencyProperty.Register(
+        nameof(CheckedBorderBrush),
+        typeof(Brush),
+        typeof(ModernSwitch),
+        new FrameworkPropertyMetadata());    
+    public Brush? CheckedBorderBrush
+    {
+        get => (Brush?)GetValue(CheckedBorderBrushProperty);
+        set => SetValue(CheckedBorderBrushProperty, value);
+    }
+        
 }

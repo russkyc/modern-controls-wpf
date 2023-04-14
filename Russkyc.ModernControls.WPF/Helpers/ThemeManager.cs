@@ -28,7 +28,7 @@ using System.Windows.Threading;
 
 namespace org.russkyc.moderncontrols.Helpers;
 
-public static class ThemeHelper
+public static class ThemeManager
 {
     private static readonly object _lock = new object();
     private static readonly IDictionary<string,string> _themes = new Dictionary<string, string>();
