@@ -16,7 +16,7 @@
 - Renamed ThemeHelper to ThemeManager
 - Other Changes</PackageReleaseNotes>
     <Authors>Russell Camo</Authors>
-    <TargetFrameworks>net6.0-windows;net47</TargetFrameworks>
+    <TargetFrameworks>net6.0-windows;net46</TargetFrameworks>
     <LangVersion>latest</LangVersion>
     <PackageIcon>Russkyc.png</PackageIcon>
   </PropertyGroup>
