@@ -21,7 +21,6 @@
 // SOFTWARE.
 
 using System.Windows;
-using org.russkyc.moderncontrols.Helpers;
 
 namespace Russkyc.ModernControls.WPF.Demo
 {
@@ -35,10 +34,6 @@ namespace Russkyc.ModernControls.WPF.Demo
             // App initialization
             InitializeComponent();
             base.OnStartup(e);
-            
-            // Add Themes
-            ThemeManager.AddTheme("Night","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/DefaultDark.xaml");
-            ThemeManager.AddTheme("Day","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/DefaultLight.xaml");
-            }
+        }
     }
 }
