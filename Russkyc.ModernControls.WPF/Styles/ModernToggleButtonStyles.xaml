@@ -7,13 +7,13 @@
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="IconPadding" Value="5" />
         <Setter Property="IconSize" Value="15" />
-        <Setter Property="DefaultForeground" Value="{DynamicResource inverted-lighten-3}" />
-        <Setter Property="DefaultBackground" Value="{DynamicResource primary-default}" />
-        <Setter Property="HoverForeground" Value="{DynamicResource inverted-lighten-3}" />
-        <Setter Property="HoverBackground" Value="{DynamicResource primary-lighten-1}" />
-        <Setter Property="PressedForeground" Value="{DynamicResource inverted-lighten-3}" />
-        <Setter Property="PressedBackground" Value="{DynamicResource primary-darken-1}" />
-        <Setter Property="CheckedForeground" Value="{DynamicResource inverted-lighten-1}" />
+        <Setter Property="DefaultForeground" Value="{DynamicResource fg-000}" />
+        <Setter Property="DefaultBackground" Value="{DynamicResource bg-100}" />
+        <Setter Property="HoverForeground" Value="{DynamicResource fg-000}" />
+        <Setter Property="HoverBackground" Value="{DynamicResource bg-200}" />
+        <Setter Property="PressedForeground" Value="{DynamicResource fg-000}" />
+        <Setter Property="PressedBackground" Value="{DynamicResource bg-100}" />
+        <Setter Property="CheckedForeground" Value="{DynamicResource fg-000}" />
         <Setter Property="CheckedBackground" Value="{DynamicResource primary-default}" />
         <Setter Property="CornerRadius" Value="3" />
         <Setter Property="Template">
@@ -98,34 +98,54 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="True">
-                            <Setter Property="Foreground" Value="{Binding DefaultForeground, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="Background" Value="{Binding DefaultBackground, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="IconForeground" Value="{Binding DefaultForeground, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="BorderBrush" Value="{Binding DefaultBorderBrush, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Foreground"
+                                    Value="{Binding DefaultForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background"
+                                    Value="{Binding DefaultBackground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="IconForeground"
+                                    Value="{Binding DefaultForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush"
+                                    Value="{Binding DefaultBorderBrush, RelativeSource={RelativeSource Self}}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Foreground" Value="{Binding DisabledForeground, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="IconForeground" Value="{Binding DisabledForeground, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="Background" Value="{Binding DisabledBackground, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="BorderBrush" Value="{Binding DisabledBorderBrush, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Foreground"
+                                    Value="{Binding DisabledForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="IconForeground"
+                                    Value="{Binding DisabledForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background"
+                                    Value="{Binding DisabledBackground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush"
+                                    Value="{Binding DisabledBorderBrush, RelativeSource={RelativeSource Self}}" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Foreground" Value="{Binding HoverForeground, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="IconForeground" Value="{Binding HoverForeground, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="Background" Value="{Binding HoverBackground, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="BorderBrush" Value="{Binding HoverBorderBrush, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Foreground"
+                                    Value="{Binding HoverForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="IconForeground"
+                                    Value="{Binding HoverForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background"
+                                    Value="{Binding HoverBackground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush"
+                                    Value="{Binding HoverBorderBrush, RelativeSource={RelativeSource Self}}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Foreground" Value="{Binding PressedForeground, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="IconForeground" Value="{Binding PressedForeground, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="Background" Value="{Binding PressedBackground, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="BorderBrush" Value="{Binding PressedBorderBrush, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Foreground"
+                                    Value="{Binding PressedForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="IconForeground"
+                                    Value="{Binding PressedForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background"
+                                    Value="{Binding PressedBackground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush"
+                                    Value="{Binding PressedBorderBrush, RelativeSource={RelativeSource Self}}" />
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Foreground" Value="{Binding CheckedForeground, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="IconForeground" Value="{Binding CheckedForeground, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="Background" Value="{Binding CheckedBackground, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="BorderBrush" Value="{Binding CheckedBorderBrush, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Foreground"
+                                    Value="{Binding CheckedForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="IconForeground"
+                                    Value="{Binding CheckedForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background"
+                                    Value="{Binding CheckedBackground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush"
+                                    Value="{Binding CheckedBorderBrush, RelativeSource={RelativeSource Self}}" />
                         </Trigger>
                         <Trigger Property="LeftIcon" Value="{x:Null}">
                             <Setter TargetName="PART_LeftIcon" Property="Margin" Value="0" />

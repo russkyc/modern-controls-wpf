@@ -27,15 +27,13 @@ Add the Resources to App.xaml. **Order is Important!**
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-            
                 <!--  ModernControls WPF  -->
                 <ResourceDictionary
-                    Source="pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/DefaultDark.xaml" />
+                    Source="pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/BaseTheme/DefaultDark.xaml" />
+                <ResourceDictionary
+                    Source="pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/Blue.xaml" />
                 <ResourceDictionary
                     Source="pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/Generic.xaml" />
-                
-                <!-- Place your other dictionaries here -->
-                
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
@@ -88,46 +86,51 @@ Sample Usage
 
 </span>
 
-### Using the new Theme Manager
+### Using the Theme Manager
 
-> **Breaking Changes in 1.5.x**\
-> `ThemeHelper` is now renamed to `ThemeManager`
+> **Breaking Changes in 1.5.2**
+> - `ThemeManager` is now uses `Instance`
+> - There are now 2 Theme resources. `Base Theme` corresponds to the overall base(dark/light) and `ColorTheme` corresponds to the theme colors (blue/red/etc.)
+> - Default Base Themes are now located in `pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/BaseTheme/`
+> - Color Themes are in `pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/`
 
 Imports
 ```csharp
 using org.russkyc.moderncontrols.Helpers;
 ```
 
-Adding Themes
+Adding Base or Color Themes
 
 ```csharp
-ThemeManager.AddTheme("Light","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/DefaultLight.xaml");
-ThemeManager.AddTheme("Dark","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/RazerDark.xaml");
+ThemeManager.Instance.AddBaseTheme("Light","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/BaseTheme/DefaultLight.xaml");
+ThemeManager.Instance.AddColorTheme("Blue","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/Blue.xaml");
 ```
 
-Changing Themes (Live)
+Changing Base or Color Themes (Live)
 
 ```csharp
-ThemeManager.SetGlobalTheme("Dark");
+ThemeManager.Instance.SetBaseTheme("Dark");
+ThemeManager.Instance.SetColorTheme("Blue");
 ```
 
-Get List of Themes (names)
+Get List of Base or Color Themes (names)
 ```csharp
-ThemeManager.GetThemes();
+ThemeManager.Instance.GetBaseThemes();
+ThemeManager.Instance.GetColorThemes();
 ```
 
-Removing Themes
+Removing Base or Color Themes
 
 ```csharp
-ThemeManager.RemoveTheme("Light");
+ThemeManager.Instance.RemoveBaseTheme("Light");
+ThemeManager.Instance.RemoveColorTheme("Blue");
 ```
 
 ## Want to create your own Theme?
 
-Use This Template
-
+#### New Base Theme
+Use this Base Theme template
 ```xaml
-<!--  ModernControls Default Light Theme  -->
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!--  Background  -->
@@ -148,6 +151,15 @@ Use This Template
     <SolidColorBrush x:Key="fg-500" Color="#3c3f46" />
     <SolidColorBrush x:Key="fg-600" Color="#46494f" />
 
+</ResourceDictionary>
+```
+
+#### New Color Theme
+Use this Color Theme template
+```xaml
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
     <!--  Primary  -->
     <SolidColorBrush x:Key="primary-lighten-3" Color="#3d9be6" />
     <SolidColorBrush x:Key="primary-lighten-2" Color="#2989e1" />
@@ -156,6 +168,11 @@ Use This Template
     <SolidColorBrush x:Key="primary-darken-1" Color="#0152c6" />
     <SolidColorBrush x:Key="primary-darken-2" Color="#0043b8" />
     <SolidColorBrush x:Key="primary-darken-3" Color="#0035a9" />
+
+    <!--  Status  -->
+    <SolidColorBrush x:Key="success" Color="#18CB56" />
+    <SolidColorBrush x:Key="warning" Color="#CE941B" />
+    <SolidColorBrush x:Key="danger" Color="#CB2D2B" />
 
     <!--  Inverted  -->
     <SolidColorBrush x:Key="inverted-lighten-3" Color="#f2f9ff" />
@@ -169,21 +186,42 @@ Use This Template
 </ResourceDictionary>
 ```
 
+
 #### Add your theme to the ThemeManager
 
 ```csharp
-ThemeManager.AddTheme("MyTheme","path_to_your_theme/MyThemeName.xaml");
+ThemeManager.Instance.AddBaseTheme("MyBase","path_to_your_theme/MyBaseThemeName.xaml");
+ThemeManager.Instance.AddColorTheme("MyColor","path_to_your_theme/MyColorThemeName.xaml");
 ```
 
 #### And Apply
 
 ```csharp
-ThemeManager.SetGlobalTheme("MyTheme");
+ThemeManager.Instance.SetBaseTheme("MyBase");
+ThemeManager.Instance.SetBaseTheme("MyColor");
 ```
+
+## Default Color Themes
+
+#### Base Themes:
+- Light
+- Dark
+
+#### Color Themes:
+- Blue
+- Gray
+- Green
+- Lime
+- Orange
+- Pink
+- Purple
+- Red
+- Teal
+- Yellow
 
 ---
 
-## API Reference
+## API Reference (To be Updated)
 > This contains all the custom control properties present in each control, their values, and their sample use case. this is the compact version of the API documentation and will be moved to its respective documentation page in the future.
 
 ### ModernButton

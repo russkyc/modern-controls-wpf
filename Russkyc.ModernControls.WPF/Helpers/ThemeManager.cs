@@ -28,36 +28,89 @@ using System.Windows.Threading;
 
 namespace org.russkyc.moderncontrols.Helpers;
 
-public static class ThemeManager
+public class ThemeManager
 {
-    private static readonly object _lock = new object();
-    private static readonly IDictionary<string,string> _themes = new Dictionary<string, string>();
+    private static object _lock = new object();
+    private static ThemeManager _instance;
+    private readonly IDictionary<string,string> _baseThemes = new Dictionary<string, string>();
+    private readonly IDictionary<string,string> _colorThemes = new Dictionary<string, string>();
 
-    public static void AddTheme(string key, string source)
+    public static ThemeManager Instance
     {
-        lock (_lock)
+        get
         {
-            _themes.Add(key,source);
+            if (_instance is null)
+            {
+                lock (_lock)
+                {
+                    if (_instance is null)
+                    {
+                        _instance = new ThemeManager();
+                    }
+                }
+            }
+
+            return _instance;
         }
     }
 
-    public static void RemoveTheme(string name, string source)
+    public ThemeManager()
+    {
+        _lock = new object();
+        InitBaseThemes();
+        InitColorThemes();
+    }
+
+    public void AddBaseTheme(string key, string source)
     {
         lock (_lock)
         {
-            _themes.Remove(name);
+            _baseThemes.Add(key,source);
+        }
+    }
+    
+    public void AddColorTheme(string key, string source)
+    {
+        lock (_lock)
+        {
+            _colorThemes.Add(key,source);
         }
     }
 
-    public static IEnumerable<string> GetThemes()
+    public void RemoveBaseTheme(string name, string source)
     {
         lock (_lock)
         {
-            return _themes.Keys
+            _baseThemes.Remove(name);
+        }
+    }
+
+    public void RemoveColorTheme(string name, string source)
+    {
+        lock (_lock)
+        {
+            _colorThemes.Remove(name);
+        }
+    }
+
+    public IEnumerable<string> GetBaseThemes()
+    {
+        lock (_lock)
+        {
+            return _baseThemes.Keys
                 .AsEnumerable();
         }
     }
-    public static void SetGlobalTheme(string name)
+
+    public IEnumerable<string> GetColorThemes()
+    {
+        lock (_lock)
+        {
+            return _colorThemes.Keys
+                .AsEnumerable();
+        }
+    }
+    public void SetBaseTheme(string name)
     {
         lock (_lock)
         {
@@ -65,8 +118,41 @@ public static class ThemeManager
                 () => Application.Current
                     .Resources
                     .MergedDictionaries
-                    .First(dict => dict.Source.LocalPath.Contains("Russkyc.ModernControls.WPF;component/Themes/"))!
-                    .Source = new Uri(_themes[name], UriKind.RelativeOrAbsolute));
+                    .First(dict => dict.Source.LocalPath.Contains("Russkyc.ModernControls.WPF;component/Themes/BaseTheme/"))!
+                    .Source = new Uri(_baseThemes[name], UriKind.RelativeOrAbsolute));
         }
+    }
+    public void SetColorTheme(string name)
+    {
+        lock (_lock)
+        {
+            Dispatcher.CurrentDispatcher.BeginInvoke(
+                () => Application.Current
+                    .Resources
+                    .MergedDictionaries
+                    .First(dict => dict.Source.LocalPath.Contains("Russkyc.ModernControls.WPF;component/Themes/ColorThemes/"))!
+                    .Source = new Uri(_colorThemes[name], UriKind.RelativeOrAbsolute));
+        }
+    }
+
+    private void InitBaseThemes()
+    {
+        // Add Base Themes
+        AddBaseTheme("Dark","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/BaseTheme/DefaultDark.xaml");
+        AddBaseTheme("Light","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/BaseTheme/DefaultLight.xaml");
+    }
+
+    private void InitColorThemes()
+    {
+        AddColorTheme("Blue","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/Blue.xaml");
+        AddColorTheme("Red","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/Red.xaml");
+        AddColorTheme("Yellow","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/Yellow.xaml");
+        AddColorTheme("Purple","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/Purple.xaml");
+        AddColorTheme("Lime","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/Lime.xaml");
+        AddColorTheme("Gray","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/Gray.xaml");
+        AddColorTheme("Teal","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/Teal.xaml");
+        AddColorTheme("Pink","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/Pink.xaml");
+        AddColorTheme("Green","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/Green.xaml");
+        AddColorTheme("Orange","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/Orange.xaml");
     }
 }

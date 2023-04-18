@@ -36,7 +36,6 @@ public partial class RegistrationViewModel : ObservableObject
     [ObservableProperty]
     private string? _email;
     
-
     [ObservableProperty]
     private int? _studentNumber;
     
@@ -53,6 +52,7 @@ public partial class RegistrationViewModel : ObservableObject
     private ObservableCollection<string>? _themes;
 
     private int _selectedIndex;
+    private bool _nightMode;
 
     public int SelectedIndex
     {
@@ -61,7 +61,18 @@ public partial class RegistrationViewModel : ObservableObject
         {
             _selectedIndex = value;
             OnPropertyChanged();
-            ChangeTheme();
+            ChangeColorTheme();
+        }
+    }
+
+    public bool NightMode
+    {
+        get => _nightMode;
+        set
+        {
+            _nightMode = value;
+            OnPropertyChanged();
+            ChangeBaseTheme();
         }
     }
     
@@ -77,15 +88,24 @@ public partial class RegistrationViewModel : ObservableObject
         for (int i = 1; i <= 12; i++) Month.Add(i);
         for (int i = 1900; i <= 2022; i++) Year.Add(i);
         
-        ThemeManager.GetThemes()
+        ThemeManager.Instance
+            .GetColorThemes()
             .ToList()
             .ForEach(Themes.Add);
-        
+
+        NightMode = false;
         SelectedIndex = 0;
     }
 
-    private void ChangeTheme()
+    private void ChangeBaseTheme()
     {
-        ThemeManager.SetGlobalTheme(Themes![SelectedIndex]);
+        ThemeManager.Instance
+            .SetBaseTheme(NightMode ? "Dark" : "Light");
+    }
+
+    private void ChangeColorTheme()
+    {
+        ThemeManager.Instance
+            .SetColorTheme(Themes![SelectedIndex]);
     }
 }
