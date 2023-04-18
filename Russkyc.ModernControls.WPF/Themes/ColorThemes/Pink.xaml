@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--  Primary  -->
+    <SolidColorBrush x:Key="primary-lighten-3" Color="#CF70B8" />
+    <SolidColorBrush x:Key="primary-lighten-2" Color="#CB5AB0" />
+    <SolidColorBrush x:Key="primary-lighten-1" Color="#C843A8" />
+    <SolidColorBrush x:Key="primary-default" Color="#C52CA0" />
+    <SolidColorBrush x:Key="primary-darken-1" Color="#B92595" />
+    <SolidColorBrush x:Key="primary-darken-2" Color="#AD1E8A" />
+    <SolidColorBrush x:Key="primary-darken-3" Color="#A0187F" />
+
+    <!--  Status  -->
+    <SolidColorBrush x:Key="success" Color="#4CAF50" />
+    <SolidColorBrush x:Key="warning" Color="#FFC107" />
+    <SolidColorBrush x:Key="danger" Color="#F44336" />
+
+    <!--  Inverted  -->
+    <SolidColorBrush x:Key="inverted-lighten-3" Color="#FFFDFE" />
+    <SolidColorBrush x:Key="inverted-lighten-2" Color="#FFF8FC" />
+    <SolidColorBrush x:Key="inverted-lighten-1" Color="#FFF5FB" />
+    <SolidColorBrush x:Key="inverted-default" Color="#FFF2FA" />
+    <SolidColorBrush x:Key="inverted-darken-1" Color="#FFF2FA" />
+    <SolidColorBrush x:Key="inverted-darken-2" Color="#FFF0F9" />
+    <SolidColorBrush x:Key="inverted-darken-3" Color="#FFEDF8" />
+
+</ResourceDictionary>
