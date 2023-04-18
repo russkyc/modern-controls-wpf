@@ -7,7 +7,7 @@
         <Setter Property="AllowsTransparency" Value="False" />
         <Setter Property="UseLayoutRounding" Value="True" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="Icon" Value="{DynamicResource DefaultIcon}" />
+        <Setter Property="Icon" Value="/Russkyc.ModernControls.WPF;component/Resources/Icons/russkyc_multi.ico" />
         <Setter Property="IconSize" Value="20" />
         <Setter Property="IconPadding" Value="5" />
         <Setter Property="Padding" Value="8" />
@@ -81,10 +81,10 @@
                                 </Grid.ColumnDefinitions>
                                 <Grid Grid.Column="0"
                                       Margin="{TemplateBinding Padding, Converter={x:Static converters:ThicknessToLeftThicknessConverter.Instance}}">
-                                    <ContentPresenter
+                                    <Image
                                         Margin="{TemplateBinding IconPadding, Converter={x:Static converters:ThicknessToRightThicknessConverter.Instance}}"
                                         VerticalAlignment="Center"
-                                        Content="{TemplateBinding Icon}"
+                                        Source="{TemplateBinding Icon}"
                                         Width="{TemplateBinding IconSize}"
                                         Height="{TemplateBinding IconSize}" />
                                 </Grid>

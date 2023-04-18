@@ -1,20 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <RootNamespace>org.russkyc.moderncontrols</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.5.0</Version>
-    <PackageIcon>Resources\Images\Russkyc.png</PackageIcon>
+    <Version>1.5.1</Version>
     <Title>Modern Controls for WPF</Title>
     <Description>Highly customizable modern controls for WPF</Description>
     <RepositoryUrl>https://github.com/russkyc/modern-controls-wpf</RepositoryUrl>
     <PackageTags>modern controls wpf custom flat theme style</PackageTags>
     <Copyright>Russell Camo 2023</Copyright>
-    <PackageReleaseNotes>removed Bindables.WPF dependency</PackageReleaseNotes>
+    <PackageReleaseNotes>- Add Dotnet Framework Support
+- Fix Window Icon property</PackageReleaseNotes>
     <Authors>Russell Camo</Authors>
+    <TargetFrameworks>net6.0-windows;net46;net7.0-windows;net47;net48</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <PackageIcon>Russkyc.png</PackageIcon>
   </PropertyGroup>
   <PropertyGroup>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -51,23 +53,14 @@
       <XamlRuntime>Wpf</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Icons.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <XamlRuntime>Wpf</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="Resources\Icons\Icon.ico" />
-    <None Update="Resources\Images\Russkyc.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Resources\Icons\russkyc_multi.ico" />
+    <None Include="Resources\Images\Russkyc.png" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Resources\Icons\russkyc_multi.ico" />
   </ItemGroup>
 
