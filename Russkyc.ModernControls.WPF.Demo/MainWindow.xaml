@@ -19,6 +19,7 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0"
                        Margin="0,0,0,0"
@@ -26,7 +27,11 @@
                        FontWeight="Medium"
                        Foreground="{DynamicResource fg-000}"
                        Text="Demo Registration UI" />
-            <russkyc:ModernComboBox Grid.Column="2"
+            <russkyc:ModernToggleButton Grid.Column="2"
+                                        IsChecked="{Binding NightMode}"
+                                        LeftCenterIcon="{materialIcons:PackIcon Kind=MoonWaxingCrescent}"
+                                        Margin="0,0,10,0" />
+            <russkyc:ModernComboBox Grid.Column="3"
                                     Width="110"
                                     CornerRadius="5"
                                     Icon="{materialIcons:PackIcon Kind=Theme}"
