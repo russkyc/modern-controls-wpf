@@ -198,7 +198,7 @@ ThemeManager.Instance.AddColorTheme("MyColor","path_to_your_theme/MyColorThemeNa
 
 ```csharp
 ThemeManager.Instance.SetBaseTheme("MyBase");
-ThemeManager.Instance.SetBaseTheme("MyColor");
+ThemeManager.Instance.SetColorTheme("MyColor");
 ```
 
 ## Default Color Themes
