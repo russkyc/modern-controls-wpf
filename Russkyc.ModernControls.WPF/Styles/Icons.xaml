@@ -1,4 +1,0 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Image x:Key="DefaultIcon" Source="/Russkyc.ModernControls.WPF;component/Resources/Icons/russkyc_multi.ico" />
-</ResourceDictionary>
