@@ -66,6 +66,15 @@ public class ModernWindow : Window
         }
     }
 
+    public static readonly DependencyProperty TitleBarTemplateProperty = DependencyProperty.Register(
+        nameof(TitleBarTemplate), typeof(object), typeof(ModernWindow), new PropertyMetadata(default(object)));
+
+    public object TitleBarTemplate
+    {
+        get => GetValue(TitleBarTemplateProperty);
+        set => SetValue(TitleBarTemplateProperty, value);
+    }
+
     public static readonly DependencyProperty TitleBarHeightProperty = DependencyProperty.Register(
         nameof(TitleBarHeight), typeof(double), typeof(ModernWindow), new FrameworkPropertyMetadata());
     public double TitleBarHeight
