@@ -18,6 +18,8 @@
         <Setter Property="HoverBorderBrush" Value="{DynamicResource bg-500}" />
         <Setter Property="FocusedForeground" Value="{DynamicResource fg-000}" />
         <Setter Property="FocusedBackground" Value="{DynamicResource bg-000}" />
+        <Setter Property="DisabledBackground" Value="{DynamicResource bg-200}" />
+        <Setter Property="DisabledForeground" Value="{DynamicResource bg-600}" />
         <Setter Property="Validation.ErrorTemplate">
             <Setter.Value>
                 <x:Null />

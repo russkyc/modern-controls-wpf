@@ -12,6 +12,8 @@
         <Setter Property="PressedBackground" Value="{DynamicResource bg-300}" />
         <Setter Property="CheckedForeground" Value="{DynamicResource fg-000}" />
         <Setter Property="CheckedBackground" Value="{DynamicResource primary-default}" />
+        <Setter Property="DisabledBackground" Value="{DynamicResource bg-200}" />
+        <Setter Property="DisabledForeground" Value="{DynamicResource bg-600}" />
         <Setter Property="CornerRadius" Value="10" />
         <Setter Property="ToggleCornerRadius" Value="7" />
         <Setter Property="Template">
