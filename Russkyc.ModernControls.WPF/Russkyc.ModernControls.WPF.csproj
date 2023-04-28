@@ -5,18 +5,15 @@
     <UseWPF>true</UseWPF>
     <RootNamespace>org.russkyc.moderncontrols</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.5.2</Version>
+    <Version>1.6.0</Version>
     <Title>Modern Controls for WPF</Title>
     <Description>Highly customizable modern controls for WPF</Description>
     <RepositoryUrl>https://github.com/russkyc/modern-controls-wpf</RepositoryUrl>
     <PackageTags>modern controls wpf custom flat theme style</PackageTags>
     <Copyright>Russell Camo 2023</Copyright>
     <PackageReleaseNotes>What's New:
-- Separate Base Theme (Light/Dark) from Color Theme
-- Added new Color Themes
 
-Breaking Changes:
-- ThemeManager now uses Instance `ThemeManager.Instance` instead of static class and now has separate methods for adding, removing, anf managing base and color themes (see updated readme in repository)</PackageReleaseNotes>
+- Add custom titlebar support for ModernWindow</PackageReleaseNotes>
     <Authors>Russell Camo</Authors>
     <TargetFrameworks>net6.0-windows;net46;net7.0-windows;net47;net48</TargetFrameworks>
     <LangVersion>latest</LangVersion>
