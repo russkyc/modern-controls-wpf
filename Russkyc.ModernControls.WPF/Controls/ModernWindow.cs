@@ -83,22 +83,22 @@ public class ModernWindow : Window
         set => SetValue(TitleBarHeightProperty, value);
     }
 
-    public static readonly DependencyProperty TitlebarBackgroundProperty = DependencyProperty.Register(
-        nameof(TitlebarBackground), typeof(Brush), typeof(ModernWindow), new FrameworkPropertyMetadata());
+    public static readonly DependencyProperty TitleBarBackgroundProperty = DependencyProperty.Register(
+        nameof(TitleBarBackground), typeof(Brush), typeof(ModernWindow), new FrameworkPropertyMetadata());
 
-    public Brush TitlebarBackground
+    public Brush TitleBarBackground
     {
-        get => (Brush)GetValue(TitlebarBackgroundProperty);
-        set => SetValue(TitlebarBackgroundProperty, value);
+        get => (Brush)GetValue(TitleBarBackgroundProperty);
+        set => SetValue(TitleBarBackgroundProperty, value);
     }
     
-    public static readonly DependencyProperty TitlebarForegroundProperty = DependencyProperty.Register(
-        nameof(TitlebarForeground), typeof(Brush), typeof(ModernWindow), new FrameworkPropertyMetadata());
+    public static readonly DependencyProperty TitleBarForegroundProperty = DependencyProperty.Register(
+        nameof(TitleBarForeground), typeof(Brush), typeof(ModernWindow), new FrameworkPropertyMetadata());
 
-    public Brush TitlebarForeground
+    public Brush TitleBarForeground
     {
-        get => (Brush)GetValue(TitlebarForegroundProperty);
-        set => SetValue(TitlebarForegroundProperty, value);
+        get => (Brush)GetValue(TitleBarForegroundProperty);
+        set => SetValue(TitleBarForegroundProperty, value);
     }
     
     public static readonly DependencyProperty IconSizeProperty = DependencyProperty.Register(
