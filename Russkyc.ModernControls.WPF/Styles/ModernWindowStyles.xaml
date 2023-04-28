@@ -64,7 +64,7 @@
                                 </Grid.ColumnDefinitions>
                                 <Border Grid.Column="0"
                                         Grid.ColumnSpan="2"
-                                        Background="{TemplateBinding TitlebarBackground}" />
+                                        Background="{TemplateBinding TitleBarBackground}" />
                                 <Grid Grid.Column="0"
                                       HorizontalAlignment="Stretch"
                                       VerticalAlignment="Stretch">
@@ -88,7 +88,7 @@
                                                Grid.Column="1"
                                                HorizontalAlignment="Stretch"
                                                VerticalAlignment="Center"
-                                               Foreground="{TemplateBinding TitlebarForeground}"
+                                               Foreground="{TemplateBinding TitleBarForeground}"
                                                Text="{TemplateBinding Title}"
                                                Visibility="Collapsed" />
                                     <ContentPresenter x:Name="PART_TitleBarTemplate"
