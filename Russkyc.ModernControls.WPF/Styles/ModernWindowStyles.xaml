@@ -5,6 +5,7 @@
     <Style TargetType="{x:Type russkyc:ModernWindow}">
         <Setter Property="TitleBarTemplate" Value="{x:Null}" />
         <Setter Property="TitleBarHeight" Value="34" />
+        <Setter Property="HideDefaultWindowTitle" Value="False" />
         <Setter Property="AllowsTransparency" Value="False" />
         <Setter Property="UseLayoutRounding" Value="True" />
         <Setter Property="BorderThickness" Value="1" />
@@ -70,13 +71,14 @@
                                       VerticalAlignment="Stretch">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition x:Name="PART_TitleBarTemplateSpacer" Width="*" />
+                                        <ColumnDefinition Width="Auto" />
                                     </Grid.ColumnDefinitions>
                                     <Grid x:Name="PART_WindowIcon"
                                           Grid.Column="0"
                                           Margin="{TemplateBinding Padding,
-                                                                   Converter={x:Static converters:ThicknessToLeftThicknessConverter.Instance}}"
-                                          Visibility="Collapsed">
+                                                                   Converter={x:Static converters:ThicknessToLeftThicknessConverter.Instance}}">
                                         <Image Width="{TemplateBinding IconSize}"
                                                Height="{TemplateBinding IconSize}"
                                                Margin="{TemplateBinding IconPadding,
@@ -89,11 +91,9 @@
                                                HorizontalAlignment="Stretch"
                                                VerticalAlignment="Center"
                                                Foreground="{TemplateBinding TitleBarForeground}"
-                                               Text="{TemplateBinding Title}"
-                                               Visibility="Collapsed" />
+                                               Text="{TemplateBinding Title}" />
                                     <ContentPresenter x:Name="PART_TitleBarTemplate"
-                                                      Grid.Column="0"
-                                                      Grid.ColumnSpan="2"
+                                                      Grid.Column="3"
                                                       HorizontalAlignment="Stretch"
                                                       Content="{TemplateBinding TitleBarTemplate}"
                                                       WindowChrome.IsHitTestVisibleInChrome="True">
@@ -295,9 +295,12 @@
                             <Setter TargetName="MaximizeButton" Property="Visibility" Value="Hidden" />
                         </Trigger>
                         <Trigger Property="TitleBarTemplate" Value="{x:Null}">
-                            <Setter TargetName="PART_WindowIcon" Property="Visibility" Value="Visible" />
-                            <Setter TargetName="PART_WindowTitle" Property="Visibility" Value="Visible" />
                             <Setter TargetName="PART_TitleBarTemplate" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="HideDefaultWindowTitle" Value="True">
+                            <Setter TargetName="PART_TitleBarTemplateSpacer" Property="Width" Value="Auto" />
+                            <Setter TargetName="PART_WindowIcon" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="PART_WindowTitle" Property="Visibility" Value="Collapsed" />
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>

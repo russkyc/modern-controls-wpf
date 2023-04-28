@@ -8,6 +8,7 @@
                       xmlns:russkyc="clr-namespace:org.russkyc.moderncontrols;assembly=Russkyc.ModernControls.WPF"
                       Title="Modern Controls WPF Demo"
                       Background="{DynamicResource bg-000}"
+                      HideDefaultWindowTitle="True"
                       TitleBarBackground="{DynamicResource bg-000}"
                       TitleBarHeight="40"
                       WindowStartupLocation="CenterScreen"

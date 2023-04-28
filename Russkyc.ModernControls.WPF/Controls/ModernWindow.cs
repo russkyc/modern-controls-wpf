@@ -66,6 +66,15 @@ public class ModernWindow : Window
         }
     }
 
+    public static readonly DependencyProperty HideDefaultWindowTitleProperty = DependencyProperty.Register(
+        nameof(HideDefaultWindowTitle), typeof(bool), typeof(ModernWindow), new FrameworkPropertyMetadata());
+
+    public bool HideDefaultWindowTitle
+    {
+        get { return (bool)GetValue(HideDefaultWindowTitleProperty); }
+        set { SetValue(HideDefaultWindowTitleProperty, value); }
+    }
+
     public static readonly DependencyProperty TitleBarTemplateProperty = DependencyProperty.Register(
         nameof(TitleBarTemplate), typeof(object), typeof(ModernWindow), new PropertyMetadata(default(object)));
 
