@@ -13,6 +13,8 @@
         <Setter Property="HoverBackground" Value="{DynamicResource primary-lighten-1}" />
         <Setter Property="PressedForeground" Value="{DynamicResource inverted-lighten-3}" />
         <Setter Property="PressedBackground" Value="{DynamicResource primary-darken-1}" />
+        <Setter Property="DisabledBackground" Value="{DynamicResource bg-200}" />
+        <Setter Property="DisabledForeground" Value="{DynamicResource bg-600}" />
         <Setter Property="CornerRadius" Value="3" />
         <Setter Property="Template">
             <Setter.Value>

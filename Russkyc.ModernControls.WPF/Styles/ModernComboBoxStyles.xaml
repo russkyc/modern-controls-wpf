@@ -11,6 +11,8 @@
         <Setter Property="IconSize" Value="15" />
         <Setter Property="ItemCornerRadius" Value="3" />
         <Setter Property="DefaultBackground" Value="{DynamicResource bg-100}" />
+        <Setter Property="DisabledBackground" Value="{DynamicResource bg-200}" />
+        <Setter Property="DisabledForeground" Value="{DynamicResource bg-600}" />
         <Setter Property="HoverBackground" Value="{DynamicResource bg-100}" />
         <Setter Property="DropdownBackground" Value="{DynamicResource bg-100}" />
         <Setter Property="PressedBackground" Value="{DynamicResource bg-200}" />
@@ -46,8 +48,7 @@
                                                     IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
                                                     PressedBackground="{Binding PressedBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}"
                                                     PressedForeground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}" />
-                        <Grid Grid.Column="0"
-                              Margin="{TemplateBinding Padding, Converter={x:Static converters:ThicknessToLeftThicknessConverter.Instance}}">
+                        <Grid Grid.Column="0" Margin="{TemplateBinding Padding, Converter={x:Static converters:ThicknessToLeftThicknessConverter.Instance}}">
                             <ScrollViewer x:Name="PART_Icon"
                                           Width="{TemplateBinding IconSize}"
                                           Height="{TemplateBinding IconSize}"
@@ -124,24 +125,19 @@
                                         BorderBrush="{TemplateBinding BorderBrush}"
                                         BorderThickness="{TemplateBinding BorderThickness}" />
                                 <ScrollViewer Margin="0">
-                                    <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained"
-                                                    SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                                    <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
                                 </ScrollViewer>
                             </Grid>
                         </Popup>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="True">
-                            <Setter Property="Foreground"
-                                    Value="{Binding ItemForeground, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="Background"
-                                    Value="{Binding DefaultBackground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Foreground" Value="{Binding ItemForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="{Binding DefaultBackground, RelativeSource={RelativeSource Self}}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Foreground"
-                                    Value="{Binding DisabledForeground, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="Background"
-                                    Value="{Binding DisabledBackground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Foreground" Value="{Binding DisabledForeground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="{Binding DisabledBackground, RelativeSource={RelativeSource Self}}" />
                         </Trigger>
                         <Trigger SourceName="Popup" Property="Popup.AllowsTransparency" Value="true">
                             <Setter TargetName="DropDownBorder" Property="CornerRadius" Value="4" />
@@ -161,8 +157,7 @@
                             <Setter Property="KeyboardNavigation.IsTabStop" Value="false" />
                             <Setter Property="BorderThickness" Value="0" />
                             <Setter TargetName="ContentSite" Property="Visibility" Value="Hidden" />
-                            <Setter TargetName="PART_EditableTextBox" Property="LeftIcon"
-                                    Value="{Binding Icon, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=russkyc:ModernComboBox}}" />
+                            <Setter TargetName="PART_EditableTextBox" Property="LeftIcon" Value="{Binding Icon, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=russkyc:ModernComboBox}}" />
                             <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible" />
                         </Trigger>
                         <Trigger Property="ComboBox.IsDropDownOpen" Value="True">
@@ -202,16 +197,12 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsHighlighted" Value="true">
-                            <Setter TargetName="Border" Property="Background"
-                                    Value="{Binding HoverItemBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}" />
-                            <Setter TargetName="PART_ContentHost" Property="TextBlock.Foreground"
-                                    Value="{Binding HoverItemForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}" />
+                            <Setter TargetName="Border" Property="Background" Value="{Binding HoverItemBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}" />
+                            <Setter TargetName="PART_ContentHost" Property="TextBlock.Foreground" Value="{Binding HoverItemForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}" />
                         </Trigger>
                         <Trigger Property="Selector.IsSelected" Value="true">
-                            <Setter TargetName="Border" Property="Background"
-                                    Value="{Binding SelectedItemBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}" />
-                            <Setter TargetName="PART_ContentHost" Property="TextBlock.Foreground"
-                                    Value="{Binding SelectedItemForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}" />
+                            <Setter TargetName="Border" Property="Background" Value="{Binding SelectedItemBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}" />
+                            <Setter TargetName="PART_ContentHost" Property="TextBlock.Foreground" Value="{Binding SelectedItemForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
