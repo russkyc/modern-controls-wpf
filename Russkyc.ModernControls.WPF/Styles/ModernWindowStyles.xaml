@@ -14,8 +14,8 @@
         <Setter Property="Padding" Value="8" />
         <Setter Property="BorderBrush" Value="{DynamicResource bg-100}" />
         <Setter Property="Foreground" Value="{DynamicResource fg-000}" />
-        <Setter Property="TitlebarForeground" Value="{DynamicResource fg-000}" />
-        <Setter Property="TitlebarBackground" Value="{DynamicResource bg-100}" />
+        <Setter Property="TitleBarForeground" Value="{DynamicResource fg-000}" />
+        <Setter Property="TitleBarBackground" Value="{DynamicResource bg-100}" />
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
                 <WindowChrome CaptionHeight="{Binding .TitleBarHeight, RelativeSource={RelativeSource AncestorType={x:Type russkyc:ModernWindow}}}"
