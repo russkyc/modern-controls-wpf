@@ -75,6 +75,15 @@ public class ModernWindow : Window
         set { SetValue(HideDefaultWindowTitleProperty, value); }
     }
 
+    public static readonly DependencyProperty ExtendClientAreaToChromeProperty = DependencyProperty.Register(
+        nameof(ExtendClientAreaToChrome), typeof(bool), typeof(ModernWindow), new FrameworkPropertyMetadata());
+
+    public bool ExtendClientAreaToChrome
+    {
+        get { return (bool)GetValue(ExtendClientAreaToChromeProperty); }
+        set { SetValue(ExtendClientAreaToChromeProperty, value); }
+    }
+
     public static readonly DependencyProperty TitleBarTemplateProperty = DependencyProperty.Register(
         nameof(TitleBarTemplate), typeof(object), typeof(ModernWindow), new PropertyMetadata(default(object)));
 
@@ -91,7 +100,66 @@ public class ModernWindow : Window
         get => (double)GetValue(TitleBarHeightProperty);
         set => SetValue(TitleBarHeightProperty, value);
     }
+    
+    public static readonly DependencyProperty TitleBarButtonHoverBackgroundProperty = DependencyProperty.Register(
+        nameof(TitleBarButtonHoverBackground), typeof(Brush), typeof(ModernWindow), new PropertyMetadata());
 
+    public Brush TitleBarButtonHoverBackground
+    {
+        get { return (Brush)GetValue(TitleBarButtonHoverBackgroundProperty); }
+        set { SetValue(TitleBarButtonHoverBackgroundProperty, value); }
+    }
+    public static readonly DependencyProperty TitleBarButtonPressedBackgroundProperty = DependencyProperty.Register(
+        nameof(TitleBarButtonPressedBackground), typeof(Brush), typeof(ModernWindow), new PropertyMetadata());
+
+    public Brush TitleBarButtonPressedBackground
+    {
+        get { return (Brush)GetValue(TitleBarButtonPressedBackgroundProperty); }
+        set { SetValue(TitleBarButtonPressedBackgroundProperty, value); }
+    }
+    public static readonly DependencyProperty TitleBarButtonDisabledBackgroundProperty = DependencyProperty.Register(
+        nameof(TitleBarButtonDisabledBackground), typeof(Brush), typeof(ModernWindow), new PropertyMetadata());
+
+    public Brush TitleBarButtonDisabledBackground
+    {
+        get { return (Brush)GetValue(TitleBarButtonDisabledBackgroundProperty); }
+        set { SetValue(TitleBarButtonDisabledBackgroundProperty, value); }
+    }
+    
+    public static readonly DependencyProperty TitleBarButtonDefaultForegroundProperty = DependencyProperty.Register(
+        nameof(TitleBarButtonDefaultForeground), typeof(Brush), typeof(ModernWindow), new PropertyMetadata());
+
+    public Brush TitleBarButtonDefaultForeground
+    {
+        get { return (Brush)GetValue(TitleBarButtonDefaultForegroundProperty); }
+        set { SetValue(TitleBarButtonDefaultForegroundProperty, value); }
+    }
+    
+    public static readonly DependencyProperty TitleBarButtonHoverForegroundProperty = DependencyProperty.Register(
+        nameof(TitleBarButtonHoverForeground), typeof(Brush), typeof(ModernWindow), new PropertyMetadata());
+
+    public Brush TitleBarButtonHoverForeground
+    {
+        get { return (Brush)GetValue(TitleBarButtonHoverForegroundProperty); }
+        set { SetValue(TitleBarButtonHoverForegroundProperty, value); }
+    }
+    public static readonly DependencyProperty TitleBarButtonPressedForegroundProperty = DependencyProperty.Register(
+        nameof(TitleBarButtonPressedForeground), typeof(Brush), typeof(ModernWindow), new PropertyMetadata());
+
+    public Brush TitleBarButtonPressedForeground
+    {
+        get { return (Brush)GetValue(TitleBarButtonPressedForegroundProperty); }
+        set { SetValue(TitleBarButtonPressedForegroundProperty, value); }
+    }
+    public static readonly DependencyProperty TitleBarButtonDisabledForegroundProperty = DependencyProperty.Register(
+        nameof(TitleBarButtonDisabledForeground), typeof(Brush), typeof(ModernWindow), new PropertyMetadata());
+
+    public Brush TitleBarButtonDisabledForeground
+    {
+        get { return (Brush)GetValue(TitleBarButtonDisabledForegroundProperty); }
+        set { SetValue(TitleBarButtonDisabledForegroundProperty, value); }
+    }
+    
     public static readonly DependencyProperty TitleBarBackgroundProperty = DependencyProperty.Register(
         nameof(TitleBarBackground), typeof(Brush), typeof(ModernWindow), new FrameworkPropertyMetadata());
 
