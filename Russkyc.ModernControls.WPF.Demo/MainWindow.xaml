@@ -8,6 +8,7 @@
                       xmlns:russkyc="clr-namespace:org.russkyc.moderncontrols;assembly=Russkyc.ModernControls.WPF"
                       Title="Modern Controls WPF Demo"
                       Background="{DynamicResource bg-000}"
+                      ResizeMode="CanMinimize"
                       TitleBarBackground="{DynamicResource bg-000}"
                       TitleBarHeight="40"
                       WindowStartupLocation="CenterScreen"
@@ -20,17 +21,11 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="0"
-                   Margin="5,0,0,0"
-                   VerticalAlignment="Center"
-                   Content="Custom TitleBar"
-                   Foreground="{DynamicResource fg-000}" />
-            <russkyc:ModernButton Grid.Column="1"
+            <russkyc:ModernButton Grid.Column="0"
                                   Width="160"
                                   Margin="5"
                                   Padding="5,3"
@@ -38,19 +33,19 @@
                                   FontWeight="Medium"
                                   IconPadding="5"
                                   LeftCenterIcon="{materialIcons:PackIcon Play}" />
-            <russkyc:ModernTextBox Grid.Column="2"
+            <russkyc:ModernTextBox Grid.Column="1"
                                    Width="400"
                                    Margin="5"
                                    Padding="6"
                                    VerticalAlignment="Center"
                                    IconPadding="5"
                                    Placeholder="Enter Text Here" />
-            <russkyc:ModernToggleButton Grid.Column="4"
+            <russkyc:ModernToggleButton Grid.Column="3"
                                         Margin="5,5,0,5"
                                         Padding="5,3"
                                         IsChecked="{Binding NightMode}"
                                         LeftCenterIcon="{materialIcons:PackIcon Kind=MoonWaxingCrescent}" />
-            <russkyc:ModernComboBox Grid.Column="5"
+            <russkyc:ModernComboBox Grid.Column="4"
                                     Width="90"
                                     Margin="5"
                                     Padding="5,5"
