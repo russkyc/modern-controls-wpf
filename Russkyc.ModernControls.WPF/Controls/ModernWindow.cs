@@ -66,6 +66,15 @@ public class ModernWindow : Window
         }
     }
 
+    public static readonly DependencyProperty NoDecorationsProperty = DependencyProperty.Register(
+        nameof(NoDecorations), typeof(bool), typeof(ModernWindow), new FrameworkPropertyMetadata());
+
+    public bool NoDecorations
+    {
+        get { return (bool)GetValue(NoDecorationsProperty); }
+        set { SetValue(NoDecorationsProperty, value); }
+    }
+
     public static readonly DependencyProperty HideDefaultWindowTitleProperty = DependencyProperty.Register(
         nameof(HideDefaultWindowTitle), typeof(bool), typeof(ModernWindow), new FrameworkPropertyMetadata());
 
