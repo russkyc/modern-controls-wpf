@@ -26,6 +26,7 @@
                     <Border x:Name="PART_ButtonBase"
                             Padding="{TemplateBinding Padding}"
                             Background="{TemplateBinding Background}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
                             CornerRadius="{TemplateBinding CornerRadius}">
                         <Grid VerticalAlignment="{TemplateBinding VerticalContentAlignment}" IsHitTestVisible="False">
                             <Grid.ColumnDefinitions>
@@ -64,6 +65,7 @@
                                               IsHitTestVisible="False"
                                               VerticalScrollBarVisibility="Disabled" />
                                 <ScrollViewer x:Name="PART_ContentHost"
+                                              Margin="{TemplateBinding Padding}"
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                               Content="{TemplateBinding Content}"
                                               Foreground="{TemplateBinding Foreground}"
