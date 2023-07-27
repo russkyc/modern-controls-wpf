@@ -7,7 +7,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <!--  ModernControls WPF  -->
                 <ResourceDictionary
-                    Source="pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/BaseTheme/DefaultDark.xaml" />
+                    Source="pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/BaseThemes/Dark.xaml" />
                 <ResourceDictionary
                     Source="pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/Blue.xaml" />
                 <ResourceDictionary

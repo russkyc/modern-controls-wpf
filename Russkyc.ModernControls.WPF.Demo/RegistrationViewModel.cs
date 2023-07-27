@@ -23,6 +23,7 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using org.russkyc.moderncontrols.Helpers;
 
 namespace Russkyc.ModernControls.WPF.Demo;
@@ -107,5 +108,11 @@ public partial class RegistrationViewModel : ObservableObject
     {
         ThemeManager.Instance
             .SetColorTheme(Themes![SelectedIndex]);
+    }
+
+    [RelayCommand]
+    private void Login()
+    {
+        
     }
 }

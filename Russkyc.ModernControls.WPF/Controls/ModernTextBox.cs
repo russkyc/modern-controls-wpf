@@ -53,6 +53,15 @@ public class ModernTextBox : TextBox
         get => (string?)GetValue(HelperTextProperty);
         set => SetValue(HelperTextProperty, value);
     }
+
+    public static readonly DependencyProperty IsPasswordBoxProperty = DependencyProperty.Register(
+        nameof(IsPasswordBox), typeof(bool), typeof(ModernTextBox), new PropertyMetadata());
+
+    public bool IsPasswordBox
+    {
+        get { return (bool)GetValue(IsPasswordBoxProperty); }
+        set { SetValue(IsPasswordBoxProperty, value); }
+    }
     
     public static readonly DependencyProperty PrefixProperty = DependencyProperty.Register(
         nameof(Prefix),

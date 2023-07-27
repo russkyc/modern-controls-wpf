@@ -24,7 +24,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
-using System.Windows.Threading;
 
 namespace org.russkyc.moderncontrols.Helpers;
 
@@ -114,32 +113,34 @@ public class ThemeManager
     {
         lock (_lock)
         {
-            Dispatcher.CurrentDispatcher.BeginInvoke(
-                () => Application.Current
-                    .Resources
-                    .MergedDictionaries
-                    .First(dict => dict.Source.LocalPath.Contains("Russkyc.ModernControls.WPF;component/Themes/BaseTheme/"))!
-                    .Source = new Uri(_baseThemes[name], UriKind.RelativeOrAbsolute));
+            var baseThemeDict = Application.Current.Resources.MergedDictionaries
+                .FirstOrDefault(dict => dict.Source?.LocalPath?.Contains("Themes/BaseThemes/") == true);
+
+            if (baseThemeDict != null)
+            {
+                baseThemeDict.Source = new Uri(_baseThemes[name], UriKind.Absolute);
+            }
         }
     }
     public void SetColorTheme(string name)
     {
         lock (_lock)
         {
-            Dispatcher.CurrentDispatcher.BeginInvoke(
-                () => Application.Current
-                    .Resources
-                    .MergedDictionaries
-                    .First(dict => dict.Source.LocalPath.Contains("Russkyc.ModernControls.WPF;component/Themes/ColorThemes/"))!
-                    .Source = new Uri(_colorThemes[name], UriKind.RelativeOrAbsolute));
+            var baseThemeDict = Application.Current.Resources.MergedDictionaries
+                .FirstOrDefault(dict => dict.Source?.LocalPath?.Contains("Themes/ColorThemes/") == true);
+
+            if (baseThemeDict != null)
+            {
+                baseThemeDict.Source = new Uri(_colorThemes[name], UriKind.Absolute);
+            }
         }
     }
 
     private void InitBaseThemes()
     {
         // Add Base Themes
-        AddBaseTheme("Dark","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/BaseTheme/DefaultDark.xaml");
-        AddBaseTheme("Light","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/BaseTheme/DefaultLight.xaml");
+        AddBaseTheme("Dark","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/BaseThemes/Dark.xaml");
+        AddBaseTheme("Light","pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/BaseThemes/Light.xaml");
     }
 
     private void InitColorThemes()

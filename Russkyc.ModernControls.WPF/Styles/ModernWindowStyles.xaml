@@ -3,6 +3,7 @@
                     xmlns:converters="clr-namespace:org.russkyc.moderncontrols.Converters"
                     xmlns:russkyc="clr-namespace:org.russkyc.moderncontrols">
     <Style TargetType="{x:Type russkyc:ModernWindow}">
+        <Setter Property="NoDecorations" Value="False" />
         <Setter Property="ExtendClientAreaToChrome" Value="False" />
         <Setter Property="TitleBarTemplate" Value="{x:Null}" />
         <Setter Property="TitleBarHeight" Value="34" />
@@ -322,6 +323,9 @@
                             <Setter TargetName="MaximizeButton" Property="Visibility" Value="Collapsed" />
                             <Setter TargetName="MinimizeButton" Property="Visibility" Value="Collapsed" />
                             <Setter TargetName="RestoreButton" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="NoDecorations" Value="True">
+                            <Setter TargetName="PART_TitleBarControls" Property="Visibility" Value="Collapsed" />
                         </Trigger>
                         <Trigger Property="TitleBarTemplate" Value="{x:Null}">
                             <Setter TargetName="PART_TitleBarTemplate" Property="Visibility" Value="Collapsed" />

@@ -1,7 +1,5 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
-        <!--<ResourceDictionary Source="/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/Default.xaml" />-->
         <ResourceDictionary Source="/Russkyc.ModernControls.WPF;component/Styles/ModernWindowStyles.xaml" />
         <ResourceDictionary Source="/Russkyc.ModernControls.WPF;component/Styles/ScrollViewerStyles.xaml" />
         <ResourceDictionary Source="/Russkyc.ModernControls.WPF;component/Styles/ScrollbarStyles.xaml" />

@@ -124,8 +124,14 @@
                                         Background="{Binding DropdownBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}"
                                         BorderBrush="{TemplateBinding BorderBrush}"
                                         BorderThickness="{TemplateBinding BorderThickness}" />
-                                <ScrollViewer Margin="0">
-                                    <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                                <ScrollViewer Margin="0"
+                                              Background="Transparent"
+                                              HorizontalScrollBarVisibility="Hidden">
+                                    <ItemsPresenter MaxWidth="{Binding ActualWidth, RelativeSource={RelativeSource FindAncestor, AncestorType=ScrollViewer}}"
+                                                    HorizontalAlignment="Stretch"
+                                                    KeyboardNavigation.DirectionalNavigation="Contained"
+                                                    ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                                    SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
                                 </ScrollViewer>
                             </Grid>
                         </Popup>

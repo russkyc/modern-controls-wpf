@@ -9,16 +9,16 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Russkyc.ModernControls.WPF\Russkyc.ModernControls.WPF.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
+      <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
       <PackageReference Include="Material.Icons.WPF" Version="1.2.0" />
     </ItemGroup>
 
     <ItemGroup>
       <Resource Include="Resources\russkyc_multi.ico" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Russkyc.ModernControls.WPF\Russkyc.ModernControls.WPF.csproj" />
     </ItemGroup>
 
 </Project>
