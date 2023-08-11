@@ -11,7 +11,7 @@
         <RepositoryUrl>https://github.com/russkyc/modern-controls-wpf</RepositoryUrl>
         <PackageTags>modern controls wpf custom flat theme style</PackageTags>
         <Copyright>Russell Camo 2023</Copyright>
-        <PackageReleaseNotes></PackageReleaseNotes>
+        <EnableWindowsTargeting>true</EnableWindowsTargeting>
         <Authors>Russell Camo</Authors>
         <TargetFrameworks>net6.0-windows;net46;net7.0-windows;net47;net48</TargetFrameworks>
         <LangVersion>latest</LangVersion>
