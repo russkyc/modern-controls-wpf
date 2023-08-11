@@ -5,7 +5,7 @@
         <UseWPF>true</UseWPF>
         <RootNamespace>org.russkyc.moderncontrols</RootNamespace>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Version>2.0.2-pre</Version>
+        <Version>2.0.2</Version>
         <Title>Modern Controls for WPF</Title>
         <Description>Highly customizable modern controls for WPF</Description>
         <RepositoryUrl>https://github.com/russkyc/modern-controls-wpf</RepositoryUrl>
@@ -16,9 +16,13 @@
         <TargetFrameworks>net6.0-windows;net46;net7.0-windows;net47;net48</TargetFrameworks>
         <LangVersion>latest</LangVersion>
         <PackageIcon>Russkyc.png</PackageIcon>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
     <PropertyGroup>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <WarningLevel>3</WarningLevel>
     </PropertyGroup>
 
     <ItemGroup>
@@ -56,6 +60,7 @@
 
     <ItemGroup>
         <None Remove="Resources\Icons\russkyc_multi.ico"/>
+        <None Include="README.md" Pack="true" PackagePath=""/>
         <None Include="Resources\Images\Russkyc.png" Pack="true" PackagePath=""/>
     </ItemGroup>
 
