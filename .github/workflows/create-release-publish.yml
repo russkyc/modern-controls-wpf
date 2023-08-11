@@ -3,7 +3,8 @@ name: Create Release and Publish to Nuget
 on:
   push:
     tags:
-      - "*.*.*"
+      - "release:"
+      - "chore(release):"
 
 jobs:
   build:
