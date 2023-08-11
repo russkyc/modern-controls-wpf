@@ -20,27 +20,15 @@ jobs:
         uses: actions/setup-dotnet@v1
       - name: Build
         run: dotnet build -c Release
-      - name: Pack nugets
+      - name: Pack Nuget
         run: dotnet pack -c Release --no-build --output .
       - name: Push to NuGet
         run: dotnet nuget push "*.nupkg" --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
-
-  release:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Set release name
-        id: release_name
-        run: |
-          echo "RELEASE_NAME=ModernControls.WPF ${GITHUB_REF#refs/tags/} Release" >> $GITHUB_ENV
-      - name: Create Release
-        id: create_release
-        uses: ncipollo/release-action@v1
+      - name: Release
+        uses: anton-yurchenko/git-release@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+          RELEASE_NAME_PREFIX: "Release "
         with:
-          artifacts: "*.nupkg"
-          bodyFile: "CHANGELOG.md"
-          token: ${{ secrets.TOKEN_GITHUB }}
-          draft: false
-          name: ${{ env.RELEASE_NAME }}
+          args: |
+            *.nupkg
