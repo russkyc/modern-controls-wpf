@@ -58,22 +58,23 @@
                                               Visibility="Hidden" />
                                 <ScrollViewer x:Name="PART_LeftIcon"
                                               Grid.Column="0"
+                                              Visibility="Collapsed"
                                               Width="{TemplateBinding IconSize}"
                                               Height="{TemplateBinding IconSize}"
                                               Margin="{TemplateBinding IconPadding,
-                                                                       Converter={x:Static converters:ThicknessToRightThicknessConverter.Instance}}"
+                                                                   Converter={x:Static converters:DoubleToRightThicknessConverter.Instance}}"
                                               VerticalAlignment="Top"
                                               HorizontalContentAlignment="Stretch"
                                               VerticalContentAlignment="Stretch"
-                                              Content="{TemplateBinding LeftIcon}"
-                                              Foreground="{TemplateBinding IconForeground}"
+                                              Content="{TemplateBinding Icon}"
+                                              Foreground="{TemplateBinding Foreground}"
                                               HorizontalScrollBarVisibility="Disabled"
                                               IsHitTestVisible="False"
                                               VerticalScrollBarVisibility="Disabled" />
                                 <ScrollViewer x:Name="PART_Prefix"
                                               Grid.Column="1"
                                               Margin="{TemplateBinding IconPadding,
-                                                                       Converter={x:Static converters:ThicknessToRightThicknessConverter.Instance}}"
+                                                                       Converter={x:Static converters:DoubleToRightThicknessConverter.Instance}}"
                                               VerticalAlignment="Top"
                                               Content="{TemplateBinding Prefix}"
                                               Foreground="{TemplateBinding PlaceholderForeground}"
@@ -89,22 +90,23 @@
                                 <TextBlock x:Name="PART_Suffix"
                                            Grid.Column="3"
                                            Margin="{TemplateBinding IconPadding,
-                                                                    Converter={x:Static converters:ThicknessToLeftThicknessConverter.Instance}}"
+                                                                    Converter={x:Static converters:DoubleToLeftThicknessConverter.Instance}}"
                                            VerticalAlignment="Bottom"
                                            Foreground="{TemplateBinding PlaceholderForeground}"
                                            IsHitTestVisible="False"
                                            Text="{TemplateBinding Suffix}" />
                                 <ScrollViewer x:Name="PART_RightIcon"
                                               Grid.Column="4"
+                                              Visibility="Collapsed"
                                               Width="{TemplateBinding IconSize}"
                                               Height="{TemplateBinding IconSize}"
                                               Margin="{TemplateBinding IconPadding,
-                                                                       Converter={x:Static converters:ThicknessToLeftThicknessConverter.Instance}}"
+                                                                   Converter={x:Static converters:DoubleToLeftThicknessConverter.Instance}}"
                                               VerticalAlignment="Bottom"
                                               HorizontalContentAlignment="Stretch"
                                               VerticalContentAlignment="Stretch"
-                                              Content="{TemplateBinding RightIcon}"
-                                              Foreground="{TemplateBinding IconForeground}"
+                                              Content="{TemplateBinding Icon}"
+                                              Foreground="{TemplateBinding Foreground}"
                                               HorizontalScrollBarVisibility="Disabled"
                                               IsHitTestVisible="False"
                                               VerticalScrollBarVisibility="Disabled" />
@@ -112,7 +114,7 @@
                         </Border>
                         <TextBlock x:Name="PART_HelperText"
                                    Margin="{TemplateBinding IconPadding,
-                                                            Converter={x:Static converters:ThicknessToTopLeftThicknessConverter.Instance}}"
+                                                            Converter={x:Static converters:DoubleToTopLeftThicknessConverter.Instance}}"
                                    FontSize="12"
                                    Foreground="{TemplateBinding PlaceholderForeground}"
                                    Text="{TemplateBinding HelperText}" />
@@ -141,14 +143,6 @@
                             <Setter Property="Background" Value="{Binding FocusedBackground, RelativeSource={RelativeSource Self}}" />
                             <Setter Property="BorderBrush" Value="{Binding FocusedBorderBrush, RelativeSource={RelativeSource Self}}" />
                         </Trigger>
-                        <Trigger Property="LeftIcon" Value="{x:Null}">
-                            <Setter TargetName="PART_LeftIcon" Property="Margin" Value="0" />
-                            <Setter TargetName="PART_LeftIcon" Property="Visibility" Value="Collapsed" />
-                        </Trigger>
-                        <Trigger Property="RightIcon" Value="{x:Null}">
-                            <Setter TargetName="PART_RightIcon" Property="Margin" Value="0" />
-                            <Setter TargetName="PART_RightIcon" Property="Visibility" Value="Collapsed" />
-                        </Trigger>
                         <Trigger Property="Prefix" Value="{x:Null}">
                             <Setter TargetName="PART_Prefix" Property="Margin" Value="0" />
                             <Setter TargetName="PART_Prefix" Property="Visibility" Value="Collapsed" />
@@ -163,6 +157,26 @@
                             <Setter TargetName="PART_HelperText" Property="Visibility" Value="Visible" />
                             <Setter TargetName="PART_HelperText" Property="Foreground" Value="{DynamicResource danger}" />
                             <Setter TargetName="PART_HelperText" Property="Text" Value="{Binding RelativeSource={x:Static RelativeSource.TemplatedParent}, Path=(Validation.Errors)[0].ErrorContent}" />
+                        </Trigger>
+                        <Trigger Property="IconPlacement" Value="Start">
+                            <Setter TargetName="PART_LeftIcon" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IconPlacement" Value="Left">
+                            <Setter TargetName="PART_LeftIcon" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IconPlacement" Value="Right">
+                            <Setter TargetName="PART_RightIcon" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IconPlacement" Value="End">
+                            <Setter TargetName="PART_RightIcon" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="Icon" Value="{x:Null}">
+                            <Setter TargetName="PART_LeftIcon" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="PART_RightIcon" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="IconPlacement" Value="Hidden">
+                            <Setter TargetName="PART_LeftIcon" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="PART_RightIcon" Property="Visibility" Value="Collapsed" />
                         </Trigger>
                         <Trigger Property="HelperText" Value="">
                             <Setter TargetName="PART_HelperText" Property="Visibility" Value="Collapsed" />
@@ -263,7 +277,7 @@
                                               IsHitTestVisible="False" />
                                 <TextBlock x:Name="PART_Suffix"
                                            Grid.Column="3"
-                                           Margin="{Binding Path=(local:PasswordBoxHelper.IconPadding), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ThicknessToRightThicknessConverter.Instance}}"
+                                           Margin="{Binding Path=(local:PasswordBoxHelper.IconPadding), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:DoubleToRightThicknessConverter.Instance}}"
                                            VerticalAlignment="Bottom"
                                            Foreground="{Binding Path=(local:PasswordBoxHelper.PlaceholderForeground), RelativeSource={RelativeSource TemplatedParent}}"
                                            IsHitTestVisible="False"
@@ -272,7 +286,7 @@
                                               Grid.Column="4"
                                               Width="{Binding Path=(local:PasswordBoxHelper.IconSize), RelativeSource={RelativeSource TemplatedParent}}"
                                               Height="{Binding Path=(local:PasswordBoxHelper.IconSize), RelativeSource={RelativeSource TemplatedParent}}"
-                                              Margin="{Binding Path=(local:PasswordBoxHelper.IconPadding), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ThicknessToRightThicknessConverter.Instance}}"
+                                              Margin="{Binding Path=(local:PasswordBoxHelper.IconPadding), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:DoubleToRightThicknessConverter.Instance}}"
                                               VerticalAlignment="Bottom"
                                               HorizontalContentAlignment="Stretch"
                                               VerticalContentAlignment="Stretch"

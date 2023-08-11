@@ -6,6 +6,7 @@
         <Setter Property="Padding" Value="10" />
         <Setter Property="IconPadding" Value="5" />
         <Setter Property="IconSize" Value="15" />
+        <Setter Property="IconPlacement" Value="Left" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="DefaultForeground" Value="{DynamicResource inverted-lighten-3}" />
         <Setter Property="DefaultBackground" Value="{DynamicResource primary-default}" />
@@ -31,15 +32,16 @@
                             </Grid.ColumnDefinitions>
                             <ScrollViewer x:Name="PART_LeftIcon"
                                           Grid.Column="0"
+                                          Visibility="Collapsed"
                                           Width="{TemplateBinding IconSize}"
                                           Height="{TemplateBinding IconSize}"
                                           Margin="{TemplateBinding IconPadding,
-                                                                   Converter={x:Static converters:ThicknessToRightThicknessConverter.Instance}}"
+                                                                   Converter={x:Static converters:DoubleToRightThicknessConverter.Instance}}"
                                           VerticalAlignment="Top"
                                           HorizontalContentAlignment="Stretch"
                                           VerticalContentAlignment="Stretch"
-                                          Content="{TemplateBinding LeftIcon}"
-                                          Foreground="{TemplateBinding IconForeground}"
+                                          Content="{TemplateBinding Icon}"
+                                          Foreground="{TemplateBinding Foreground}"
                                           HorizontalScrollBarVisibility="Disabled"
                                           IsHitTestVisible="False"
                                           VerticalScrollBarVisibility="Disabled" />
@@ -47,15 +49,16 @@
                                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                         Orientation="Horizontal">
                                 <ScrollViewer x:Name="PART_LeftCenterIcon"
+                                              Visibility="Collapsed"
                                               Width="{TemplateBinding IconSize}"
                                               Height="{TemplateBinding IconSize}"
                                               Margin="{TemplateBinding IconPadding,
-                                                                       Converter={x:Static converters:ThicknessToRightThicknessConverter.Instance}}"
+                                                                       Converter={x:Static converters:DoubleToRightThicknessConverter.Instance}}"
                                               VerticalAlignment="Top"
                                               HorizontalContentAlignment="Stretch"
                                               VerticalContentAlignment="Stretch"
-                                              Content="{TemplateBinding LeftCenterIcon}"
-                                              Foreground="{TemplateBinding IconForeground}"
+                                              Content="{TemplateBinding Icon}"
+                                              Foreground="{TemplateBinding Foreground}"
                                               HorizontalScrollBarVisibility="Disabled"
                                               IsHitTestVisible="False"
                                               VerticalScrollBarVisibility="Disabled" />
@@ -67,30 +70,32 @@
                                               IsHitTestVisible="False"
                                               VerticalScrollBarVisibility="Disabled" />
                                 <ScrollViewer x:Name="PART_RightCenterIcon"
+                                              Visibility="Collapsed"
                                               Width="{TemplateBinding IconSize}"
                                               Height="{TemplateBinding IconSize}"
                                               Margin="{TemplateBinding IconPadding,
-                                                                       Converter={x:Static converters:ThicknessToLeftThicknessConverter.Instance}}"
+                                                                       Converter={x:Static converters:DoubleToLeftThicknessConverter.Instance}}"
                                               VerticalAlignment="Bottom"
                                               HorizontalContentAlignment="Stretch"
                                               VerticalContentAlignment="Stretch"
-                                              Content="{TemplateBinding RightCenterIcon}"
-                                              Foreground="{TemplateBinding IconForeground}"
+                                              Content="{TemplateBinding Icon}"
+                                              Foreground="{TemplateBinding Foreground}"
                                               HorizontalScrollBarVisibility="Disabled"
                                               IsHitTestVisible="False"
                                               VerticalScrollBarVisibility="Disabled" />
                             </StackPanel>
                             <ScrollViewer x:Name="PART_RightIcon"
                                           Grid.Column="2"
+                                          Visibility="Collapsed"
                                           Width="{TemplateBinding IconSize}"
                                           Height="{TemplateBinding IconSize}"
                                           Margin="{TemplateBinding IconPadding,
-                                                                   Converter={x:Static converters:ThicknessToLeftThicknessConverter.Instance}}"
+                                                                   Converter={x:Static converters:DoubleToLeftThicknessConverter.Instance}}"
                                           VerticalAlignment="Bottom"
                                           HorizontalContentAlignment="Stretch"
                                           VerticalContentAlignment="Stretch"
-                                          Content="{TemplateBinding RightIcon}"
-                                          Foreground="{TemplateBinding IconForeground}"
+                                          Content="{TemplateBinding Icon}"
+                                          Foreground="{TemplateBinding Foreground}"
                                           HorizontalScrollBarVisibility="Disabled"
                                           IsHitTestVisible="False"
                                           VerticalScrollBarVisibility="Disabled" />
@@ -121,20 +126,28 @@
                             <Setter Property="Background" Value="{Binding PressedBackground, RelativeSource={RelativeSource Self}}" />
                             <Setter Property="BorderBrush" Value="{Binding PressedBorderBrush, RelativeSource={RelativeSource Self}}" />
                         </Trigger>
-                        <Trigger Property="LeftIcon" Value="{x:Null}">
-                            <Setter TargetName="PART_LeftIcon" Property="Margin" Value="0" />
+                        <Trigger Property="IconPlacement" Value="Start">
+                            <Setter TargetName="PART_LeftIcon" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IconPlacement" Value="Left">
+                            <Setter TargetName="PART_LeftCenterIcon" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IconPlacement" Value="Right">
+                            <Setter TargetName="PART_RightCenterIcon" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IconPlacement" Value="End">
+                            <Setter TargetName="PART_RightIcon" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="Icon" Value="{x:Null}">
                             <Setter TargetName="PART_LeftIcon" Property="Visibility" Value="Collapsed" />
-                        </Trigger>
-                        <Trigger Property="RightIcon" Value="{x:Null}">
-                            <Setter TargetName="PART_RightIcon" Property="Margin" Value="0" />
                             <Setter TargetName="PART_RightIcon" Property="Visibility" Value="Collapsed" />
-                        </Trigger>
-                        <Trigger Property="LeftCenterIcon" Value="{x:Null}">
-                            <Setter TargetName="PART_LeftCenterIcon" Property="Margin" Value="0" />
                             <Setter TargetName="PART_LeftCenterIcon" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="PART_RightCenterIcon" Property="Visibility" Value="Collapsed" />
                         </Trigger>
-                        <Trigger Property="RightCenterIcon" Value="{x:Null}">
-                            <Setter TargetName="PART_RightCenterIcon" Property="Margin" Value="0" />
+                        <Trigger Property="IconPlacement" Value="Hidden">
+                            <Setter TargetName="PART_LeftIcon" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="PART_RightIcon" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="PART_LeftCenterIcon" Property="Visibility" Value="Collapsed" />
                             <Setter TargetName="PART_RightCenterIcon" Property="Visibility" Value="Collapsed" />
                         </Trigger>
                     </ControlTemplate.Triggers>

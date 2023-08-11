@@ -20,9 +20,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-namespace org.russkyc.moderncontrols;
+using System;
+using System.Globalization;
+using System.Windows;
+using System.Windows.Data;
 
-public class ModernRadio : ModernToggleButton
+namespace org.russkyc.moderncontrols.Converters;
+
+[ValueConversion(typeof(double), typeof(Thickness))]
+public class DoubleToRightThicknessConverter : IValueConverter
 {
-    
+    public static DoubleToRightThicknessConverter Instance = new();
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        return new Thickness(0, 0, (double)value, 0);
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        return ((Thickness)value).Right;
+    }
 }

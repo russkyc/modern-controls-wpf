@@ -94,7 +94,7 @@
                                         <Image Width="{TemplateBinding IconSize}"
                                                Height="{TemplateBinding IconSize}"
                                                Margin="{TemplateBinding IconPadding,
-                                                                        Converter={x:Static converters:ThicknessToRightThicknessConverter.Instance}}"
+                                                                        Converter={x:Static converters:DoubleToRightThicknessConverter.Instance}}"
                                                VerticalAlignment="Center"
                                                Source="{TemplateBinding Icon}" />
                                     </Grid>

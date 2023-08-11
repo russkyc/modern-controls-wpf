@@ -23,10 +23,11 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using Bindables.Wpf;
 
 namespace org.russkyc.moderncontrols;
 
-public class ModernComboBox : ComboBox
+public partial class ModernComboBox : ComboBox
 {
     
     /// <summary>
@@ -242,93 +243,25 @@ public class ModernComboBox : ComboBox
     /// <summary>
     /// Item Background Properties
     /// </summary>
-    public static readonly DependencyProperty ItemBackgroundProperty = DependencyProperty.Register(
-        nameof(ItemBackground),
-        typeof(Brush),
-        typeof(ModernComboBox),
-        new FrameworkPropertyMetadata());
-    public Brush? ItemBackground
-    {
-        get => (Brush?)GetValue(ItemBackgroundProperty);
-        set => SetValue(ItemBackgroundProperty, value);
-    }
-    public static readonly DependencyProperty HoverItemBackgroundProperty = DependencyProperty.Register(
-        nameof(HoverItemBackground),
-        typeof(Brush),
-        typeof(ModernComboBox),
-        new FrameworkPropertyMetadata());
-    public Brush? HoverItemBackground
-    {
-        get => (Brush?)GetValue(HoverItemBackgroundProperty);
-        set => SetValue(HoverItemBackgroundProperty, value);
-    }
-    public static readonly DependencyProperty SelectedItemBackgroundProperty = DependencyProperty.Register(
-        nameof(SelectedItemBackground),
-        typeof(Brush),
-        typeof(ModernComboBox),
-        new FrameworkPropertyMetadata());
-    public Brush? SelectedItemBackground
-    {
-        get => (Brush?)GetValue(SelectedItemBackgroundProperty);
-        set => SetValue(SelectedItemBackgroundProperty, value);
-    }
+    [DependencyProperty(typeof(Brush))] public static readonly DependencyProperty ItemBackgroundProperty;
+    [DependencyProperty(typeof(Brush))] public static readonly DependencyProperty ItemHoverBackgroundProperty;
+    [DependencyProperty(typeof(Brush))] public static readonly DependencyProperty ItemFocusedBackgroundProperty;
+    [DependencyProperty(typeof(Brush))] public static readonly DependencyProperty ItemPressedBackgroundProperty;
+    [DependencyProperty(typeof(Brush))] public static readonly DependencyProperty ItemCheckedBackgroundProperty;
     
     /// <summary>
     /// Item Foreground Properties
     /// </summary>
-    public static readonly DependencyProperty ItemForegroundProperty = DependencyProperty.Register(
-        nameof(ItemForeground),
-        typeof(Brush),
-        typeof(ModernComboBox),
-        new FrameworkPropertyMetadata());
-    public Brush? ItemForeground
-    {
-        get => (Brush?)GetValue(ItemForegroundProperty);
-        set => SetValue(ItemForegroundProperty, value);
-    }
-    public static readonly DependencyProperty HoverItemForegroundProperty = DependencyProperty.Register(
-        nameof(HoverItemForeground),
-        typeof(Brush),
-        typeof(ModernComboBox),
-        new FrameworkPropertyMetadata());
-    public Brush? HoverItemForeground
-    {
-        get => (Brush?)GetValue(HoverItemForegroundProperty);
-        set => SetValue(HoverItemForegroundProperty, value);
-    }
-    public static readonly DependencyProperty SelectedItemForegroundProperty = DependencyProperty.Register(
-        nameof(SelectedItemForeground),
-        typeof(Brush),
-        typeof(ModernComboBox),
-        new FrameworkPropertyMetadata());
-    public Brush? SelectedItemForeground
-    {
-        get => (Brush?)GetValue(SelectedItemForegroundProperty);
-        set => SetValue(SelectedItemForegroundProperty, value);
-    }
+    [DependencyProperty(typeof(Brush))] public static readonly DependencyProperty ItemForegroundProperty;
+    [DependencyProperty(typeof(Brush))] public static readonly DependencyProperty ItemHoverForegroundProperty;
+    [DependencyProperty(typeof(Brush))] public static readonly DependencyProperty ItemFocusedForegroundProperty;
+    [DependencyProperty(typeof(Brush))] public static readonly DependencyProperty ItemPressedForegroundProperty;
+    [DependencyProperty(typeof(Brush))] public static readonly DependencyProperty ItemCheckedForegroundProperty;
     
     /// <summary>
     /// Dropdown Background Properties
     /// </summary>
-    public static readonly DependencyProperty DropdownBackgroundProperty = DependencyProperty.Register(
-        nameof(DropdownBackground),
-        typeof(Brush),
-        typeof(ModernComboBox),
-        new FrameworkPropertyMetadata());
-    public Brush? DropdownBackground
-    {
-        get => (Brush?)GetValue(DropdownBackgroundProperty);
-        set => SetValue(DropdownBackgroundProperty, value);
-    }
     
-    public static readonly DependencyProperty DropdownBorderBrushProperty = DependencyProperty.Register(
-        nameof(DropdownBorderBrush),
-        typeof(Brush),
-        typeof(ModernComboBox),
-        new FrameworkPropertyMetadata());
-    public Brush? DropdownBorderBrush
-    {
-        get => (Brush?)GetValue(DropdownBorderBrushProperty);
-        set => SetValue(DropdownBorderBrushProperty, value);
-    }
+    [DependencyProperty(typeof(Brush))] public static readonly DependencyProperty DropdownBackgroundProperty;
+    [DependencyProperty(typeof(Brush))] public static readonly DependencyProperty DropdownBorderBrushProperty;
 }

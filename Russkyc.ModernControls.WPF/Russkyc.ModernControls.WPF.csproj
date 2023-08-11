@@ -1,66 +1,73 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <Nullable>enable</Nullable>
-    <UseWPF>true</UseWPF>
-    <RootNamespace>org.russkyc.moderncontrols</RootNamespace>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.9.18</Version>
-    <Title>Modern Controls for WPF</Title>
-    <Description>Highly customizable modern controls for WPF</Description>
-    <RepositoryUrl>https://github.com/russkyc/modern-controls-wpf</RepositoryUrl>
-    <PackageTags>modern controls wpf custom flat theme style</PackageTags>
-    <Copyright>Russell Camo 2023</Copyright>
-    <PackageReleaseNotes></PackageReleaseNotes>
-    <Authors>Russell Camo</Authors>
-    <TargetFrameworks>net6.0-windows;net46;net7.0-windows;net47;net48</TargetFrameworks>
-    <LangVersion>latest</LangVersion>
-    <PackageIcon>Russkyc.png</PackageIcon>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-  </PropertyGroup>
+    <PropertyGroup>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+        <RootNamespace>org.russkyc.moderncontrols</RootNamespace>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Version>2.0.0-pre</Version>
+        <Title>Modern Controls for WPF</Title>
+        <Description>Highly customizable modern controls for WPF</Description>
+        <RepositoryUrl>https://github.com/russkyc/modern-controls-wpf</RepositoryUrl>
+        <PackageTags>modern controls wpf custom flat theme style</PackageTags>
+        <Copyright>Russell Camo 2023</Copyright>
+        <PackageReleaseNotes></PackageReleaseNotes>
+        <Authors>Russell Camo</Authors>
+        <TargetFrameworks>net6.0-windows;net46;net7.0-windows;net47;net48</TargetFrameworks>
+        <LangVersion>latest</LangVersion>
+        <PackageIcon>Russkyc.png</PackageIcon>
+    </PropertyGroup>
+    <PropertyGroup>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <Page Update="Styles\ModernButtonStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <XamlRuntime>Wpf</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Styles\ModernTextBoxStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <XamlRuntime>Wpf</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Styles\ModernToggleButtonStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <XamlRuntime>Wpf</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Styles\ModernRadioButtonStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <XamlRuntime>Wpf</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Styles\ModernRadioStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <XamlRuntime>Wpf</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Themes\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <XamlRuntime>Wpf</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
-  </ItemGroup>
+    <ItemGroup>
+        <Page Update="Styles\ModernButtonStyles.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <XamlRuntime>Wpf</XamlRuntime>
+            <SubType>Designer</SubType>
+        </Page>
+        <Page Update="Styles\ModernTextBoxStyles.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <XamlRuntime>Wpf</XamlRuntime>
+            <SubType>Designer</SubType>
+        </Page>
+        <Page Update="Styles\ModernToggleButtonStyles.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <XamlRuntime>Wpf</XamlRuntime>
+            <SubType>Designer</SubType>
+        </Page>
+        <Page Update="Styles\ModernRadioButtonStyles.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <XamlRuntime>Wpf</XamlRuntime>
+            <SubType>Designer</SubType>
+        </Page>
+        <Page Update="Styles\ModernRadioStyles.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <XamlRuntime>Wpf</XamlRuntime>
+            <SubType>Designer</SubType>
+        </Page>
+        <Page Update="Themes\Generic.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <XamlRuntime>Wpf</XamlRuntime>
+            <SubType>Designer</SubType>
+        </Page>
+    </ItemGroup>
 
-  <ItemGroup>
-    <None Remove="Resources\Icons\russkyc_multi.ico" />
-    <None Include="Resources\Images\Russkyc.png" Pack="true" PackagePath="" />
-  </ItemGroup>
+    <ItemGroup>
+        <None Remove="Resources\Icons\russkyc_multi.ico"/>
+        <None Include="Resources\Images\Russkyc.png" Pack="true" PackagePath=""/>
+    </ItemGroup>
 
-  <ItemGroup>
-    <Resource Include="Resources\Icons\russkyc_multi.ico" />
-  </ItemGroup>
+    <ItemGroup>
+        <Resource Include="Resources\Icons\russkyc_multi.ico"/>
+    </ItemGroup>
+
+
+    <ItemGroup>
+        <PackageReference Include="Bindables.Wpf" Version="1.4.0"/>
+    </ItemGroup>
+
+
 
 </Project>

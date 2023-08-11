@@ -20,9 +20,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-namespace org.russkyc.moderncontrols;
+namespace org.russkyc.moderncontrols.Enums;
 
-public class ModernRadio : ModernToggleButton
+public enum IconPlacement
 {
-    
+    Start,
+    Left,
+    Right,
+    End,
+    Hidden
 }
