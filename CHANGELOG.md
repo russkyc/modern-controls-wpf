@@ -3,6 +3,6 @@
 ### Changes
 - Clean up styling
 - Used Bindables.WPF
-### Breaking Changes
 
+### Breaking Changes
 - Removed Left/Right/Etc. Icon Attribute, replaced with single Icon attribute and IconPlacement(Start,End,Left,Right) attribute
