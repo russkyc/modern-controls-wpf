@@ -25,7 +25,7 @@ jobs:
       - name: Push to NuGet
         run: dotnet nuget push "*.nupkg" --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
       - name: Release
-        uses: anton-yurchenko/git-release@master
+        uses: docker://antonyurchenko/git-release:v5
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
           RELEASE_NAME_PREFIX: "Release "
