@@ -1,10 +1,20 @@
-# Russkyc.ModernControls.WPF
-A highly customizable custom control library for wpf
+<h2 align="center">ModernControls.WPF</h2>
 
-| Version                                                                                                                                                                                                                                                       | Package Name                                                                             |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
-| ![Nuget](https://img.shields.io/nuget/v/Russkyc.ModernControls.WPF?color=1f72de) ![](https://img.shields.io/badge/-.NET%20Framework%204.6-blueviolet?color=1f72de&label=NET) ![](https://img.shields.io/badge/-.NET%206.0-blueviolet?color=1f72de&label=NET)  | [Russkyc.ModernControls.WPF](https://www.nuget.org/packages/Russkyc.ModernControls.WPF/) |
+<p align="center">
+    <a href="https://www.nuget.org/packages/Russkyc.ModernControls.WPF">
+        <img src="https://img.shields.io/nuget/v/Russkyc.ModernControls.WPF?color=1f72de" alt="Nuget">
+    </a>
+    <a href="#">
+        <img src="https://img.shields.io/badge/-.NET%206.0-blueviolet?color=1f72de&label=NET" alt="">
+    </a>
+    <a href="#">
+        <img src="https://img.shields.io/badge/-.NET%20Framework%204.6-blueviolet?color=1f72de&label=NET" alt="">
+    </a>
+</p>
 
+<p align="center">
+<a href="https://www.nuget.org/packages/Russkyc.ModernControls.WPF">Russkyc.ModernControls.WPF</a> is an easy to use and highly customizable modern control library for wpf
+</p>
 
 ### What sets this apart from the default WPF controls?
 
