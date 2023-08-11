@@ -4,6 +4,10 @@ on:
   push:
     tags:
       - "*.*.*"
+    branches:
+      - main
+      - master
+      - dev-moderncontrols-v2
 
 jobs:
   build:
