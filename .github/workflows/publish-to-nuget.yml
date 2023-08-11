@@ -1,6 +1,9 @@
 ﻿name: Publish Release to Nuget
 
 on:
+  push:
+    branches:
+      - main
   release:
     types: [published]
 
