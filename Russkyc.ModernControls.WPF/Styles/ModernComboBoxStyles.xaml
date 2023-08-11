@@ -19,10 +19,10 @@
         <Setter Property="ItemForeground" Value="{DynamicResource fg-000}" />
         <Setter Property="PlaceholderForeground" Value="{DynamicResource bg-400}" />
         <Setter Property="SelectedBackground" Value="{DynamicResource bg-200}" />
-        <Setter Property="HoverItemBackground" Value="{DynamicResource bg-100}" />
-        <Setter Property="HoverItemForeground" Value="{DynamicResource fg-000}" />
-        <Setter Property="SelectedItemBackground" Value="{DynamicResource primary-default}" />
-        <Setter Property="SelectedItemForeground" Value="{DynamicResource inverted-lighten-3}" />
+        <Setter Property="ItemHoverBackground" Value="{DynamicResource bg-100}" />
+        <Setter Property="ItemHoverForeground" Value="{DynamicResource fg-000}" />
+        <Setter Property="ItemCheckedBackground" Value="{DynamicResource primary-default}" />
+        <Setter Property="ItemCheckedForeground" Value="{DynamicResource inverted-lighten-3}" />
         <Setter Property="ItemContainerStyle" Value="{DynamicResource CustomComboBoxItemStyle}" />
         <Setter Property="ItemsPanel" Value="{DynamicResource CustomComboBoxItemsPanelTemplate}" />
         <Setter Property="Template">
@@ -163,7 +163,8 @@
                             <Setter Property="KeyboardNavigation.IsTabStop" Value="false" />
                             <Setter Property="BorderThickness" Value="0" />
                             <Setter TargetName="ContentSite" Property="Visibility" Value="Hidden" />
-                            <Setter TargetName="PART_EditableTextBox" Property="LeftIcon" Value="{Binding Icon, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=russkyc:ModernComboBox}}" />
+                            <Setter TargetName="PART_EditableTextBox" Property="IconPlacement" Value="Start" />
+                            <Setter TargetName="PART_EditableTextBox" Property="Icon" Value="{Binding Icon, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=russkyc:ModernComboBox}}" />
                             <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible" />
                         </Trigger>
                         <Trigger Property="ComboBox.IsDropDownOpen" Value="True">
@@ -203,12 +204,12 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsHighlighted" Value="true">
-                            <Setter TargetName="Border" Property="Background" Value="{Binding HoverItemBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}" />
-                            <Setter TargetName="PART_ContentHost" Property="TextBlock.Foreground" Value="{Binding HoverItemForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}" />
+                            <Setter TargetName="Border" Property="Background" Value="{Binding ItemHoverBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}" />
+                            <Setter TargetName="PART_ContentHost" Property="TextBlock.Foreground" Value="{Binding ItemHoverForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}" />
                         </Trigger>
                         <Trigger Property="Selector.IsSelected" Value="true">
-                            <Setter TargetName="Border" Property="Background" Value="{Binding SelectedItemBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}" />
-                            <Setter TargetName="PART_ContentHost" Property="TextBlock.Foreground" Value="{Binding SelectedItemForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}" />
+                            <Setter TargetName="Border" Property="Background" Value="{Binding ItemCheckedBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}" />
+                            <Setter TargetName="PART_ContentHost" Property="TextBlock.Foreground" Value="{Binding ItemCheckedForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

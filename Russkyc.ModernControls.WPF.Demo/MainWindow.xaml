@@ -8,9 +8,8 @@
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                       xmlns:russkyc="clr-namespace:org.russkyc.moderncontrols;assembly=Russkyc.ModernControls.WPF"
                       Title="Modern Controls WPF Demo"
+                      TitleBarHeight="42"
                       Background="{DynamicResource bg-000}"
-                      ExtendClientAreaToChrome="True"
-                      HideDefaultWindowTitle="True"
                       WindowStartupLocation="CenterScreen"
                       mc:Ignorable="d">
     <Window.DataContext>
@@ -32,7 +31,7 @@
                                   Content="TitleBar Button Test"
                                   FontWeight="Medium"
                                   IconPadding="5"
-                                  LeftCenterIcon="{materialIcons:PackIcon Play}" />
+                                  Icon="{materialIcons:PackIcon Play}" />
             <russkyc:ModernTextBox Grid.Column="1"
                                    Width="400"
                                    Margin="5"
@@ -44,7 +43,7 @@
                                         Margin="5,5,0,5"
                                         Padding="5,3"
                                         IsChecked="{Binding NightMode}"
-                                        LeftCenterIcon="{materialIcons:PackIcon Kind=MoonWaxingCrescent}" />
+                                        Icon="{materialIcons:PackIcon Kind=MoonWaxingCrescent}" />
             <russkyc:ModernComboBox Grid.Column="4"
                                     Width="90"
                                     Margin="5"
@@ -78,19 +77,21 @@
                                CornerRadius="5"
                                HelperText="Surname, First Name, Last Name"
                                IsPasswordBox="True"
-                               LeftIcon="{materialIcons:PackIcon Kind=User}"
+                               IconPlacement="Left"
+                               Icon="{materialIcons:PackIcon Kind=User}"
                                Placeholder="Name"
                                Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
         <russkyc:ModernTextBox Margin="0,10,0,0"
                                CornerRadius="5"
                                HelperText="Example: delacruz.2939@legazpi.sti.edu.ph"
-                               LeftIcon="{materialIcons:PackIcon Kind=Email}"
+                               IconPlacement="Left"
+                               Icon="{materialIcons:PackIcon Kind=Email}"
                                Placeholder="Email"
                                Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}" />
         <russkyc:ModernTextBox Margin="0,10,0,0"
                                CornerRadius="5"
                                HelperText="Number [0-9]"
-                               LeftIcon="{materialIcons:PackIcon Kind=Number7Box}"
+                               Icon="{materialIcons:PackIcon Kind=Number7Box}"
                                Placeholder="Student No"
                                Text="{Binding StudentNumber, UpdateSourceTrigger=PropertyChanged, Delay=500}" />
         <Grid Margin="0,10,0,0">
@@ -116,6 +117,9 @@
                                        Margin="0,0,5,0"
                                        VerticalAlignment="Center"
                                        Content="Transferee"
+                                       IconPlacement="End"
+                                       IconPadding="10"
+                                       Icon="{materialIcons:PackIcon Kind=Register}"
                                        CornerRadius="5" />
         </Grid>
         <Grid Margin="0,10,0,0">
@@ -151,6 +155,7 @@
                               Content="Register Student"
                               CornerRadius="5"
                               FontWeight="Medium"
-                              LeftCenterIcon="{materialIcons:PackIcon Kind=Register}" />
+                              IconPadding="10"
+                              Icon="{materialIcons:PackIcon Kind=Register}" />
     </StackPanel>
 </russkyc:ModernWindow>
