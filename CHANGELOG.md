@@ -1,4 +1,11 @@
-﻿## [2.0.4] - 2023/08/11
+﻿## [2.0.5] - In Development
+
+### Changes
+-
+### Breaking Changes
+-
+
+## [2.0.4] - 2023/08/11
 
 ### Changes
 - Clean up styling
