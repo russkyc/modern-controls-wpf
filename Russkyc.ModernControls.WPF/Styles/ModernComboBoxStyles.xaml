@@ -17,8 +17,8 @@
         <Setter Property="DropdownBackground" Value="{DynamicResource bg-100}" />
         <Setter Property="PressedBackground" Value="{DynamicResource bg-200}" />
         <Setter Property="ItemForeground" Value="{DynamicResource fg-000}" />
-        <Setter Property="PlaceholderForeground" Value="{DynamicResource bg-400}" />
-        <Setter Property="SelectedBackground" Value="{DynamicResource bg-200}" />
+        <Setter Property="DefaultPlaceholderForeground" Value="{DynamicResource bg-400}" />
+        <Setter Property="CheckedBackground" Value="{DynamicResource bg-200}" />
         <Setter Property="ItemHoverBackground" Value="{DynamicResource bg-100}" />
         <Setter Property="ItemHoverForeground" Value="{DynamicResource fg-000}" />
         <Setter Property="ItemCheckedBackground" Value="{DynamicResource primary-default}" />
@@ -37,7 +37,7 @@
                         <russkyc:ModernToggleButton x:Name="Part_ToggleButton"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="3"
-                                                    CheckedBackground="{Binding SelectedBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}"
+                                                    CheckedBackground="{Binding CheckedBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}"
                                                     CheckedForeground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}"
                                                     ClickMode="Press"
                                                     CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernComboBox}}"
@@ -53,7 +53,7 @@
                                           Width="{TemplateBinding IconSize}"
                                           Height="{TemplateBinding IconSize}"
                                           Margin="{TemplateBinding IconPadding,
-                                                                   Converter={x:Static converters:ThicknessToRightThicknessConverter.Instance}}"
+                                                                   Converter={x:Static converters:DoubleToRightThicknessConverter.Instance}}"
                                           VerticalAlignment="Center"
                                           HorizontalContentAlignment="Stretch"
                                           VerticalContentAlignment="Stretch"
@@ -157,7 +157,7 @@
                             <Setter Property="DefaultBackground" Value="{DynamicResource bg-000}" />
                             <Setter Property="HoverBackground" Value="{DynamicResource bg-000}" />
                             <Setter Property="PressedBackground" Value="{DynamicResource bg-000}" />
-                            <Setter Property="SelectedBackground" Value="{DynamicResource bg-000}" />
+                            <Setter Property="CheckedBackground" Value="{DynamicResource bg-000}" />
                         </Trigger>
                         <Trigger Property="ComboBox.IsEditable" Value="true">
                             <Setter Property="KeyboardNavigation.IsTabStop" Value="false" />

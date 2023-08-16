@@ -36,7 +36,9 @@ public partial class ModernWindow : Window
     public ModernWindow()
     {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(ModernWindow), new FrameworkPropertyMetadata(typeof(ModernWindow)));
+        
         SetResourceReference(StyleProperty, typeof(ModernWindow));
+        
         CommandBindings.Add(new CommandBinding(CloseCommand, Close));
         CommandBindings.Add(new CommandBinding(MaximizeCommand, Maximize));
         CommandBindings.Add(new CommandBinding(MinimizeCommand, Minimize));
