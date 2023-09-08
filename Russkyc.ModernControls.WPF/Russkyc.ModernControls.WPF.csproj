@@ -17,6 +17,7 @@
         <LangVersion>latest</LangVersion>
         <PackageIcon>Russkyc.png</PackageIcon>
         <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageReleaseNotes>Fixed framework metadata Error in 2.0.4+ that causes application to crash</PackageReleaseNotes>
     </PropertyGroup>
     <PropertyGroup>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
