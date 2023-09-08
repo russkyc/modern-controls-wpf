@@ -41,6 +41,7 @@ public partial class ModernComboBox : ComboBox
     [DependencyProperty(typeof(CornerRadius))] public static readonly DependencyProperty ItemCornerRadiusProperty;
     
     // Input Styling
+    [DependencyProperty(typeof(double))] public static readonly DependencyProperty DropDownWidthProperty;
     [DependencyProperty(typeof(string))] public static readonly DependencyProperty PlaceholderProperty;
     
     // Global Theming
