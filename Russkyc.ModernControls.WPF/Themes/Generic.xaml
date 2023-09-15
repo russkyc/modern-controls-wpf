@@ -5,6 +5,7 @@
         </ResourceDictionary>
         <ResourceDictionary Source="/Russkyc.ModernControls.WPF;component/Styles/ModernWindowStyles.xaml" />
         <ResourceDictionary Source="/Russkyc.ModernControls.WPF;component/Styles/ScrollViewerStyles.xaml" />
+        <ResourceDictionary Source="/Russkyc.ModernControls.WPF;component/Styles/ModernProgressBarStyles.xaml" />
         <ResourceDictionary Source="/Russkyc.ModernControls.WPF;component/Styles/ScrollbarStyles.xaml" />
         <ResourceDictionary Source="/Russkyc.ModernControls.WPF;component/Styles/ModernButtonStyles.xaml" />
         <ResourceDictionary Source="/Russkyc.ModernControls.WPF;component/Styles/ModernToggleButtonStyles.xaml" />
