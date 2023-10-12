@@ -6,6 +6,6 @@
     StartupUri="MainWindow.xaml">
     <Application.Resources>
         <!--  ModernControls WPF  -->
-        <russkyc:ModernControlsWpf BaseTheme="Dark" ColorTheme="Green" />
+        <russkyc:ModernControlsWpf BaseTheme="Dark" ColorTheme="Red" />
     </Application.Resources>
 </Application>

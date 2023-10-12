@@ -146,7 +146,7 @@ public class ThemeManager
 
     public void SetColorTheme(ColorTheme colorTheme)
     {
-        SetBaseTheme(colorTheme.ToString());
+        SetColorTheme(colorTheme.ToString());
     }
 
     private void InitBaseThemes()

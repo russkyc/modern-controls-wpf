@@ -32,8 +32,27 @@ namespace org.russkyc.moderncontrols.Styles;
 [Localizability(LocalizationCategory.Ignore)]
 public class ModernControlsWpf : ResourceDictionary
 {
-    public BaseTheme BaseTheme { get; set; }
-    public ColorTheme ColorTheme { get; set; }
+    private BaseTheme _baseTheme;
+    private ColorTheme _colorTheme;
+
+    public BaseTheme BaseTheme
+    {
+        get => _baseTheme;
+        set
+        {
+            _baseTheme = value;
+            ThemeManager.Instance.SetBaseTheme(value);
+        }
+    }
+    public ColorTheme ColorTheme
+    {
+        get => _colorTheme;
+        set
+        {
+            _colorTheme = value;
+            ThemeManager.Instance.SetColorTheme(value);
+        }
+    }
 
     public ModernControlsWpf()
     {
@@ -61,7 +80,5 @@ public class ModernControlsWpf : ResourceDictionary
                 )
             }
         );
-        ThemeManager.Instance.SetBaseTheme(BaseTheme);
-        ThemeManager.Instance.SetColorTheme(ColorTheme);
     }
 }

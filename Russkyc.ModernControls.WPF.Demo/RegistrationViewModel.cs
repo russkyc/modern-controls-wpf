@@ -61,7 +61,7 @@ public partial class RegistrationViewModel : ObservableObject
         {
             _selectedIndex = value;
             OnPropertyChanged();
-            ChangeColorTheme();
+            //ChangeColorTheme();
         }
     }
 
@@ -72,7 +72,7 @@ public partial class RegistrationViewModel : ObservableObject
         {
             _nightMode = value;
             OnPropertyChanged();
-            ChangeBaseTheme();
+            //ChangeBaseTheme();
         }
     }
 
@@ -91,8 +91,8 @@ public partial class RegistrationViewModel : ObservableObject
             Year.Add(i);
 
         ThemeManager.Instance.GetColorThemes().ToList().ForEach(Themes.Add);
-        NightMode = false;
-        SelectedIndex = 0;
+        //NightMode = false;
+        //SelectedIndex = 0;
     }
 
     private void ChangeBaseTheme()
