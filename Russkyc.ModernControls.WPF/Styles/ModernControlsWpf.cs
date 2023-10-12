@@ -21,26 +21,45 @@
 // SOFTWARE.
 
 using System;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Markup;
 using org.russkyc.moderncontrols.Enums;
-using org.russkyc.moderncontrols.Helpers;
 
 namespace org.russkyc.moderncontrols.Styles;
 
 [UsableDuringInitialization(true)]
 [Localizability(LocalizationCategory.Ignore)]
-public class ModernBaseThemes : ResourceDictionary
+public class ModernControlsWpf : ResourceDictionary
 {
-    public BaseTheme BaseTheme
-    {
-        set => ThemeManager.Instance.SetBaseTheme(value.ToString());
-    }
+    public BaseTheme BaseTheme { get; set; }
+    public ColorTheme ColorTheme { get; set; }
 
-    public ModernBaseThemes()
+    public ModernControlsWpf()
     {
-        Source = new Uri(
-            "pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/BaseThemes/Dark.xaml"
+        MergedDictionaries.Add(
+            new ResourceDictionary
+            {
+                Source = new Uri(
+                    $"pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/BaseThemes/{BaseTheme.ToString()}.xaml"
+                )
+            }
+        );
+        MergedDictionaries.Add(
+            new ResourceDictionary
+            {
+                Source = new Uri(
+                    $"pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/{ColorTheme.ToString()}.xaml"
+                )
+            }
+        );
+        MergedDictionaries.Add(
+            new ResourceDictionary
+            {
+                Source = new Uri(
+                    "pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/Generic.xaml"
+                )
+            }
         );
     }
 }

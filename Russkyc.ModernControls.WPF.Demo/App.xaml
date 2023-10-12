@@ -5,13 +5,7 @@
     xmlns:styles="clr-namespace:org.russkyc.moderncontrols.Styles;assembly=Russkyc.ModernControls.WPF"
     StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <!--  ModernControls WPF  -->
-                <styles:ModernBaseThemes BaseTheme="Dark" />
-                <styles:ModernColorThemes ColorTheme="Blue" />
-                <styles:ModernControlStyles />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
+        <!--  ModernControls WPF  -->
+        <styles:ModernControlsWpf BaseTheme="Dark" ColorTheme="Green" />
     </Application.Resources>
 </Application>
