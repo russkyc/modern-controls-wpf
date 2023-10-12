@@ -1,17 +1,17 @@
 ﻿// MIT License
-// 
+//
 // Copyright (c) 2023 Russell Camo (Russkyc)
-// 
+//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in all
 // copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -30,22 +30,21 @@ namespace Russkyc.ModernControls.WPF.Demo;
 
 public partial class RegistrationViewModel : ObservableObject
 {
-    
     [ObservableProperty]
     private string? _name;
-    
+
     [ObservableProperty]
     private string? _email;
-    
+
     [ObservableProperty]
     private int? _studentNumber;
-    
+
     [ObservableProperty]
     private ObservableCollection<int>? _day;
-    
+
     [ObservableProperty]
     private ObservableCollection<int>? _month;
-    
+
     [ObservableProperty]
     private ObservableCollection<int>? _year;
 
@@ -76,43 +75,36 @@ public partial class RegistrationViewModel : ObservableObject
             ChangeBaseTheme();
         }
     }
-    
+
     public RegistrationViewModel()
     {
-
         Day = new ObservableCollection<int>();
         Month = new ObservableCollection<int>();
         Year = new ObservableCollection<int>();
         Themes = new ObservableCollection<string>();
-            
-        for (int i = 1; i <= 30; i++) Day.Add(i);
-        for (int i = 1; i <= 12; i++) Month.Add(i);
-        for (int i = 1900; i <= 2022; i++) Year.Add(i);
-        
-        ThemeManager.Instance
-            .GetColorThemes()
-            .ToList()
-            .ForEach(Themes.Add);
 
+        for (int i = 1; i <= 30; i++)
+            Day.Add(i);
+        for (int i = 1; i <= 12; i++)
+            Month.Add(i);
+        for (int i = 1900; i <= 2022; i++)
+            Year.Add(i);
+
+        ThemeManager.Instance.GetColorThemes().ToList().ForEach(Themes.Add);
         NightMode = false;
         SelectedIndex = 0;
     }
 
     private void ChangeBaseTheme()
     {
-        ThemeManager.Instance
-            .SetBaseTheme(NightMode ? "Dark" : "Light");
+        ThemeManager.Instance.SetBaseTheme(NightMode ? "Dark" : "Light");
     }
 
     private void ChangeColorTheme()
     {
-        ThemeManager.Instance
-            .SetColorTheme(Themes![SelectedIndex]);
+        ThemeManager.Instance.SetColorTheme(Themes![SelectedIndex]);
     }
 
     [RelayCommand]
-    private void Login()
-    {
-        
-    }
+    private void Login() { }
 }
