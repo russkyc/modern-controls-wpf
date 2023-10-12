@@ -21,10 +21,10 @@
 // SOFTWARE.
 
 using System;
-using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Markup;
 using org.russkyc.moderncontrols.Enums;
+using org.russkyc.moderncontrols.Helpers;
 
 namespace org.russkyc.moderncontrols.Styles;
 
@@ -61,5 +61,7 @@ public class ModernControlsWpf : ResourceDictionary
                 )
             }
         );
+        ThemeManager.Instance.SetBaseTheme(BaseTheme);
+        ThemeManager.Instance.SetColorTheme(ColorTheme);
     }
 }
