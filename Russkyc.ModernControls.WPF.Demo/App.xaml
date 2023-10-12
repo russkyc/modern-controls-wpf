@@ -2,10 +2,10 @@
     x:Class="Russkyc.ModernControls.WPF.Demo.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:styles="clr-namespace:org.russkyc.moderncontrols.Styles;assembly=Russkyc.ModernControls.WPF"
+    xmlns:russkyc="clr-namespace:org.russkyc.moderncontrols.Styles;assembly=Russkyc.ModernControls.WPF"
     StartupUri="MainWindow.xaml">
     <Application.Resources>
         <!--  ModernControls WPF  -->
-        <styles:ModernControlsWpf BaseTheme="Dark" ColorTheme="Green" />
+        <russkyc:ModernControlsWpf BaseTheme="Dark" ColorTheme="Green" />
     </Application.Resources>
 </Application>

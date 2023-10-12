@@ -17,21 +17,17 @@ The default wpf control library is awesome when it comes to ui customization, bu
 ---
 ### Getting Strated
 
-Add the Resources to App.xaml. **Order is Important!**
+Add This Reference to App.xaml
+```xaml
+xmlns:russkyc="clr-namespace:org.russkyc.moderncontrols.Styles;assembly=Russkyc.ModernControls.WPF"
+```
+
+Add the Resource and set default theme in App.xaml
 
 ```xaml
     <Application.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <!--  ModernControls WPF  -->
-                <ResourceDictionary
-                    Source="pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/BaseTheme/DefaultDark.xaml" />
-                <ResourceDictionary
-                    Source="pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/ColorThemes/Blue.xaml" />
-                <ResourceDictionary
-                    Source="pack://application:,,,/Russkyc.ModernControls.WPF;component/Themes/Generic.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
+        <!--  ModernControls WPF  -->
+        <styles:ModernControlsWpf BaseTheme="Dark" ColorTheme="Green" />
     </Application.Resources>
 ```
 

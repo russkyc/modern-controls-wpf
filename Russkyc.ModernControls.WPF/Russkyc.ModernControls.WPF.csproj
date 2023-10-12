@@ -5,7 +5,7 @@
         <UseWPF>true</UseWPF>
         <RootNamespace>org.russkyc.moderncontrols</RootNamespace>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Version>2.2.0</Version>
+        <Version>2.2.1</Version>
         <Title>Modern Controls for WPF</Title>
         <Description>Highly customizable modern controls for WPF</Description>
         <RepositoryUrl>https://github.com/russkyc/modern-controls-wpf</RepositoryUrl>
@@ -17,7 +17,7 @@
         <LangVersion>latest</LangVersion>
         <PackageIcon>Russkyc.png</PackageIcon>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <PackageReleaseNotes>Fixed framework metadata Error in 2.0.4+ that causes application to crash</PackageReleaseNotes>
+        <PackageReleaseNotes>Make single custom resource for importing, add enum overloads to theme manager methods</PackageReleaseNotes>
     </PropertyGroup>
     <PropertyGroup>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
