@@ -5,6 +5,9 @@
     xmlns:russkyc="clr-namespace:org.russkyc.moderncontrols">
     <Style TargetType="{x:Type russkyc:ModernProgressbar}">
         <Setter Property="Height" Value="15" />
+        <Setter Property="TextMargin" Value="3" />
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="Orientation" Value="Horizontal" />
         <Setter Property="Width" Value="100" />
         <Setter Property="DefaultForeground" Value="{DynamicResource primary-default}" />
         <Setter Property="DefaultBackground" Value="{DynamicResource bg-200}" />
@@ -16,6 +19,9 @@
                         Width="{Binding Width, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernProgressbar}}"
                         Height="{Binding Height, RelativeSource={RelativeSource FindAncestor, AncestorType=russkyc:ModernProgressbar}}"
                         VerticalAlignment="Stretch">
+                        <Grid.RenderTransform>
+                            <RotateTransform Angle="{Binding Orientation, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type russkyc:ModernProgressbar}}, Converter={x:Static converters:OrientationToAngleConverter.Instance}}" />
+                        </Grid.RenderTransform>
                         <Border
                             x:Name="Part_Track"
                             HorizontalAlignment="Stretch"
@@ -40,6 +46,17 @@
                                 </TransformGroup>
                             </Border.RenderTransform>
                         </Border>
+                        <TextBlock
+                            Margin="{Binding TextMargin, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type russkyc:ModernProgressbar}}}"
+                            HorizontalAlignment="{Binding TextAlignment, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type russkyc:ModernProgressbar}}}"
+                            VerticalAlignment="Center"
+                            FontFamily="{Binding FontFamily, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type russkyc:ModernProgressbar}}}"
+                            FontSize="{Binding FontSize, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type russkyc:ModernProgressbar}}}"
+                            FontStretch="{Binding FontStretch, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type russkyc:ModernProgressbar}}}"
+                            FontStyle="{Binding FontStyle, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type russkyc:ModernProgressbar}}}"
+                            FontWeight="{Binding FontWeight, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type russkyc:ModernProgressbar}}}"
+                            Foreground="#ffffff"
+                            Text="{Binding Progress, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type russkyc:ModernProgressbar}}}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

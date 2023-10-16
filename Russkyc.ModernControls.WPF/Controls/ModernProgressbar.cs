@@ -33,6 +33,18 @@ public partial class ModernProgressbar : Control
     [DependencyProperty(typeof(double))]
     public static readonly DependencyProperty ProgressProperty;
 
+    [DependencyProperty(typeof(bool))]
+    public static readonly DependencyProperty ShowProgressProperty;
+
+    [DependencyProperty(typeof(Thickness))]
+    public static readonly DependencyProperty TextMarginProperty;
+
+    [DependencyProperty(typeof(HorizontalAlignment))]
+    public static readonly DependencyProperty TextAlignmentProperty;
+
+    [DependencyProperty(typeof(Orientation))]
+    public static readonly DependencyProperty OrientationProperty;
+
     // Border Styling
     [DependencyProperty(typeof(CornerRadius))]
     public static readonly DependencyProperty CornerRadiusProperty;
