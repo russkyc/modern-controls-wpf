@@ -21,19 +21,17 @@
 // SOFTWARE.
 
 using System.Windows;
-using org.russkyc.moderncontrols.Dialogs;
 
-namespace Russkyc.ModernControls.WPF.Demo
+namespace org.russkyc.moderncontrols.Dialogs;
+
+public static class DialogService
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
-    public partial class App : Application
-    {
-        protected override void OnStartup(StartupEventArgs e)
-        {
-            // App initialization
-            InitializeComponent();
-        }
-    }
+    public static bool? ShowDialog(string messageboxText, string caption) =>
+        new ModernDialog(messageboxText, caption).ShowDialog();
+
+    public static bool? ShowDialog(
+        string messageboxText,
+        string caption,
+        MessageBoxButton messageBoxButton
+    ) => new ModernDialog(messageboxText, caption, messageBoxButton).ShowDialog();
 }

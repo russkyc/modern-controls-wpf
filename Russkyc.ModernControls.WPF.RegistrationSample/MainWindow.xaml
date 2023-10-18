@@ -76,10 +76,6 @@
                 Foreground="{DynamicResource fg-000}"
                 Text="Demo Registration UI" />
         </Grid>
-        <PasswordBox
-            helpers:PasswordBoxHelper.CornerRadius="5"
-            helpers:PasswordBoxHelper.LeftIcon="{materialIcons:PackIcon Kind=User}"
-            helpers:PasswordBoxHelper.Placeholder="Password" />
         <russkyc:ModernTextBox
             Margin="0,10,0,0"
             CornerRadius="5"

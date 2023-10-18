@@ -24,6 +24,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using org.russkyc.moderncontrols.Dialogs;
 using org.russkyc.moderncontrols.Helpers;
 
 namespace Russkyc.ModernControls.WPF.Demo;
@@ -61,7 +62,7 @@ public partial class RegistrationViewModel : ObservableObject
         {
             _selectedIndex = value;
             OnPropertyChanged();
-            //ChangeColorTheme();
+            ChangeColorTheme();
         }
     }
 
@@ -72,7 +73,7 @@ public partial class RegistrationViewModel : ObservableObject
         {
             _nightMode = value;
             OnPropertyChanged();
-            //ChangeBaseTheme();
+            ChangeBaseTheme();
         }
     }
 
@@ -91,8 +92,6 @@ public partial class RegistrationViewModel : ObservableObject
             Year.Add(i);
 
         ThemeManager.Instance.GetColorThemes().ToList().ForEach(Themes.Add);
-        //NightMode = false;
-        //SelectedIndex = 0;
     }
 
     private void ChangeBaseTheme()
@@ -106,5 +105,8 @@ public partial class RegistrationViewModel : ObservableObject
     }
 
     [RelayCommand]
-    private void Login() { }
+    private void Login()
+    {
+        DialogService.ShowDialog("Registration", $"{Name} is successfully registered");
+    }
 }
