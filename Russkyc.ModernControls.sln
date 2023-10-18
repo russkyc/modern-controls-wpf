@@ -2,7 +2,11 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Russkyc.ModernControls.WPF", "Russkyc.ModernControls.WPF\Russkyc.ModernControls.WPF.csproj", "{9D485DFF-FFD3-4498-A691-D1F786C5B3D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Russkyc.ModernControls.WPF.Demo", "Russkyc.ModernControls.WPF.Demo\Russkyc.ModernControls.WPF.Demo.csproj", "{AFCF046C-90AD-4DDD-99BA-6470B74183E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Russkyc.ModernControls.WPF.RegistrationSample", "Russkyc.ModernControls.WPF.RegistrationSample\Russkyc.ModernControls.WPF.RegistrationSample.csproj", "{AFCF046C-90AD-4DDD-99BA-6470B74183E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{10CC1A83-4016-4937-A010-25AA34AD0633}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C8507ECF-B832-41AA-BAFA-5B882DD0BCC8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +22,9 @@ Global
 		{AFCF046C-90AD-4DDD-99BA-6470B74183E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFCF046C-90AD-4DDD-99BA-6470B74183E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFCF046C-90AD-4DDD-99BA-6470B74183E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9D485DFF-FFD3-4498-A691-D1F786C5B3D1} = {C8507ECF-B832-41AA-BAFA-5B882DD0BCC8}
+		{AFCF046C-90AD-4DDD-99BA-6470B74183E2} = {10CC1A83-4016-4937-A010-25AA34AD0633}
 	EndGlobalSection
 EndGlobal
